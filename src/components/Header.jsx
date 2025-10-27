@@ -11,14 +11,19 @@ const Header = () => {
                         aria-label="Back to homepage"
                         className="flex items-center p-2"
                     >
-                       <img src={"/bcf-logo-nobg.png"} alt="bcf logo" className="h-15 w-full" />
+                        <img
+                            src={"/bcf-logo-nobg.png"}
+                            alt="bcf logo"
+                            className="h-15 w-full"
+                        />
                     </Link>
                     <ul className="items-stretch hidden space-x-3 lg:flex">
                         <li className="flex">
                             <NavLink
                                 rel="noopener noreferrer"
                                 to={"/"}
-                                className="flex items-center px-4 -mb-1">
+                                className="flex items-center px-4 -mb-1"
+                            >
                                 Home
                             </NavLink>
                         </li>
@@ -58,11 +63,22 @@ const Header = () => {
                                 Contact
                             </NavLink>
                         </li>
+                        <li className="flex">
+                            <NavLink
+                                rel="noopener noreferrer"
+                                to={"/partner"}
+                                className="flex items-center px-4 -mb-1"
+                            >
+                                Partner
+                            </NavLink>
+                        </li>
                     </ul>
                     <div className="items-center shrink-0 hidden lg:flex">
-                        <button className="self-center px-8 py-3 font-semibold rounded bg-(--color-logo-orange) text-gray-100">
-                            Donate
-                        </button>
+                        <Link rel="noopener noreferrer" to={"/donate"}>
+                            <button className="self-center px-8 py-3 font-semibold rounded bg-(--color-logo-orange) text-gray-100">
+                                Donate
+                            </button>
+                        </Link>
                     </div>
                     <button className="p-4 lg:hidden">
                         <svg

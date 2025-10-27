@@ -1,3 +1,4 @@
+import { Facebook, Instagram, Mail, MapPin, Phone, Twitter } from "lucide-react";
 import { Link, NavLink } from "react-router";
 
 const Footer = () => {
@@ -17,9 +18,9 @@ const Footer = () => {
                                 one community at a time.
                             </p>
                             <div class="flex space-x-4">
-                                <i class="fa-brands fa-facebook text-xl text-black-300 hover:text-white cursor-pointer"></i>
-                                <i class="fa-brands fa-twitter text-xl text-black-300 hover:text-white cursor-pointer"></i>
-                                <i class="fa-brands fa-instagram text-xl text-black-300 hover:text-white cursor-pointer"></i>
+                                <Facebook size={24} className="text-black-300 hover:text-white cursor-pointer" />
+                                <Twitter size={24} className="text-black-300 hover:text-white cursor-pointer" />
+                                <Instagram size={24} className="text-black-300 hover:text-white cursor-pointer" />
                             </div>
                         </div>
                         <div>
@@ -41,14 +42,7 @@ const Footer = () => {
                                         Board
                                     </Link>
                                 </li>
-                                <li>
-                                    <Link
-                                        to="/volunteer"
-                                        className="text-neutral-300 hover:text-white"
-                                    >
-                                        Volunteer
-                                    </Link>
-                                </li>
+
                                 <li>
                                     <Link
                                         to="/welfare"
@@ -71,36 +65,36 @@ const Footer = () => {
                             <h4 class="text-lg mb-4">Get Involved</h4>
                             <ul class="space-y-2">
                                 <li>
-                                    <a
-                                        href="#"
+                                    <Link
+                                        to="/donate"
                                         class="text-neutral-300 hover:text-white"
                                     >
                                         Donate
-                                    </a>
+                                    </Link>
                                 </li>
                                 <li>
-                                    <a
-                                        href="#"
+                                    <Link
+                                        to="/volunteer"
                                         class="text-neutral-300 hover:text-white"
                                     >
                                         Volunteer
-                                    </a>
+                                    </Link>
                                 </li>
                                 <li>
-                                    <a
-                                        href="#"
+                                    <Link
+                                        to="/donate"
                                         class="text-neutral-300 hover:text-white"
                                     >
                                         Fundraise
-                                    </a>
+                                    </Link>
                                 </li>
                                 <li>
-                                    <a
-                                        href="#"
+                                    <Link
+                                        to="/partner"
                                         class="text-neutral-300 hover:text-white"
                                     >
                                         Partner With Us
-                                    </a>
+                                    </Link>
                                 </li>
                             </ul>
                         </div>
@@ -108,15 +102,15 @@ const Footer = () => {
                             <h4 class="text-lg mb-4">Contact</h4>
                             <div class="space-y-2 text-neutral-300">
                                 <div class="flex items-center">
-                                    <i class="fa-solid fa-envelope mr-2"></i>
+                                    <Mail size={18} className="mr-2" />
                                     <span>info@beaconcompassion.org</span>
                                 </div>
                                 <div class="flex items-center">
-                                    <i class="fa-solid fa-phone mr-2"></i>
-                                    <span>+1 (555) 123-4567</span>
+                                    <Phone size={18} className="mr-2" />
+                                    <span>+254 700 00 00</span>
                                 </div>
                                 <div class="flex items-center">
-                                    <i class="fa-solid fa-location-dot mr-2"></i>
+                                    <MapPin size={18} className="mr-2" />
                                     <span>
                                         123 Hope Street, City, State 12345
                                     </span>
