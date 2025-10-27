@@ -5,8 +5,11 @@ import { Footer } from "./components/Footer";
 function App() {
     return (
         <div>
-            <Header />
-            <main>
+            <div className="relative w-full">
+                <Header />
+            </div>
+
+            <main className="pt-20">
                 <Outlet />
             </main>
 

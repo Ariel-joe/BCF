@@ -1,9 +1,13 @@
+import { Menu } from "lucide-react";
+import { useState } from "react";
 import { Link, NavLink } from "react-router";
 
 const Header = () => {
+    const [mobileOpen, setMobileOpen] = useState(false);
+
     return (
         <div>
-            <header className="p-4">
+            <header className="p-4 w-full fixed top-0 z-50 bg-white/95 backdrop-blur-sm">
                 <div className="container flex justify-between h-16 mx-auto">
                     <Link
                         rel="noopener noreferrer"
@@ -14,7 +18,7 @@ const Header = () => {
                         <img
                             src={"/bcf-logo-nobg.png"}
                             alt="bcf logo"
-                            className="h-15 w-full"
+                            className="h-18 w-full"
                         />
                     </Link>
                     <ul className="items-stretch hidden space-x-3 lg:flex">
@@ -30,10 +34,19 @@ const Header = () => {
                         <li className="flex">
                             <NavLink
                                 rel="noopener noreferrer"
+                                to={"/team"}
+                                className="flex items-center px-4 -mb-1"
+                            >
+                                BCF Team
+                            </NavLink>
+                        </li>
+                        <li className="flex">
+                            <NavLink
+                                rel="noopener noreferrer"
                                 to={"/board"}
                                 className="flex items-center px-4 -mb-1"
                             >
-                                Board
+                                BCF Board
                             </NavLink>
                         </li>
                         <li className="flex">
@@ -74,29 +87,103 @@ const Header = () => {
                         </li>
                     </ul>
                     <div className="items-center shrink-0 hidden lg:flex">
-                        <Link rel="noopener noreferrer" to={"/donate"}>
+                        <Link
+                            rel="noopener noreferrer"
+                            to={"/donate"}
+                            onClick={() => setMobileOpen(false)}
+                        >
                             <button className="self-center px-8 py-3 font-semibold rounded bg-(--color-logo-orange) text-gray-100">
                                 Donate
                             </button>
                         </Link>
                     </div>
-                    <button className="p-4 lg:hidden">
-                        <svg
-                            xmlns="http://www.w3.org/2000/svg"
-                            fill="none"
-                            viewBox="0 0 24 24"
-                            stroke="currentColor"
-                            className="w-6 h-6 text-gray-100"
-                        >
-                            <path
-                                strokeLinecap="round"
-                                strokeLinejoin="round"
-                                strokeWidth="2"
-                                d="M4 6h16M4 12h16M4 18h16"
-                            ></path>
-                        </svg>
+                    <button
+                        className="mt-4 lg:hidden"
+                        aria-controls="mobile-menu"
+                        aria-expanded={mobileOpen ? "true" : "false"}
+                        onClick={() => setMobileOpen(!mobileOpen)}
+                    >
+                        <Menu size={32} color="#000000" />
                     </button>
                 </div>
+                {/* mobile navigation - toggled by Menu button */}
+                {mobileOpen && (
+                    <div
+                        id="mobile-menu"
+                        className="lg:hidden fixed inset-x-0 top-16 bottom-0 z-40 bg-white/95 overflow-auto p-6"
+                        role="dialog"
+                        aria-modal="true"
+                    >
+                        <Link
+                            rel="noopener noreferrer"
+                            to={"/"}
+                            onClick={() => setMobileOpen(false)}
+                        >
+                            <button className="w-full text-left px-4 py-6 font-semibold border-b border-(--color-logo-orange) text-black">
+                                Home
+                            </button>
+                        </Link>
+                        <Link
+                            rel="noopener noreferrer"
+                            to={"/team"}
+                            onClick={() => setMobileOpen(false)}
+                        >
+                            <button className="w-full text-left px-4 py-6 font-semibold border-b border-(--color-logo-orange) text-black">
+                                BCF Team
+                            </button>
+                        </Link>
+                        <Link
+                            rel="noopener noreferrer"
+                            to={"/board"}
+                            onClick={() => setMobileOpen(false)}
+                        >
+                            <button className="w-full text-left px-4 py-6 font-semibold border-b border-(--color-logo-orange) text-black">
+                                BCF Board
+                            </button>
+                        </Link>
+                        <Link
+                            rel="noopener noreferrer"
+                            to={"/volunteer"}
+                            onClick={() => setMobileOpen(false)}
+                        >
+                            <button className="w-full text-left px-4 py-6 font-semibold border-b border-(--color-logo-orange) text-black">
+                                Volunteer
+                            </button>
+                        </Link>
+                        <Link
+                            rel="noopener noreferrer"
+                            to={"/welfare"}
+                            onClick={() => setMobileOpen(false)}
+                        >
+                            <button className="w-full text-left px-4 py-6 font-semibold  border-b border-(--color-logo-orange) text-black">
+                                Welfare
+                            </button>
+                        </Link>
+                        <Link
+                            rel="noopener noreferrer"
+                            to={"/contact"}
+                            onClick={() => setMobileOpen(false)}
+                        >
+                            <button className="w-full text-left px-4 py-6 font-semibold  border-b border-(--color-logo-orange) text-black">
+                                Contact
+                            </button>
+                        </Link>
+                        <Link
+                            rel="noopener noreferrer"
+                            to={"/partner"}
+                            onClick={() => setMobileOpen(false)}
+                        >
+                            <button className="w-full text-left px-4 py-6 font-semibold  border-b border-(--color-logo-orange) text-black">
+                                Partner
+                            </button>
+                        </Link>
+                        <Link rel="noopener noreferrer" to={"/donate"}>
+                            <button className="w-full px-4 py-3 font-semibold bg-(--color-logo-orange) text-gray-100">
+                                Donate
+                            </button>
+                        </Link>
+                    </div>
+                )}
             </header>
         </div>
     );
