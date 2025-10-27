@@ -108,12 +108,7 @@ const Header = () => {
                 </div>
                 {/* mobile navigation - toggled by Menu button */}
                 {mobileOpen && (
-                    <div
-                        id="mobile-menu"
-                        className="lg:hidden fixed inset-x-0 top-16 bottom-0 z-40 bg-white/95 overflow-auto p-6"
-                        role="dialog"
-                        aria-modal="true"
-                    >
+                    <div id="mobile-menu" className="lg:hidden mt-4 space-y-3 h-dvh">
                         <Link
                             rel="noopener noreferrer"
                             to={"/"}
