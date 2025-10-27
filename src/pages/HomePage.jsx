@@ -1,4 +1,11 @@
-import React from 'react'
+import {
+    BadgeCheck,
+    HeartHandshake,
+    Lightbulb,
+    UsersIcon,
+    UsersRound,
+} from "lucide-react";
+import React from "react";
 import { Link } from "react-router";
 
 const HomePage = () => {
@@ -55,8 +62,8 @@ const HomePage = () => {
                         </div>
                         <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
                             <div class="text-center p-6">
-                                <div class="w-16 h-16 bg-neutral-800 rounded-full flex items-center justify-center mx-auto mb-4">
-                                    <i class="fa-solid fa-users text-white text-2xl"></i>
+                                <div class="w-16 h-16 bg-neutral-400 rounded-full flex items-center justify-center mx-auto mb-4">
+                                    <UsersRound color="white" size={36} />
                                 </div>
                                 <h3 class="text-xl text-neutral-900 mb-3">
                                     Community Focus
@@ -67,8 +74,8 @@ const HomePage = () => {
                                 </p>
                             </div>
                             <div class="text-center p-6">
-                                <div class="w-16 h-16 bg-neutral-800 rounded-full flex items-center justify-center mx-auto mb-4">
-                                    <i class="fa-solid fa-lightbulb text-white text-2xl"></i>
+                                <div class="w-16 h-16 bg-neutral-400 rounded-full flex items-center justify-center mx-auto mb-4">
+                                    <Lightbulb color="white" size={36} />
                                 </div>
                                 <h3 class="text-xl text-neutral-900 mb-3">
                                     Innovation
@@ -79,8 +86,8 @@ const HomePage = () => {
                                 </p>
                             </div>
                             <div class="text-center p-6">
-                                <div class="w-16 h-16 bg-neutral-800 rounded-full flex items-center justify-center mx-auto mb-4">
-                                    <i class="fa-solid fa-handshake text-white text-2xl"></i>
+                                <div class="w-16 h-16 bg-neutral-400 rounded-full flex items-center justify-center mx-auto mb-4">
+                                    <HeartHandshake color="white" size={36} />
                                 </div>
                                 <h3 class="text-xl text-neutral-900 mb-3">
                                     Collaboration
@@ -96,16 +103,86 @@ const HomePage = () => {
                 <section id="mission" class="py-20 bg-neutral-50">
                     <div class="max-w-7xl mx-auto px-6">
                         <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-                            <div class="bg-neutral-400 rounded-lg h-96 flex items-center justify-center">
-                                <span class="text-white text-lg">
-                                    Mission Image
-                                </span>
+                            <div>
+                                <div class="grid grid-cols-3 md:grid-cols-4 gap-4">
+                                    <div class="grid gap-4">
+                                        <div>
+                                            <img
+                                                class="h-auto max-w-full rounded-lg"
+                                                src="/DSC_3049.jpeg"
+                                                alt=""
+                                            />
+                                        </div>
+                                        <div>
+                                            <img
+                                                class="h-auto max-w-full rounded-lg"
+                                                src="IMG-20250901-WA0035.jpg"
+                                                alt=""
+                                            />
+                                        </div>
+                                        <div>
+                                            <img
+                                                class="h-auto max-w-full rounded-lg"
+                                                src="IMG-20250901-WA0022.jpg"
+                                                alt=""
+                                            />
+                                        </div>
+                                    </div>
+                                    <div class="grid gap-4">
+                                        <div>
+                                            <img
+                                                class="h-auto max-w-full rounded-lg"
+                                                src="IMG-20250901-WA0029.jpg"
+                                                alt=""
+                                            />
+                                        </div>
+
+                                        <div>
+                                            <img
+                                                class="h-auto max-w-full rounded-lg"
+                                                src="IMG-20250901-WA0018.jpg"
+                                                alt=""
+                                            />
+                                        </div>
+                                        <div>
+                                            <img
+                                                class="h-auto max-w-full rounded-lg"
+                                                src="DSC_3270.jpeg"
+                                                alt=""
+                                            />
+                                        </div>
+                                    </div>
+                                    <div class="grid gap-4">
+                                        <div>
+                                            <img
+                                                class="h-auto max-w-full rounded-lg"
+                                                src="DSC_3042.jpeg"
+                                                alt=""
+                                            />
+                                        </div>
+                                        <div>
+                                            <img
+                                                class="h-auto max-w-full rounded-lg"
+                                                src="IMG-20250901-WA0026.jpg"
+                                                alt=""
+                                            />
+                                        </div>
+
+                                        <div>
+                                            <img
+                                                class="h-auto max-w-full rounded-lg"
+                                                src="IMG-20250901-WA0032.jpg"
+                                                alt=""
+                                            />
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                             <div>
-                                <h2 class="text-4xl text-neutral-900 mb-6">
+                                <h2 class="text-4xl mb-6 font-bold marker-highlight">
                                     Our Mission
                                 </h2>
-                                <p class="text-lg text-neutral-600 mb-6 leading-relaxed">
+                                <p class="text-lg text-neutral-600 mb-6 text-justify leading-relaxed">
                                     To empower communities and individuals by
                                     providing resources, support, and
                                     opportunities that foster growth, education,
@@ -116,21 +193,21 @@ const HomePage = () => {
                                 </p>
                                 <div class="space-y-4">
                                     <div class="flex items-start space-x-3">
-                                        <i class="fa-solid fa-check text-neutral-800 mt-1"></i>
+                                        <BadgeCheck color="var(--color-logo-blue)" />
                                         <span class="text-neutral-700">
                                             Provide essential resources to
                                             underserved communities
                                         </span>
                                     </div>
                                     <div class="flex items-start space-x-3">
-                                        <i class="fa-solid fa-check text-neutral-800 mt-1"></i>
+                                        <BadgeCheck color="var(--color-logo-blue)" />
                                         <span class="text-neutral-700">
                                             Create educational opportunities for
                                             all ages
                                         </span>
                                     </div>
                                     <div class="flex items-start space-x-3">
-                                        <i class="fa-solid fa-check text-neutral-800 mt-1"></i>
+                                        <BadgeCheck color="var(--color-logo-blue)" />
                                         <span class="text-neutral-700">
                                             Foster sustainable development
                                             initiatives
@@ -145,7 +222,7 @@ const HomePage = () => {
                     <div class="max-w-7xl mx-auto px-6">
                         <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
                             <div>
-                                <h2 class="text-4xl text-neutral-900 mb-6">
+                                <h2 class="text-4xl mb-6 font-bold marker-highlight">
                                     Our Vision
                                 </h2>
                                 <p class="text-lg text-neutral-600 mb-6 leading-relaxed">
@@ -169,10 +246,80 @@ const HomePage = () => {
                                     </p>
                                 </div>
                             </div>
-                            <div class="bg-neutral-400 rounded-lg h-96 flex items-center justify-center">
-                                <span class="text-white text-lg">
-                                    Vision Image
-                                </span>
+                            <div class="">
+                                <div class="grid grid-cols-3 md:grid-cols-4 gap-4">
+                                    <div class="grid gap-4">
+                                        <div>
+                                            <img
+                                                class="h-auto max-w-full rounded-lg"
+                                                src="/DSC_3049.jpeg"
+                                                alt=""
+                                            />
+                                        </div>
+                                        <div>
+                                            <img
+                                                class="h-auto max-w-full rounded-lg"
+                                                src="IMG-20250901-WA0035.jpg"
+                                                alt=""
+                                            />
+                                        </div>
+                                        <div>
+                                            <img
+                                                class="h-auto max-w-full rounded-lg"
+                                                src="IMG-20250901-WA0022.jpg"
+                                                alt=""
+                                            />
+                                        </div>
+                                    </div>
+                                    <div class="grid gap-4">
+                                        <div>
+                                            <img
+                                                class="h-auto max-w-full rounded-lg"
+                                                src="IMG-20250901-WA0029.jpg"
+                                                alt=""
+                                            />
+                                        </div>
+
+                                        <div>
+                                            <img
+                                                class="h-auto max-w-full rounded-lg"
+                                                src="IMG-20250901-WA0018.jpg"
+                                                alt=""
+                                            />
+                                        </div>
+                                        <div>
+                                            <img
+                                                class="h-auto max-w-full rounded-lg"
+                                                src="DSC_3270.jpeg"
+                                                alt=""
+                                            />
+                                        </div>
+                                    </div>
+                                    <div class="grid gap-4">
+                                        <div>
+                                            <img
+                                                class="h-auto max-w-full rounded-lg"
+                                                src="DSC_3042.jpeg"
+                                                alt=""
+                                            />
+                                        </div>
+                                        <div>
+                                            <img
+                                                class="h-auto max-w-full rounded-lg"
+                                                src="IMG-20250901-WA0026.jpg"
+                                                alt=""
+                                            />
+                                        </div>
+
+                                        <div>
+                                            <img
+                                                class="h-auto max-w-full rounded-lg"
+                                                src="IMG-20250901-WA0032.jpg"
+                                                alt=""
+                                            />
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -235,4 +382,4 @@ const HomePage = () => {
     );
 };
 
-export default HomePage
+export default HomePage;
