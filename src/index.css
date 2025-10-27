@@ -15,3 +15,52 @@ a.active {
     padding-top: 0;
     padding-bottom: 0;
 }
+
+/* marker highlight styling for headings */
+:root {
+    /* semi-transparent marker color using the brand orange */
+    --marker-color: var(--color-logo-orange);
+}
+
+.marker-highlight {
+    position: relative;
+    display: inline-block;
+    z-index: 1;
+    padding: 0 .12rem;
+}
+
+.marker-highlight::before,
+.marker-highlight::after {
+    content: '';
+    position: absolute;
+    left: -0.06em;
+    right: -0.06em;
+    top: 50%;
+    transform: translateY(-50%);
+    height: 0.9em;
+    background: var(--marker-color);
+    z-index: -1;
+    border-radius: 0.18em;
+    filter: blur(0.3px);
+}
+
+/* second layer for irregular freehand look */
+.marker-highlight::before {
+    transform: translateY(-45%) rotate(-3deg) skewX(-6deg);
+    opacity: 1;
+}
+.marker-highlight::after {
+    transform: translateY(-55%) rotate(2deg) skewX(4deg);
+    opacity: 0.85;
+    left: 0.02em;
+    right: 0.02em;
+    height: 0.88em;
+}
+
+/* slightly smaller highlight on very small screens */
+@media (max-width: 420px) {
+    .marker-highlight::before,
+    .marker-highlight::after {
+        height: 0.78em;
+    }
+}

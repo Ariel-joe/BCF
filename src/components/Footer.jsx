@@ -4,7 +4,7 @@ import { Link, NavLink } from "react-router";
 const Footer = () => {
     return (
         <>
-            <footer id="footer" class="bg-(--color-logo-orange) text- py-12">
+            <footer id="footer" class="text- py-12">
                 <div class="max-w-7xl mx-auto px-6 lg:px-8">
                     <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
                         <div>
@@ -18,9 +18,18 @@ const Footer = () => {
                                 one community at a time.
                             </p>
                             <div class="flex space-x-4">
-                                <Facebook size={24} className="text-black-300 hover:text-white cursor-pointer" />
-                                <Twitter size={24} className="text-black-300 hover:text-white cursor-pointer" />
-                                <Instagram size={24} className="text-black-300 hover:text-white cursor-pointer" />
+                                <Facebook
+                                    size={24}
+                                    className="text-black-300 hover:text-white cursor-pointer"
+                                />
+                                <Twitter
+                                    size={24}
+                                    className="text-black-300 hover:text-white cursor-pointer"
+                                />
+                                <Instagram
+                                    size={24}
+                                    className="text-black-300 hover:text-white cursor-pointer"
+                                />
                             </div>
                         </div>
                         <div>
@@ -29,7 +38,7 @@ const Footer = () => {
                                 <li>
                                     <Link
                                         to="/"
-                                        className="text-neutral-300 hover:text-white"
+                                        className="text-black-300 hover:text-(--color-logo-orange)"
                                     >
                                         Home
                                     </Link>
@@ -37,7 +46,7 @@ const Footer = () => {
                                 <li>
                                     <Link
                                         to="/board"
-                                        className="text-neutral-300 hover:text-white"
+                                        className="text-black-300 hover:text-(--color-logo-orange)"
                                     >
                                         Board
                                     </Link>
@@ -46,7 +55,7 @@ const Footer = () => {
                                 <li>
                                     <Link
                                         to="/welfare"
-                                        className="text-neutral-300 hover:text-white"
+                                        className="text-black-300 hover:text-(--color-logo-orange)"
                                     >
                                         Welfare
                                     </Link>
@@ -54,7 +63,7 @@ const Footer = () => {
                                 <li>
                                     <Link
                                         to="/contact"
-                                        className="text-neutral-300 hover:text-white"
+                                        className="text-black-300 hover:text-(--color-logo-orange)"
                                     >
                                         Contact
                                     </Link>
@@ -67,7 +76,7 @@ const Footer = () => {
                                 <li>
                                     <Link
                                         to="/donate"
-                                        class="text-neutral-300 hover:text-white"
+                                        class="text-black-300 hover:text-(--color-logo-orange)"
                                     >
                                         Donate
                                     </Link>
@@ -75,7 +84,7 @@ const Footer = () => {
                                 <li>
                                     <Link
                                         to="/volunteer"
-                                        class="text-neutral-300 hover:text-white"
+                                        class="text-black-300 hover:text-(--color-logo-orange)"
                                     >
                                         Volunteer
                                     </Link>
@@ -83,7 +92,7 @@ const Footer = () => {
                                 <li>
                                     <Link
                                         to="/donate"
-                                        class="text-neutral-300 hover:text-white"
+                                        class="text-black-300 hover:text-(--color-logo-orange)"
                                     >
                                         Fundraise
                                     </Link>
@@ -91,7 +100,7 @@ const Footer = () => {
                                 <li>
                                     <Link
                                         to="/partner"
-                                        class="text-neutral-300 hover:text-white"
+                                        class="text-black-300 hover:text-(--color-logo-orange)"
                                     >
                                         Partner With Us
                                     </Link>
@@ -100,7 +109,7 @@ const Footer = () => {
                         </div>
                         <div>
                             <h4 class="text-lg mb-4">Contact</h4>
-                            <div class="space-y-2 text-neutral-300">
+                            <div class="space-y-2 text-black-300">
                                 <div class="flex items-center">
                                     <Mail size={18} className="mr-2" />
                                     <span>info@beaconcompassion.org</span>
