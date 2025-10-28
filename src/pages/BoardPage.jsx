@@ -5,7 +5,8 @@ const BoardPage = () => {
       <>
           <section
               id="team-hero"
-              className="h-[300px] bg-neutral-50 flex items-center"
+              className="h-[400px] flex items-center bg-neutral-50 relative text-white hero bg-cover bg-center"
+              style={{ backgroundImage: 'url("/team.JPG")' }}
           ></section>
           <section id="leadership" className="py-20 bg-white">
               <div className="max-w-7xl mx-auto px-6">

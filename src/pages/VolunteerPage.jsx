@@ -1,6 +1,7 @@
 import { Calendar, ChartAreaIcon, Clock, GraduationCap, Hammer, Handshake, Heart, Laptop, Users, UsersIcon } from 'lucide-react';
 import React from 'react'
 import { VolunteerForm } from "../components/volunteerForm";
+import VolunteerGallery from '../components/VolunteerGallery';
 
 const VolunteerPage = () => {
     return (
@@ -197,6 +198,10 @@ const VolunteerPage = () => {
                                 </div>
                             </div>
                         </div>
+                    </section>
+
+                    <section>
+                        <VolunteerGallery />
                     </section>
                 </div>
             </section>
