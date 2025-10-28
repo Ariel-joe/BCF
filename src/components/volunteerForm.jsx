@@ -1,58 +1,54 @@
-import React from "react";
 
 const VolunteerForm = () => {
     return (
         <>
             <div className="">
                 <div className="bg-white border border-neutral-200 rounded-lg p-8">
-                    <h2 className="text-3xl text-neutral-900 mb-8">
-                        Send us a Message
-                    </h2>
                     <form className="space-y-6">
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                             <div>
-                                <label className="block text-sm text-neutral-700 mb-2">
+                                <label className="block font-bold text-sm text-neutral-700 mb-2">
                                     First Name
                                 </label>
                                 <input
                                     type="text"
-                                    placeholder="Enter your first name"
+                                    placeholder=""
                                     className="w-full px-4 py-3 border border-neutral-300 rounded-md focus:outline-none focus:ring-2 focus:ring-neutral-900 focus:border-transparent"
                                 />
                             </div>
                             <div>
-                                <label className="block text-sm text-neutral-700 mb-2">
+                                <label className="block text-sm font-bold text-neutral-700 mb-2">
                                     Last Name
                                 </label>
                                 <input
                                     type="text"
-                                    placeholder="Enter your last name"
+                                    placeholder=""
                                     className="w-full px-4 py-3 border border-neutral-300 rounded-md focus:outline-none focus:ring-2 focus:ring-neutral-900 focus:border-transparent"
                                 />
                             </div>
                         </div>
                         <div>
-                            <label className="block text-sm text-neutral-700 mb-2">
+                            <label className="block text-sm font-bold text-neutral-700 mb-2">
                                 Email Address
                             </label>
                             <input
                                 type="email"
-                                placeholder="Enter your email address"
+                                placeholder="name@example.com"
                                 className="w-full px-4 py-3 border border-neutral-300 rounded-md focus:outline-none focus:ring-2 focus:ring-neutral-900 focus:border-transparent"
                             />
                         </div>
                         <div>
-                            <label className="block text-sm text-neutral-700 mb-2">
+                            <label className="block text-sm font-bold text-neutral-700 mb-2">
                                 Phone Number
                             </label>
                             <input
                                 type="tel"
-                                placeholder="Enter your phone number"
+                                placeholder="07..."
                                 className="w-full px-4 py-3 border border-neutral-300 rounded-md focus:outline-none focus:ring-2 focus:ring-neutral-900 focus:border-transparent"
                             />
                         </div>
                         <div>
-                            <label className="block text-sm text-neutral-700 mb-2">
+                            <label className="block text-sm font-bold text-neutral-700 mb-2">
                                 Subject
                             </label>
                             <select className="w-full px-4 py-3 border border-neutral-300 rounded-md focus:outline-none focus:ring-2 focus:ring-neutral-900 focus:border-transparent">
@@ -65,7 +61,7 @@ const VolunteerForm = () => {
                             </select>
                         </div>
                         <div>
-                            <label className="block text-sm text-neutral-700 mb-2">
+                            <label className="block text-sm font-bold text-neutral-700 mb-2">
                                 Message
                             </label>
                             <textarea
@@ -92,7 +88,6 @@ const VolunteerForm = () => {
                             type="submit"
                             className="w-full px-8 py-3 bg-neutral-900 text-white rounded-md hover:bg-neutral-800"
                         >
-                            <i className="fa-solid fa-paper-plane mr-2"></i>
                             Send Message
                         </button>
                     </form>

@@ -8,59 +8,24 @@ const VolunteerPage = () => {
             <section id="volunteers" className="py-20 bg-white">
                 <div className="max-w-7xl mx-auto px-6">
                     <div className="text-center mb-16">
-                        <h2 className="text-3xl font-bold text-neutral-900 mb-6">
+                        <h2 className="text-3xl font-bold text-neutral-900 mb-6 marker-highlight">
                             Our Volunteers
                         </h2>
-                        <p className="text-lg text-neutral-600 max-w-2xl mx-auto">
+                        <p className="text-lg text-neutral-600 font-semibold max-w-2xl mx-auto">
                             The heart of our organization - passionate
                             individuals who dedicate their time and skills to
                             make a difference.
                         </p>
                     </div>
-                    <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
-                        <div className="text-center">
-                            <div className="w-16 h-16 bg-(--color-logo-orange) rounded-full flex items-center justify-center mx-auto mb-4">
-                                <UsersIcon size={30} color="white" />
-                            </div>
-                            <h3 className="text-xl text-neutral-900 mb-2">
-                                150+
-                            </h3>
-                            <p className="text-neutral-600">
-                                Active Volunteers
-                            </p>
-                        </div>
-                        <div className="text-center">
-                            <div className="w-16 h-16 bg-(--color-logo-orange) rounded-full flex items-center justify-center mx-auto mb-4">
-                                <Clock size={30} color="white" />
-                            </div>
-                            <h3 className="text-xl text-neutral-900 mb-2">
-                                2,500+
-                            </h3>
-                            <p className="text-neutral-600">
-                                Hours Contributed Monthly
-                            </p>
-                        </div>
-                        <div className="text-center">
-                            <div className="w-16 h-16 bg-(--color-logo-orange) rounded-full flex items-center justify-center mx-auto mb-4">
-                                <Heart size={30} color="white" />
-                            </div>
-                            <h3 className="text-xl text-neutral-900 mb-2">
-                                25+
-                            </h3>
-                            <p className="text-neutral-600">
-                                Different Skill Areas
-                            </p>
-                        </div>
-                    </div>
-                    <div className="grid grid-cols-1 lg:grid-cols-3 gap-12">
-                        <VolunteerForm />
-                        <h3 className="text-xl text-neutral-900 mb-6 font-semibold text-center">
+
+                    <div className="bg-neutral-50 p-8 rounded-lg">
+                        <h3 className="text-xl text-neutral-900 font-semibold mb-6 text-center">
                             Volunteer Opportunities
                         </h3>
                         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                            <div className="bg-white w-full p-6 rounded-lg">
+                            <div className="bg-white p-6 rounded-lg">
                                 <GraduationCap />
-                                <h4 className="text-lg font-medium text-neutral-900 mb-2">
+                                <h4 className="text-lg font-bold text-neutral-900 mb-2">
                                     Education Support
                                 </h4>
                                 <p className="text-sm text-neutral-600">
@@ -70,7 +35,7 @@ const VolunteerPage = () => {
                             </div>
                             <div className="bg-white p-6 rounded-lg">
                                 <Hammer />
-                                <h4 className="text-lg font-medium text-neutral-900 mb-2">
+                                <h4 className="text-lg font-bold text-neutral-900 mb-2">
                                     Community Building
                                 </h4>
                                 <p className="text-sm text-neutral-600">
@@ -80,7 +45,7 @@ const VolunteerPage = () => {
                             </div>
                             <div className="bg-white p-6 rounded-lg">
                                 <Laptop />
-                                <h4 className="text-lg font-medium text-neutral-900 mb-2">
+                                <h4 className="text-lg font-bold text-neutral-900 mb-2">
                                     Digital Support
                                 </h4>
                                 <p className="text-sm text-neutral-600">
@@ -90,7 +55,7 @@ const VolunteerPage = () => {
                             </div>
                             <div className="bg-white p-6 rounded-lg">
                                 <Calendar />
-                                <h4 className="text-lg font-medium text-neutral-900 mb-2">
+                                <h4 className="text-lg font-bold text-neutral-900 mb-2">
                                     Event Planning
                                 </h4>
                                 <p className="text-sm text-neutral-600">
@@ -100,7 +65,7 @@ const VolunteerPage = () => {
                             </div>
                             <div className="bg-white p-6 rounded-lg">
                                 <Handshake />
-                                <h4 className="text-lg font-medium text-neutral-900 mb-2">
+                                <h4 className="text-lg font-bold text-neutral-900 mb-2">
                                     Outreach
                                 </h4>
                                 <p className="text-sm text-neutral-600">
@@ -110,7 +75,7 @@ const VolunteerPage = () => {
                             </div>
                             <div className="bg-white p-6 rounded-lg">
                                 <ChartAreaIcon />
-                                <h4 className="text-lg font-medium text-neutral-900 mb-2">
+                                <h4 className="text-lg font-bold text-neutral-900 mb-2">
                                     Administrative
                                 </h4>
                                 <p className="text-sm text-neutral-600">
@@ -120,6 +85,133 @@ const VolunteerPage = () => {
                             </div>
                         </div>
                     </div>
+
+                    <section id="contact-content" class="py-20 bg-white">
+                        <div class="max-w-7xl mx-auto px-6">
+                            <div class="grid grid-cols-1 lg:grid-cols-3 gap-12">
+                                <div class="lg:col-span-2">
+                                    <VolunteerForm />
+                                </div>
+                                <div class="space-y-8">
+                                    <div class="bg-neutral-50 p-6 rounded-lg">
+                                        <h3 class="text-xl text-neutral-900 mb-4">
+                                            Contact Information
+                                        </h3>
+                                        <div class="space-y-4">
+                                            <div class="flex items-start space-x-3">
+                                                <i class="fa-solid fa-location-dot text-neutral-600 mt-1"></i>
+                                                <div>
+                                                    <p class="text-neutral-900">
+                                                        Address
+                                                    </p>
+                                                    <p class="text-neutral-600">
+                                                        123 Main Street
+                                                        <br />
+                                                        Suite 456
+                                                        <br />
+                                                        City, State 12345
+                                                    </p>
+                                                </div>
+                                            </div>
+                                            <div class="flex items-start space-x-3">
+                                                <i class="fa-solid fa-phone text-neutral-600 mt-1"></i>
+                                                <div>
+                                                    <p class="text-neutral-900">
+                                                        Phone
+                                                    </p>
+                                                    <p class="text-neutral-600">
+                                                        (555) 123-4567
+                                                    </p>
+                                                </div>
+                                            </div>
+                                            <div class="flex items-start space-x-3">
+                                                <i class="fa-solid fa-envelope text-neutral-600 mt-1"></i>
+                                                <div>
+                                                    <p class="text-neutral-900">
+                                                        Email
+                                                    </p>
+                                                    <p class="text-neutral-600">
+                                                        contact@organization.org
+                                                    </p>
+                                                </div>
+                                            </div>
+                                            <div class="flex items-start space-x-3">
+                                                <i class="fa-solid fa-clock text-neutral-600 mt-1"></i>
+                                                <div>
+                                                    <p class="text-neutral-900">
+                                                        Office Hours
+                                                    </p>
+                                                    <p class="text-neutral-600">
+                                                        Monday - Friday
+                                                        <br />
+                                                        9:00 AM - 5:00 PM EST
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="bg-neutral-50 p-6 rounded-lg">
+                                        <h3 class="text-xl text-neutral-900 mb-4">
+                                            Follow Us
+                                        </h3>
+                                        <div class="grid grid-cols-2 gap-4">
+                                            <a
+                                                href="#"
+                                                class="flex items-center space-x-2 p-3 bg-white border border-neutral-200 rounded-md hover:bg-neutral-50"
+                                            >
+                                                <i class="fa-brands fa-facebook text-neutral-600"></i>
+                                                <span class="text-neutral-700">
+                                                    Facebook
+                                                </span>
+                                            </a>
+                                            <a
+                                                href="#"
+                                                class="flex items-center space-x-2 p-3 bg-white border border-neutral-200 rounded-md hover:bg-neutral-50"
+                                            >
+                                                <i class="fa-brands fa-twitter text-neutral-600"></i>
+                                                <span class="text-neutral-700">
+                                                    Twitter
+                                                </span>
+                                            </a>
+                                            <a
+                                                href="#"
+                                                class="flex items-center space-x-2 p-3 bg-white border border-neutral-200 rounded-md hover:bg-neutral-50"
+                                            >
+                                                <i class="fa-brands fa-instagram text-neutral-600"></i>
+                                                <span class="text-neutral-700">
+                                                    Instagram
+                                                </span>
+                                            </a>
+                                            <a
+                                                href="#"
+                                                class="flex items-center space-x-2 p-3 bg-white border border-neutral-200 rounded-md hover:bg-neutral-50"
+                                            >
+                                                <i class="fa-brands fa-linkedin text-neutral-600"></i>
+                                                <span class="text-neutral-700">
+                                                    LinkedIn
+                                                </span>
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div class="bg-neutral-50 p-6 rounded-lg">
+                                        <h3 class="text-xl text-neutral-900 mb-4">
+                                            Quick Response
+                                        </h3>
+                                        <p class="text-neutral-600 mb-4">
+                                            Need immediate assistance? We
+                                            typically respond to inquiries
+                                            within 24 hours during business
+                                            days.
+                                        </p>
+                                        <button class="w-full px-6 py-2 bg-neutral-900 text-white rounded-md hover:bg-neutral-800">
+                                            <i class="fa-solid fa-comments mr-2"></i>
+                                            Live Chat
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
                 </div>
             </section>
         </>
