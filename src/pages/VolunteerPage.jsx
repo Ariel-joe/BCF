@@ -54,71 +54,69 @@ const VolunteerPage = () => {
                     </div>
                     <div className="grid grid-cols-1 lg:grid-cols-3 gap-12">
                         <VolunteerForm />
-                        <div className="bg-neutral-50 p-8 rounded-lg grid grid-cols-2 lg:grid-cols-2 gap-6">
-                            <h3 className="text-xl text-neutral-900 mb-6 font-semibold text-center">
-                                Volunteer Opportunities
-                            </h3>
-                            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                                <div className="bg-white p-6 rounded-lg">
-                                    <GraduationCap />
-                                    <h4 className="text-lg font-medium text-neutral-900 mb-2">
-                                        Education Support
-                                    </h4>
-                                    <p className="text-sm text-neutral-600">
-                                        Tutoring, mentoring, and educational
-                                        program assistance.
-                                    </p>
-                                </div>
-                                <div className="bg-white p-6 rounded-lg">
-                                    <Hammer />
-                                    <h4 className="text-lg font-medium text-neutral-900 mb-2">
-                                        Community Building
-                                    </h4>
-                                    <p className="text-sm text-neutral-600">
-                                        Help with construction, maintenance, and
-                                        infrastructure projects.
-                                    </p>
-                                </div>
-                                <div className="bg-white p-6 rounded-lg">
-                                    <Laptop />
-                                    <h4 className="text-lg font-medium text-neutral-900 mb-2">
-                                        Digital Support
-                                    </h4>
-                                    <p className="text-sm text-neutral-600">
-                                        Web development, social media, and
-                                        digital marketing.
-                                    </p>
-                                </div>
-                                <div className="bg-white p-6 rounded-lg">
-                                    <Calendar />
-                                    <h4 className="text-lg font-medium text-neutral-900 mb-2">
-                                        Event Planning
-                                    </h4>
-                                    <p className="text-sm text-neutral-600">
-                                        Organize fundraisers, community events,
-                                        and awareness campaigns.
-                                    </p>
-                                </div>
-                                <div className="bg-white p-6 rounded-lg">
-                                    <Handshake />
-                                    <h4 className="text-lg font-medium text-neutral-900 mb-2">
-                                        Outreach
-                                    </h4>
-                                    <p className="text-sm text-neutral-600">
-                                        Connect with communities and build
-                                        partnerships.
-                                    </p>
-                                </div>
-                                <div className="bg-white p-6 rounded-lg">
-                                    <ChartAreaIcon />
-                                    <h4 className="text-lg font-medium text-neutral-900 mb-2">
-                                        Administrative
-                                    </h4>
-                                    <p className="text-sm text-neutral-600">
-                                        Data entry, research, and office support
-                                        tasks.
-                                    </p>
-                                </div>
+                        <h3 className="text-xl text-neutral-900 mb-6 font-semibold text-center">
+                            Volunteer Opportunities
+                        </h3>
+                        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                            <div className="bg-white w-full p-6 rounded-lg">
+                                <GraduationCap />
+                                <h4 className="text-lg font-medium text-neutral-900 mb-2">
+                                    Education Support
+                                </h4>
+                                <p className="text-sm text-neutral-600">
+                                    Tutoring, mentoring, and educational program
+                                    assistance.
+                                </p>
+                            </div>
+                            <div className="bg-white p-6 rounded-lg">
+                                <Hammer />
+                                <h4 className="text-lg font-medium text-neutral-900 mb-2">
+                                    Community Building
+                                </h4>
+                                <p className="text-sm text-neutral-600">
+                                    Help with construction, maintenance, and
+                                    infrastructure projects.
+                                </p>
+                            </div>
+                            <div className="bg-white p-6 rounded-lg">
+                                <Laptop />
+                                <h4 className="text-lg font-medium text-neutral-900 mb-2">
+                                    Digital Support
+                                </h4>
+                                <p className="text-sm text-neutral-600">
+                                    Web development, social media, and digital
+                                    marketing.
+                                </p>
+                            </div>
+                            <div className="bg-white p-6 rounded-lg">
+                                <Calendar />
+                                <h4 className="text-lg font-medium text-neutral-900 mb-2">
+                                    Event Planning
+                                </h4>
+                                <p className="text-sm text-neutral-600">
+                                    Organize fundraisers, community events, and
+                                    awareness campaigns.
+                                </p>
+                            </div>
+                            <div className="bg-white p-6 rounded-lg">
+                                <Handshake />
+                                <h4 className="text-lg font-medium text-neutral-900 mb-2">
+                                    Outreach
+                                </h4>
+                                <p className="text-sm text-neutral-600">
+                                    Connect with communities and build
+                                    partnerships.
+                                </p>
+                            </div>
+                            <div className="bg-white p-6 rounded-lg">
+                                <ChartAreaIcon />
+                                <h4 className="text-lg font-medium text-neutral-900 mb-2">
+                                    Administrative
+                                </h4>
+                                <p className="text-sm text-neutral-600">
+                                    Data entry, research, and office support
+                                    tasks.
+                                </p>
                             </div>
                         </div>
                     </div>
