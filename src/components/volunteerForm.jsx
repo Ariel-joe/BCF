@@ -1,9 +1,9 @@
 import React from "react";
 
-const volunteerForm = () => {
+const VolunteerForm = () => {
     return (
         <>
-            <div className="lg:col-span-2">
+            <div className="">
                 <div className="bg-white border border-neutral-200 rounded-lg p-8">
                     <h2 className="text-3xl text-neutral-900 mb-8">
                         Send us a Message
@@ -102,4 +102,4 @@ const volunteerForm = () => {
     );
 };
 
-export default volunteerForm;
+export { VolunteerForm };
