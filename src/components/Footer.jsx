@@ -129,8 +129,8 @@ const Footer = () => {
                     </div>
                     <div className="border-t border-neutral-700 mt-8 pt-8 text-center text-black-400">
                         <p>
-                            &copy; 2025 The Beacon of Compassion. All rights
-                            reserved.
+                            &copy; {new Date().getFullYear()} The Beacon of
+                            Compassion. All rights reserved.
                         </p>
                     </div>
                 </div>

@@ -7,6 +7,9 @@
 :root {
     --color-logo-blue: #081bee;
     --color-logo-orange: #ee5108;
+    --color-card-orange: #ffd5a8;
+    --color-light-blue: #5c88ff;
+    --color-card-blue: #8ab5ff;
 }
 
 a.active {

@@ -114,7 +114,7 @@ const Header = () => {
                             to={"/"}
                             onClick={() => setMobileOpen(false)}
                         >
-                            <button className="w-full text-left px-4 py-6 font-semibold border-b border-(--color-logo-orange) text-black">
+                            <button className="w-full text-left px-4 py-6 font-semibold border-b border-(--color-card-orange) text-black">
                                 Home
                             </button>
                         </Link>
@@ -123,7 +123,7 @@ const Header = () => {
                             to={"/team"}
                             onClick={() => setMobileOpen(false)}
                         >
-                            <button className="w-full text-left px-4 py-6 font-semibold border-b border-(--color-logo-orange) text-black">
+                            <button className="w-full text-left px-4 py-6 font-semibold border-b border-(--color-card-orange) text-black">
                                 BCF Team
                             </button>
                         </Link>
@@ -132,7 +132,7 @@ const Header = () => {
                             to={"/board"}
                             onClick={() => setMobileOpen(false)}
                         >
-                            <button className="w-full text-left px-4 py-6 font-semibold border-b border-(--color-logo-orange) text-black">
+                            <button className="w-full text-left px-4 py-6 font-semibold border-b border-(--color-card-orange) text-black">
                                 BCF Board
                             </button>
                         </Link>
@@ -141,7 +141,7 @@ const Header = () => {
                             to={"/volunteer"}
                             onClick={() => setMobileOpen(false)}
                         >
-                            <button className="w-full text-left px-4 py-6 font-semibold border-b border-(--color-logo-orange) text-black">
+                            <button className="w-full text-left px-4 py-6 font-semibold border-b border-(--color-card-orange) text-black">
                                 Volunteer
                             </button>
                         </Link>
@@ -150,7 +150,7 @@ const Header = () => {
                             to={"/welfare"}
                             onClick={() => setMobileOpen(false)}
                         >
-                            <button className="w-full text-left px-4 py-6 font-semibold  border-b border-(--color-logo-orange) text-black">
+                            <button className="w-full text-left px-4 py-6 font-semibold  border-b border-(--color-card-orange) text-black">
                                 Welfare
                             </button>
                         </Link>
@@ -159,7 +159,7 @@ const Header = () => {
                             to={"/contact"}
                             onClick={() => setMobileOpen(false)}
                         >
-                            <button className="w-full text-left px-4 py-6 font-semibold  border-b border-(--color-logo-orange) text-black">
+                            <button className="w-full text-left px-4 py-6 font-semibold  border-b border-(--color-card-orange) text-black">
                                 Contact
                             </button>
                         </Link>
@@ -168,7 +168,7 @@ const Header = () => {
                             to={"/partner"}
                             onClick={() => setMobileOpen(false)}
                         >
-                            <button className="w-full text-left px-4 py-6 font-semibold  border-b border-(--color-logo-orange) text-black">
+                            <button className="w-full text-left px-4 py-6 font-semibold  border-b border-(--color-card-orange) text-black">
                                 Partner
                             </button>
                         </Link>

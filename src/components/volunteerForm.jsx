@@ -86,7 +86,7 @@ const VolunteerForm = () => {
                         </div>
                         <button
                             type="submit"
-                            className="w-full px-8 py-3 bg-neutral-900 text-white rounded-md hover:bg-neutral-800"
+                            className="w-full px-8 py-3 bg-(--color-logo-orange) text-white rounded-md hover:bg-neutral-500"
                         >
                             Send Message
                         </button>

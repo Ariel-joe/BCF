@@ -50,7 +50,9 @@ const HomePage = () => {
                     <div className="max-w-7xl mx-auto px-6">
                         <div className="text-center mb-16">
                             <h2 className="text-3xl text-neutral-900 mb-6 font-bold">
-                                <span className="marker-highlight">Who We Are</span>
+                                <span className="marker-highlight">
+                                    Who We Are
+                                </span>
                             </h2>
                             <p className="text-lg text-neutral-600 max-w-3xl mx-auto leading-relaxed">
                                 We are a dedicated organization committed to
@@ -62,7 +64,7 @@ const HomePage = () => {
                         </div>
                         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
                             <div className="text-center p-6">
-                                <div className="w-16 h-16 bg-neutral-400 rounded-full flex items-center justify-center mx-auto mb-4">
+                                <div className="w-16 h-16 bg-(--color-light-blue) rounded-full flex items-center justify-center mx-auto mb-4">
                                     <UsersRound color="white" size={36} />
                                 </div>
                                 <h3 className="text-xl text-neutral-900 mb-3">
@@ -74,7 +76,7 @@ const HomePage = () => {
                                 </p>
                             </div>
                             <div className="text-center p-6">
-                                <div className="w-16 h-16 bg-neutral-400 rounded-full flex items-center justify-center mx-auto mb-4">
+                                <div className="w-16 h-16 bg-(--color-light-blue) rounded-full flex items-center justify-center mx-auto mb-4">
                                     <Lightbulb color="white" size={36} />
                                 </div>
                                 <h3 className="text-xl text-neutral-900 mb-3">
@@ -86,7 +88,7 @@ const HomePage = () => {
                                 </p>
                             </div>
                             <div className="text-center p-6">
-                                <div className="w-16 h-16 bg-neutral-400 rounded-full flex items-center justify-center mx-auto mb-4">
+                                <div className="w-16 h-16 bg-(--color-light-blue) rounded-full flex items-center justify-center mx-auto mb-4">
                                     <HeartHandshake color="white" size={36} />
                                 </div>
                                 <h3 className="text-xl text-neutral-900 mb-3">
@@ -239,11 +241,11 @@ const HomePage = () => {
                                     sustainable, and connected through shared
                                     values of compassion and progress.
                                 </p>
-                                <div className="bg-neutral-100 p-6 rounded-lg">
-                                    <h3 className="text-xl text-neutral-900 mb-3">
+                                <div className="bg-(--color-light-blue) p-6 rounded-lg">
+                                    <h3 className="text-xl text-neutral-900 font-semibold mb-3">
                                         Looking Ahead to 2025
                                     </h3>
-                                    <p className="text-neutral-600 text-justify">
+                                    <p className="text-white font-semibold text-justify">
                                         Our strategic plan focuses on expanding
                                         our reach, deepening our impact, and
                                         building stronger partnerships to create
@@ -357,7 +359,9 @@ const HomePage = () => {
                                 </Link>
                             </div>
                             <div className="bg-black p-8">
-                                <h3 className="text-xl text-white mb-3">Donate</h3>
+                                <h3 className="text-xl text-white mb-3">
+                                    Donate
+                                </h3>
                                 <p className="text-neutral-300 mb-6">
                                     Support our mission with a financial
                                     contribution that goes directly to our

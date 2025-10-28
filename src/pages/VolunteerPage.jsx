@@ -193,21 +193,7 @@ const VolunteerPage = () => {
                                             </a>
                                         </div>
                                     </div>
-                                    <div class="bg-neutral-50 p-6 rounded-lg">
-                                        <h3 class="text-xl text-neutral-900 mb-4">
-                                            Quick Response
-                                        </h3>
-                                        <p class="text-neutral-600 mb-4">
-                                            Need immediate assistance? We
-                                            typically respond to inquiries
-                                            within 24 hours during business
-                                            days.
-                                        </p>
-                                        <button class="w-full px-6 py-2 bg-neutral-900 text-white rounded-md hover:bg-neutral-800">
-                                            <i class="fa-solid fa-comments mr-2"></i>
-                                            Live Chat
-                                        </button>
-                                    </div>
+                                    
                                 </div>
                             </div>
                         </div>
