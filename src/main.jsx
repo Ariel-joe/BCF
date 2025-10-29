@@ -9,7 +9,6 @@ import VolunteerPage from "./pages/VolunteerPage";
 import WelfarePage from "./pages/WelfarePage";
 import ContactPage from "./pages/ContactPage";
 import Donatepage from "./pages/Donatepage";
-import PartnerPage from "./pages/PartnerPage";
 
 createRoot(document.getElementById("root")).render(
     <BrowserRouter>
@@ -22,7 +21,6 @@ createRoot(document.getElementById("root")).render(
                 <Route path="/welfare" element={<WelfarePage />} />
                 <Route path="/contact" element={<ContactPage />} />
                 <Route path="/donate" element={<Donatepage />} />
-                <Route path="/partner" element={<PartnerPage />} />
             </Route>
         </Routes>
     </BrowserRouter>

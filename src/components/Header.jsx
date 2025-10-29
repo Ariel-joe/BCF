@@ -76,15 +76,6 @@ const Header = () => {
                                 Contact
                             </NavLink>
                         </li>
-                        <li className="flex">
-                            <NavLink
-                                rel="noopener noreferrer"
-                                to={"/partner"}
-                                className="flex items-center px-4 -mb-1"
-                            >
-                                Partner
-                            </NavLink>
-                        </li>
                     </ul>
                     <div className="items-center shrink-0 hidden lg:flex">
                         <Link
@@ -108,7 +99,10 @@ const Header = () => {
                 </div>
                 {/* mobile navigation - toggled by Menu button */}
                 {mobileOpen && (
-                    <div id="mobile-menu" className="lg:hidden mt-4 space-y-3 h-dvh">
+                    <div
+                        id="mobile-menu"
+                        className="lg:hidden mt-4 space-y-3 h-dvh"
+                    >
                         <Link
                             rel="noopener noreferrer"
                             to={"/"}
@@ -163,16 +157,12 @@ const Header = () => {
                                 Contact
                             </button>
                         </Link>
+
                         <Link
                             rel="noopener noreferrer"
-                            to={"/partner"}
+                            to={"/donate"}
                             onClick={() => setMobileOpen(false)}
                         >
-                            <button className="w-full text-left px-4 py-6 font-semibold  border-b border-(--color-card-orange) text-black">
-                                Partner
-                            </button>
-                        </Link>
-                        <Link rel="noopener noreferrer" to={"/donate"}>
                             <button className="w-full px-4 py-3 font-semibold bg-(--color-logo-orange) text-gray-100">
                                 Donate
                             </button>

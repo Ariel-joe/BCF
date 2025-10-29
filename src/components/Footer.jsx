@@ -99,7 +99,7 @@ const Footer = () => {
                                 </li>
                                 <li>
                                     <Link
-                                        to="/partner"
+                                        to="/contact"
                                         className="text-black-300 hover:text-(--color-logo-orange)"
                                     >
                                         Partner With Us

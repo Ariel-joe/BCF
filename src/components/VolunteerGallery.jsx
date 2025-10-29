@@ -64,13 +64,7 @@ const VolunteerGallery = () => {
                         alt=""
                     />
                 </div>
-                <div>
-                    <img
-                        class="h-auto max-w-full rounded-lg"
-                        src="/IMG-20250901-WA0035.jpg"
-                        alt=""
-                    />
-                </div>
+                
             </div>
         </>
     );
