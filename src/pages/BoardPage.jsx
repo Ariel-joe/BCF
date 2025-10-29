@@ -11,7 +11,7 @@ const BoardPage = () => {
           <section id="leadership" className="py-20 bg-white">
               <div className="max-w-7xl mx-auto px-6">
                   <div className="text-center mb-16">
-                      <h2 className="text-3xl text-neutral-900 font-bold mb-6 marker-highlight">
+                      <h2 className="text-2xl text-neutral-900 font-bold mb-6 marker-highlight">
                           BCF Board Members
                       </h2>
                       <p className="text-lg text-neutral-600 font-semibold max-w-2xl mx-auto">

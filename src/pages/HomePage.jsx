@@ -49,7 +49,7 @@ const HomePage = () => {
                 <section id="introduction" className="py-20 bg-white">
                     <div className="max-w-7xl mx-auto px-6">
                         <div className="text-center mb-16">
-                            <h2 className="text-3xl text-neutral-900 mb-6 font-bold">
+                            <h2 className="text-2xl text-neutral-900 mb-6 font-bold">
                                 <span className="marker-highlight">
                                     Who We Are
                                 </span>
@@ -182,7 +182,7 @@ const HomePage = () => {
                             </div>
                             <div>
                                 <div className="text-center">
-                                    <h2 className="text-3xl mb-6 font-bold marker-highlight">
+                                    <h2 className="text-2xl mb-6 font-bold marker-highlight">
                                         Our Mission
                                     </h2>
                                 </div>
@@ -228,7 +228,7 @@ const HomePage = () => {
                         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
                             <div>
                                 <div className="text-center">
-                                    <h2 className="text-3xl mb-6 font-bold marker-highlight">
+                                    <h2 className="text-2xl mb-6 font-bold marker-highlight">
                                         Our Vision
                                     </h2>
                                 </div>

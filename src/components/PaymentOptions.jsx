@@ -7,20 +7,29 @@ const PaymentOptions = () => {
     return (
         <>
             <TabGroup>
-                <TabList className={"mb-6"}>
+                <TabList className={"mb-6 flex gap-1"}>
                     <Tab
                         className={
-                            "px-6 py-3 text-neutral-900 data-selected:border-b-2 data-selected:border-neutral-900 bg-white"
+                            "flex items-center px-6 py-3 text-neutral-900 data-selected:border-b-2 data-selected:border-neutral-900 bg-white"
                         }
                     >
+                        <img
+                            src={"/paypal.png"}
+                            alt="paypal logo"
+                            className="h-5 w-5 mr-2"
+                        />
                         PayPal
                     </Tab>
                     <Tab
                         className={
-                            "px-6 py-3 text-neutral-900 data-selected:border-b-2 data-selected:border-neutral-900 bg-white"
+                            "flex px-6 py-3 text-neutral-900 data-selected:border-b-2 data-selected:border-neutral-900 bg-white"
                         }
                     >
-                        Mpesa
+                        <img
+                            src={"/mpesa.png"}
+                            alt="paypal logo"
+                            className="h-5 w-full"
+                        />
                     </Tab>
                 </TabList>
                 <TabPanels>
@@ -30,7 +39,6 @@ const PaymentOptions = () => {
                     <TabPanel>
                         <MpesaOption />
                     </TabPanel>
-                    
                 </TabPanels>
             </TabGroup>
         </>

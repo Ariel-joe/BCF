@@ -2,7 +2,7 @@ const VolunteerGallery = () => {
     return (
         <>
             <div className="text-center mb-16">
-                <h2 className="text-3xl font-bold text-neutral-900 mb-6 marker-highlight">
+                <h2 className="text-2xl font-bold text-neutral-900 mb-6 marker-highlight">
                     Volunteer Gallery
                 </h2>
                 
