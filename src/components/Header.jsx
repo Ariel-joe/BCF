@@ -26,7 +26,7 @@ const Header = () => {
                             <NavLink
                                 rel="noopener noreferrer"
                                 to={"/"}
-                                className="flex items-center px-4 -mb-1 font-bold "
+                                className="flex items-center px-4 -mb-1 font-bold"
                             >
                                 Home
                             </NavLink>
@@ -36,20 +36,26 @@ const Header = () => {
                             <NavLink
                                 rel="noopener noreferrer"
                                 to={"/board"}
-                                className="flex items-center px-4 -mb-1 font-bold"
+                                className={
+                                    "flex items-center px-4 -mb-1 font-bold"
+                                }
                             >
                                 BCF Board
                             </NavLink>
                         </li>
+
                         <li className="flex">
                             <NavLink
                                 rel="noopener noreferrer"
                                 to={"/team"}
-                                className="flex items-center px-4 -mb-1 font-bold"
+                                className={
+                                    "flex items-center px-4 -mb-1 font-bold"
+                                }
                             >
                                 BCF Team
                             </NavLink>
                         </li>
+
                         <li className="flex">
                             <NavLink
                                 rel="noopener noreferrer"
@@ -99,7 +105,7 @@ const Header = () => {
                         {mobileOpen ? (
                             <X size={32} color="#000000" />
                         ) : (
-                            <Menu size={32} color="#000000" />
+                            <Menu />
                         )}
                     </button>
                 </div>

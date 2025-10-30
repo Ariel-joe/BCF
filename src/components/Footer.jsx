@@ -144,7 +144,7 @@ const Footer = () => {
                                 <div className="flex items-center">
                                     <MapPin size={18} className="mr-2" />
                                     <span>
-                                        P.O BOX 925 KAREN
+                                        P.O BOX 925 Karen
                                         
                                     </span>
                                 </div>
