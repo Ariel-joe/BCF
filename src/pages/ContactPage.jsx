@@ -12,7 +12,7 @@ const ContactPage = () => {
             >
                 <div className="max-w-7xl mx-auto px-6">
                     <div className="text-center">
-                        <h1 className="text-3xl text-neutral-900 mb-6 font-bold marker-highlight">
+                        <h1 className="text-2xl text-neutral-900 mb-6 font-bold marker-highlight">
                             Contact Us
                         </h1>
                         <p className="text-lg font-semibold text-neutral-600 max-w-3xl mx-auto leading-relaxed">

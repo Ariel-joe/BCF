@@ -2,9 +2,9 @@
 const VolunteerForm = () => {
     return (
         <>
-            <div className="">
-                <div className="bg-white border border-neutral-200 rounded-lg p-8">
-                    <form className="space-y-6">
+            <div className="w-full">
+                <div className="bg-white border border-neutral-200 rounded-lg p-4">
+                    <form className="space-y-6 w-full">
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                             <div>
                                 <label className="block font-bold text-sm text-neutral-700 mb-2">

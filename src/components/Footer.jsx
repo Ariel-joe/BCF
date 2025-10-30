@@ -1,5 +1,5 @@
 import { Facebook, Instagram, Mail, MapPin, Phone, Twitter } from "lucide-react";
-import { Link, NavLink } from "react-router";
+import { Link } from "react-router";
 
 const Footer = () => {
     return (
@@ -18,18 +18,34 @@ const Footer = () => {
                                 one community at a time.
                             </p>
                             <div className="flex space-x-4">
-                                <Facebook
-                                    size={24}
-                                    className="text-black-300 hover:text-white cursor-pointer"
-                                />
-                                <Twitter
-                                    size={24}
-                                    className="text-black-300 hover:text-white cursor-pointer"
-                                />
-                                <Instagram
-                                    size={24}
-                                    className="text-black-300 hover:text-white cursor-pointer"
-                                />
+                                <Link
+                                    to={
+                                        "https://www.facebook.com/share/1Q68NS2ECq/"
+                                    }
+                                >
+                                    <Facebook
+                                        size={24}
+                                        className="text-black-300 hover:text-white cursor-pointer"
+                                    />
+                                </Link>
+
+                                <Link to={""}>
+                                    <Twitter
+                                        size={24}
+                                        className="text-black-300 hover:text-white cursor-pointer"
+                                    />
+                                </Link>
+
+                                <Link
+                                    to={
+                                        "https://www.instagram.com/beacon_compasion?igsh=YW45aGc4dzUzemNv"
+                                    }
+                                >
+                                    <Instagram
+                                        size={24}
+                                        className="text-black-300 hover:text-white cursor-pointer"
+                                    />
+                                </Link>
                             </div>
                         </div>
                         <div>
@@ -121,8 +137,15 @@ const Footer = () => {
                                 <div className="flex items-center">
                                     <MapPin size={18} className="mr-2" />
                                     <span>
-                                        Bogani Road opposite CUEA,<br/> St Clares
-                                        Hostels, Nairobi, Karen
+                                        Bogani Road opposite CUEA,
+                                        <br /> St Clares Hostels, Nairobi, Karen
+                                    </span>
+                                </div>
+                                <div className="flex items-center">
+                                    <MapPin size={18} className="mr-2" />
+                                    <span>
+                                        P.O BOX 925 KAREN
+                                        
                                     </span>
                                 </div>
                             </div>

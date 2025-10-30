@@ -25,7 +25,7 @@ const VolunteerPage = () => {
                         <h3 className="text-xl text-neutral-900 font-semibold mb-6 text-center">
                             Volunteer Opportunities
                         </h3>
-                        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-6">
                             <div className="bg-white p-6 rounded-lg">
                                 <GraduationCap />
                                 <h4 className="text-lg font-bold text-neutral-900 mb-2">
@@ -46,16 +46,7 @@ const VolunteerPage = () => {
                                     infrastructure projects.
                                 </p>
                             </div>
-                            <div className="bg-white p-6 rounded-lg">
-                                <Laptop />
-                                <h4 className="text-lg font-bold text-neutral-900 mb-2">
-                                    Digital Support
-                                </h4>
-                                <p className="text-sm text-neutral-600">
-                                    Web development, social media, and digital
-                                    marketing.
-                                </p>
-                            </div>
+
                             <div className="bg-white p-6 rounded-lg">
                                 <Calendar />
                                 <h4 className="text-lg font-bold text-neutral-900 mb-2">
@@ -76,21 +67,11 @@ const VolunteerPage = () => {
                                     partnerships.
                                 </p>
                             </div>
-                            <div className="bg-white p-6 rounded-lg">
-                                <ChartAreaIcon />
-                                <h4 className="text-lg font-bold text-neutral-900 mb-2">
-                                    Administrative
-                                </h4>
-                                <p className="text-sm text-neutral-600">
-                                    Data entry, research, and office support
-                                    tasks.
-                                </p>
-                            </div>
                         </div>
                     </div>
 
                     <section id="contact-content" className="py-20 bg-white">
-                        <div className="max-w-7xl mx-auto px-6">
+                        <div className="max-w-7xl mx-auto px-2">
                             <div className="grid grid-cols-1 lg:grid-cols-3 gap-12">
                                 <div className="lg:col-span-2">
                                     <VolunteerForm />
@@ -98,8 +79,6 @@ const VolunteerPage = () => {
                                 <div className="space-y-8">
                                     <ContactInfo />
                                     <SocialMedia />
-                                    
-                                    
                                 </div>
                             </div>
                         </div>

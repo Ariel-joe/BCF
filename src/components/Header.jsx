@@ -1,4 +1,4 @@
-import { Menu } from "lucide-react";
+import { Menu, X } from "lucide-react";
 import { useState } from "react";
 import { Link, NavLink } from "react-router";
 
@@ -26,9 +26,19 @@ const Header = () => {
                             <NavLink
                                 rel="noopener noreferrer"
                                 to={"/"}
-                                className="flex items-center px-4 -mb-1 font-bold"
+                                className="flex items-center px-4 -mb-1 font-bold "
                             >
                                 Home
+                            </NavLink>
+                        </li>
+
+                        <li className="flex">
+                            <NavLink
+                                rel="noopener noreferrer"
+                                to={"/board"}
+                                className="flex items-center px-4 -mb-1 font-bold"
+                            >
+                                BCF Board
                             </NavLink>
                         </li>
                         <li className="flex">
@@ -38,15 +48,6 @@ const Header = () => {
                                 className="flex items-center px-4 -mb-1 font-bold"
                             >
                                 BCF Team
-                            </NavLink>
-                        </li>
-                        <li className="flex">
-                            <NavLink
-                                rel="noopener noreferrer"
-                                to={"/board"}
-                                className="flex items-center px-4 -mb-1 font-bold"
-                            >
-                                BCF Board
                             </NavLink>
                         </li>
                         <li className="flex">
@@ -92,9 +93,14 @@ const Header = () => {
                         className="mt-4 lg:hidden"
                         aria-controls="mobile-menu"
                         aria-expanded={mobileOpen ? "true" : "false"}
+                        aria-label={mobileOpen ? "Close menu" : "Open menu"}
                         onClick={() => setMobileOpen(!mobileOpen)}
                     >
-                        <Menu size={32} color="#000000" />
+                        {mobileOpen ? (
+                            <X size={32} color="#000000" />
+                        ) : (
+                            <Menu size={32} color="#000000" />
+                        )}
                     </button>
                 </div>
                 {/* mobile navigation - toggled by Menu button */}
@@ -108,7 +114,7 @@ const Header = () => {
                             to={"/"}
                             onClick={() => setMobileOpen(false)}
                         >
-                            <button className="w-full text-left px-4 py-6 font-semibold border-b border-(--color-card-orange) text-black">
+                            <button className="w-full text-left px-4 py-6 font-semibold border-b border-(--color-card-orange) text-black animate__zoomIn">
                                 HOME
                             </button>
                         </Link>
