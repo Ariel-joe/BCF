@@ -16,7 +16,7 @@ const Header = () => {
                         className="flex items-center p-2"
                     >
                         <img
-                            src={"/bcf-logo-nobg.png"}
+                            src={"/logos/bcf-logo-nobg.png"}
                             alt="bcf logo"
                             className="h-18 w-full"
                         />
@@ -26,7 +26,7 @@ const Header = () => {
                             <NavLink
                                 rel="noopener noreferrer"
                                 to={"/"}
-                                className="flex items-center px-4 -mb-1"
+                                className="flex items-center px-4 -mb-1 font-bold"
                             >
                                 Home
                             </NavLink>
@@ -35,7 +35,7 @@ const Header = () => {
                             <NavLink
                                 rel="noopener noreferrer"
                                 to={"/team"}
-                                className="flex items-center px-4 -mb-1"
+                                className="flex items-center px-4 -mb-1 font-bold"
                             >
                                 BCF Team
                             </NavLink>
@@ -44,7 +44,7 @@ const Header = () => {
                             <NavLink
                                 rel="noopener noreferrer"
                                 to={"/board"}
-                                className="flex items-center px-4 -mb-1"
+                                className="flex items-center px-4 -mb-1 font-bold"
                             >
                                 BCF Board
                             </NavLink>
@@ -53,7 +53,7 @@ const Header = () => {
                             <NavLink
                                 rel="noopener noreferrer"
                                 to={"/volunteer"}
-                                className="flex items-center px-4 -mb-1"
+                                className="flex items-center px-4 -mb-1 font-bold"
                             >
                                 Volunteer
                             </NavLink>
@@ -62,7 +62,7 @@ const Header = () => {
                             <NavLink
                                 rel="noopener noreferrer"
                                 to={"/welfare"}
-                                className="flex items-center px-4 -mb-1"
+                                className="flex items-center px-4 -mb-1 font-bold"
                             >
                                 Welfare
                             </NavLink>
@@ -71,7 +71,7 @@ const Header = () => {
                             <NavLink
                                 rel="noopener noreferrer"
                                 to={"/contact"}
-                                className="flex items-center px-4 -mb-1"
+                                className="flex items-center px-4 -mb-1 font-bold"
                             >
                                 Contact
                             </NavLink>
@@ -109,7 +109,7 @@ const Header = () => {
                             onClick={() => setMobileOpen(false)}
                         >
                             <button className="w-full text-left px-4 py-6 font-semibold border-b border-(--color-card-orange) text-black">
-                                Home
+                                HOME
                             </button>
                         </Link>
                         <Link
@@ -118,7 +118,7 @@ const Header = () => {
                             onClick={() => setMobileOpen(false)}
                         >
                             <button className="w-full text-left px-4 py-6 font-semibold border-b border-(--color-card-orange) text-black">
-                                BCF Team
+                                BCF TEAM
                             </button>
                         </Link>
                         <Link
@@ -127,7 +127,7 @@ const Header = () => {
                             onClick={() => setMobileOpen(false)}
                         >
                             <button className="w-full text-left px-4 py-6 font-semibold border-b border-(--color-card-orange) text-black">
-                                BCF Board
+                                BCF BOARD
                             </button>
                         </Link>
                         <Link
@@ -136,7 +136,7 @@ const Header = () => {
                             onClick={() => setMobileOpen(false)}
                         >
                             <button className="w-full text-left px-4 py-6 font-semibold border-b border-(--color-card-orange) text-black">
-                                Volunteer
+                                VOLUNTEER
                             </button>
                         </Link>
                         <Link
@@ -145,7 +145,7 @@ const Header = () => {
                             onClick={() => setMobileOpen(false)}
                         >
                             <button className="w-full text-left px-4 py-6 font-semibold  border-b border-(--color-card-orange) text-black">
-                                Welfare
+                                WELFARE
                             </button>
                         </Link>
                         <Link
@@ -154,7 +154,7 @@ const Header = () => {
                             onClick={() => setMobileOpen(false)}
                         >
                             <button className="w-full text-left px-4 py-6 font-semibold  border-b border-(--color-card-orange) text-black">
-                                Contact
+                                CONTACT
                             </button>
                         </Link>
 

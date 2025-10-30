@@ -4,13 +4,13 @@ import PaymentOptions from '../components/PaymentOptions'
 const Donatepage = () => {
   return (
       <>
-          <section id="donation-hero" class="bg-neutral-50 py-16">
-              <div class="container mx-auto px-6">
-                  <div class="text-center">
-                      <h1 class="text-2xl font-bold text-neutral-900 mb-4 marker-highlight">
+          <section id="donation-hero" className="bg-neutral-50 py-16">
+              <div className="container mx-auto px-6">
+                  <div className="text-center">
+                      <h1 className="text-2xl font-bold text-neutral-900 mb-4 marker-highlight">
                           Make a Difference Today
                       </h1>
-                      <p class="text-lg font-semibold text-neutral-600 max-w-2xl mx-auto">
+                      <p className="text-lg font-semibold text-neutral-600 max-w-2xl mx-auto">
                           Your donation helps us continue our mission of
                           spreading compassion and hope across Kenya. Every
                           contribution makes a real impact.

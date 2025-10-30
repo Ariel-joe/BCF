@@ -36,14 +36,8 @@ const HomePage = () => {
                                         Donate Now
                                     </button>
                                 </Link>
-                                <button className="px-8 py-3 border border-neutral-300 text-white rounded-md hover:bg-neutral-50">
-                                    Learn More
-                                </button>
                             </div>
                         </div>
-                        {/* <div class="rounded-lg flex items-center justify-center">
-                            <img src={"LEE_8924.jpg"} alt="" />
-                        </div> */}
                     </div>
                 </section>
                 <section id="introduction" className="py-20 bg-white">

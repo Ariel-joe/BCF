@@ -77,7 +77,7 @@ const VolunteerForm = () => {
                                 className="mt-1"
                             />
                             <label
-                                for="newsletter"
+                                htmlFor="newsletter"
                                 className="text-sm text-neutral-600"
                             >
                                 I would like to receive updates and newsletters

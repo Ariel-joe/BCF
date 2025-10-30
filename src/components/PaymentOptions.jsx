@@ -14,7 +14,7 @@ const PaymentOptions = () => {
                         }
                     >
                         <img
-                            src={"/paypal.png"}
+                            src={"/logos/paypal.png"}
                             alt="paypal logo"
                             className="h-5 w-5 mr-2"
                         />
@@ -26,8 +26,8 @@ const PaymentOptions = () => {
                         }
                     >
                         <img
-                            src={"/mpesa.png"}
-                            alt="paypal logo"
+                            src={"/logos/mpesa.png"}
+                            alt="mpesa logo"
                             className="h-5 w-full"
                         />
                     </Tab>

@@ -112,16 +112,17 @@ const Footer = () => {
                             <div className="space-y-2 text-black-300">
                                 <div className="flex items-center">
                                     <Mail size={18} className="mr-2" />
-                                    <span>info@beaconcompassion.org</span>
+                                    <span>beaconcompassion07@gmail.com</span>
                                 </div>
                                 <div className="flex items-center">
                                     <Phone size={18} className="mr-2" />
-                                    <span>+254 700 00 00</span>
+                                    <span>+254 111 62 8390</span>
                                 </div>
                                 <div className="flex items-center">
                                     <MapPin size={18} className="mr-2" />
                                     <span>
-                                        123 Hope Street, City, State 12345
+                                        Bogani Road opposite CUEA,<br/> St Clares
+                                        Hostels, Nairobi, Karen
                                     </span>
                                 </div>
                             </div>

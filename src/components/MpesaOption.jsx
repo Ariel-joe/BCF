@@ -23,8 +23,7 @@ const MpesaOption = () => {
                     placeholder="ksh"
                 />
             </div>
-            <button class="w-full bg-neutral-900 text-white py-4 rounded-lg hover:bg-neutral-800 transition-colors flex items-center justify-center">
-                <i class="fa-brands fa-paypal mr-2"></i>
+            <button class="w-full bg-[#30B54A] text-white py-4 rounded-lg hover:bg-neutral-800 transition-colors flex items-center justify-center">
                 Donate with Mpesa
             </button>
         </>
