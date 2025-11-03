@@ -7,7 +7,7 @@ const TeamPage = () => {
       <>
           <section
               id="team-hero"
-              className="h-[400px] flex items-center bg-neutral-50 relative text-white hero bg-cover bg-center"
+              className="h-[450px] flex items-center bg-neutral-50 relative text-white hero bg-cover bg-center"
               style={{ backgroundImage: 'url("/team.JPG")' }}
           ></section>
           <section id="leadership" className="py-20 bg-white">

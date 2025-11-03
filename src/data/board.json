@@ -34,6 +34,13 @@
             "image": "/board/odongo.jpg",
             "title": "Founder and Finance Director",
             "description": "He holds a bachelors degree in law. Besides that, Steve is a professional mediator. He is driven by an unwavering passion for compassion and service to to others. His vision is rooted in creating meaningful change and fostering hope within the community through impactful and sustainable solutions."
+        },
+        {
+            "id": "6",
+            "name": "Mum Karola Teschler",
+            "image": "https://api.dicebear.com/7.x/notionists/svg?scale=200&seed=67890",
+            "title": "Founder and Executive Director",
+            "description": "He holds a bachelors degree in law. Besides that, Steve is a professional mediator. He is driven by an unwavering passion for compassion and service to to others. His vision is rooted in creating meaningful change and fostering hope within the community through impactful and sustainable solutions."
         }
     ]
 }

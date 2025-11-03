@@ -12,7 +12,7 @@ const ProfileCard = ({ BoardMember }) => {
                 />
                 <h3 className="text-2xl text-black font-semibold mb-2">{name}</h3>
                 <p className="text-black font-medium mb-4">{title}</p>
-                <p className="text-sm text-black/50 mb-4 text-justify">
+                <p className="text-sm text-black/50 mb-4">
                     {description}
                 </p>
                 <div className="flex justify-center space-x-3">

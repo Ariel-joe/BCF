@@ -9,8 +9,8 @@ const BoardPage = () => {
       <>
           <section
               id="team-hero"
-              className="h-[400px] flex items-center bg-neutral-50 relative text-white hero bg-cover bg-center"
-              style={{ backgroundImage: 'url("/team.JPG")' }}
+              className="h-[450px] flex items-center bg-neutral-50 relative text-white hero bg-cover bg-center"
+              style={{ backgroundImage: 'url("/bg-board.jpg")' }}
           ></section>
           <section id="leadership" className="py-20 bg-white">
               <div className="max-w-7xl mx-auto px-6">

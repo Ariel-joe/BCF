@@ -12,7 +12,7 @@ function App() {
 
             {/* ensure page resets to top on navigation */}
             <ScrollToTop />
-            <main className="pt-20">
+            <main className="pt-24">
                 <Outlet />
             </main>
 
