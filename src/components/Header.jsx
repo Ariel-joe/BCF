@@ -105,7 +105,7 @@ const Header = () => {
                         {mobileOpen ? (
                             <X size={32} color="#000000" />
                         ) : (
-                            <Menu />
+                            <Menu size={32} color="#000000" />
                         )}
                     </button>
                 </div>
@@ -124,15 +124,7 @@ const Header = () => {
                                 HOME
                             </button>
                         </Link>
-                        <Link
-                            rel="noopener noreferrer"
-                            to={"/team"}
-                            onClick={() => setMobileOpen(false)}
-                        >
-                            <button className="w-full text-left px-4 py-6 font-semibold border-b border-(--color-card-orange) text-black">
-                                BCF TEAM
-                            </button>
-                        </Link>
+
                         <Link
                             rel="noopener noreferrer"
                             to={"/board"}
@@ -140,6 +132,15 @@ const Header = () => {
                         >
                             <button className="w-full text-left px-4 py-6 font-semibold border-b border-(--color-card-orange) text-black">
                                 BCF BOARD
+                            </button>
+                        </Link>
+                        <Link
+                            rel="noopener noreferrer"
+                            to={"/team"}
+                            onClick={() => setMobileOpen(false)}
+                        >
+                            <button className="w-full text-left px-4 py-6 font-semibold border-b border-(--color-card-orange) text-black">
+                                BCF TEAM
                             </button>
                         </Link>
                         <Link
