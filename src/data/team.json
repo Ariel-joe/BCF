@@ -1,0 +1,38 @@
+{
+    "TeamMembers": [
+        {
+            "id": "1",
+            "name": "Isaac Sean",
+            "image": "/board/Sean.jpeg",
+            "title": "Chairperson"
+            
+        },
+        {
+            "id": "2",
+            "name": "Damiana Indoshi Amwayi",
+            "image": "https://api.dicebear.com/7.x/notionists/svg?scale=200&seed=67890",
+            "title": "Deputy Chairperson"
+            
+        },
+        {
+            "id": "3",
+            "name": "Billia Chenamba Pusikwang",
+            "image": "https://api.dicebear.com/7.x/notionists/svg?scale=200&seed=67890",
+            "title": "Secretary"
+            
+        },
+        
+        {
+            "id": "4",
+            "name": "Steve Odongo",
+            "image": "/board/odongo.jpg",
+            "title": "Finance Director"
+        },
+        {
+            "id": "5",
+            "name": "James otieno",
+            "image": "/board/james.jpg",
+            "title": "Communications Director"
+        }
+    ]
+}
