@@ -6,7 +6,7 @@ const ScrollToTop = () => {
 
     useEffect(() => {
         // smooth-scroll to top on route change
-        window.scrollTo({ top: 0, left: 0, behavior: "auto" });
+        window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
     }, [location.pathname]);
 
     return null;

@@ -5,8 +5,8 @@ import {
     UsersIcon,
     UsersRound,
 } from "lucide-react";
-import React from "react";
 import { Link } from "react-router";
+import BlogSection from "../components/BlogSection";
 
 const HomePage = () => {
     return (
@@ -382,6 +382,9 @@ const HomePage = () => {
                         </div>
                     </div>
                 </section>
+
+                {/* blog section */}
+                <BlogSection />
             </main>
         </>
     );
