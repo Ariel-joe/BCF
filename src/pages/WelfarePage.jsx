@@ -5,7 +5,7 @@ const WelfarePage = () => {
     return (
         <>
             <section id="internal-welfare" className="py-20 bg-white">
-                <div className="max-w-7xl mx-auto px-6 lg:px-8">
+                <div className="max-w-7xl mx-auto px-2 lg:px-8">
                     <div className="text-center mb-8">
                         <h2 className="text-2xl text-neutral-900 mb-4 font-bold marker-highlight">
                             Internal Welfare Programs
@@ -17,40 +17,40 @@ const WelfarePage = () => {
                     </div>
 
                     <WelfareProject />
-                    <div className="mt-16 bg-(--color-logo-orange) p-8 rounded-2xl text-center">
-                        <h3 className="text-2xl text-white mb-4">
+                    <div className="mt- bg-(--color-logo-orange) p-8 rounded-2xl text-center">
+                        <h3 className="text-xl font-bold text-white mb-4">
                             Internal Impact Statistics
                         </h3>
                         <div className="grid grid-cols-2 lg:grid-cols-4 gap-6">
                             <div>
-                                <div className="text-3xl text-white mb-2">
+                                <div className="text-lg font-bold text-white mb-2">
                                     25
                                 </div>
-                                <div className="text-neutral-300">
+                                <div className="text-white text-sm">
                                     Team Members Supported
                                 </div>
                             </div>
                             <div>
-                                <div className="text-3xl text-white mb-2">
+                                <div className="text-lg font-bold text-white mb-2">
                                     100%
                                 </div>
-                                <div className="text-neutral-300">
+                                <div className="text-white text-sm">
                                     Health Coverage
                                 </div>
                             </div>
                             <div>
-                                <div className="text-3xl text-white mb-2">
+                                <div className="text-lg font-bold text-white mb-2">
                                     18
                                 </div>
-                                <div className="text-neutral-300">
+                                <div className="text-white text-sm">
                                     Training Programs
                                 </div>
                             </div>
                             <div>
-                                <div className="text-3xl text-white mb-2">
+                                <div className="text-lg font-bold text-white mb-2">
                                     95%
                                 </div>
-                                <div className="text-neutral-300">
+                                <div className="text-white text-sm">
                                     Satisfaction Rate
                                 </div>
                             </div>
@@ -63,7 +63,7 @@ const WelfarePage = () => {
                 <div className="max-w-7xl mx-auto px-6 lg:px-8">
                     <div className="text-center mb-8">
                         <h2 className="text-2xl text-neutral-900 mb-4 font-bold marker-highlight">
-                            External Community Welfare
+                            Friends Of Beacon
                         </h2>
                         <p className="text-lg text-neutral-600 font-semibold">
                             Creating lasting impact in communities across Kenya
@@ -72,12 +72,12 @@ const WelfarePage = () => {
 
                     <WelfareProject />
                     <div className="bg-(--color-logo-orange) p-8 rounded-2xl">
-                        <h3 className="text-2xl text-white mb-8 text-center">
+                        <h3 className="text-xl font-bold text-white mb-8 text-center">
                             Community Impact Achievements
                         </h3>
                         <div className="grid grid-cols-2 lg:grid-cols-6 gap-6 text-center">
                             <div>
-                                <div className="text-3xl text-white mb-2">
+                                <div className="text-lg font-bold text-white mb-2">
                                     500+
                                 </div>
                                 <div className="text-white text-sm">
@@ -85,7 +85,7 @@ const WelfarePage = () => {
                                 </div>
                             </div>
                             <div>
-                                <div className="text-3xl text-white mb-2">
+                                <div className="text-lg font-bold text-white mb-2">
                                     12
                                 </div>
                                 <div className="text-white text-sm">
@@ -93,7 +93,7 @@ const WelfarePage = () => {
                                 </div>
                             </div>
                             <div>
-                                <div className="text-3xl text-white mb-2">
+                                <div className="text-lg font-bold text-white mb-2">
                                     200+
                                 </div>
                                 <div className="text-white text-sm">
@@ -101,7 +101,7 @@ const WelfarePage = () => {
                                 </div>
                             </div>
                             <div>
-                                <div className="text-3xl text-white mb-2">
+                                <div className="text-lg font-bold text-white mb-2">
                                     150
                                 </div>
                                 <div className="text-white text-sm">
@@ -109,7 +109,7 @@ const WelfarePage = () => {
                                 </div>
                             </div>
                             <div>
-                                <div className="text-3xl text-white mb-2">
+                                <div className="text-lg font-bold text-white mb-2">
                                     5
                                 </div>
                                 <div className="text-white text-sm">
@@ -117,7 +117,7 @@ const WelfarePage = () => {
                                 </div>
                             </div>
                             <div>
-                                <div className="text-3xl text-white mb-2">
+                                <div className="text-lg font-bold text-white mb-2">
                                     75
                                 </div>
                                 <div className="text-white text-sm">

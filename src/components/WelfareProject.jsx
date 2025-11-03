@@ -6,12 +6,11 @@ const WelfareProject = () => {
             <section id="active-projects" className="py-16 bg-white">
                 <div className="max-w-7xl mx-auto px-6">
                     <div className="flex items-center justify-between mb-12">
-                        <h2 className="text-3xl text-neutral-900">
+                        <h2 className="text-lg font-semibold text-neutral-900">
                             Active Projects
                         </h2>
-                        <div className="flex items-center space-x-2 text-neutral-600">
+                        <div className="flex items-center space-x-2 font-semibold text-neutral-600">
                             <span>127 projects</span>
-                            <i className="fa-solid fa-circle-play text-neutral-600"></i>
                         </div>
                     </div>
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
