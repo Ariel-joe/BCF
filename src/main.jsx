@@ -9,6 +9,7 @@ import VolunteerPage from "./pages/VolunteerPage";
 import WelfarePage from "./pages/WelfarePage";
 import ContactPage from "./pages/ContactPage";
 import Donatepage from "./pages/Donatepage";
+import SingleWelfare from "./pages/SingleWelfare";
 
 createRoot(document.getElementById("root")).render(
     <BrowserRouter>
@@ -21,6 +22,7 @@ createRoot(document.getElementById("root")).render(
                 <Route path="/welfare" element={<WelfarePage />} />
                 <Route path="/contact" element={<ContactPage />} />
                 <Route path="/donate" element={<Donatepage />} />
+                <Route path="/welfare/:id" element={<SingleWelfare />} />
             </Route>
         </Routes>
     </BrowserRouter>

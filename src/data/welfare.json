@@ -1,0 +1,21 @@
+{
+    "welfares": [
+        {
+            "id": 1,
+            "title": "Digital Learning Centers",
+            "date": "20/10/2025",
+            "category": "Friends of Beacon",
+            "progress": "80",
+            "status": "active",
+            "budget": "200,000",
+            "successRate": "90",
+            "individuals": "240",
+            "partners": ["BCF", "KBC", "ABSA"],
+            "communities": "10",
+            "coordinator": "James Otieno",
+            "description": "This comprehensive program provides school fees assistance, educational materials, uniforms, and nutritional support to ensure children can focus on their studies. We also offer after-school tutoring and mentorship programs to help students excel academically. The Education Support Initiative is one of our flagship welfare programs designed to break the cycle of poverty through education. We believe that every child deserves access to quality education regardless of their economic background.\n\nThis comprehensive program provides school fees assistance, educational materials, uniforms, and nutritional support to ensure children can focus on their studies. We also offer after-school tutoring and mentorship programs to help students excel academically. The Education Support Initiative is one of our flagship welfare programs designed to break the cycle of poverty through education. We believe that every child deserves access to quality education regardless of their economic background.\n\nThis comprehensive program provides school fees assistance, educational materials, uniforms, and nutritional support to ensure children can focus on their studies. We also offer after-school tutoring and mentorship programs to help students excel academically. The Education Support Initiative is one of our flagship welfare programs designed to break the cycle of poverty through education. We believe that every child deserves access to quality education regardless of their economic background.",
+            "about": "This comprehensive program provides school fees assistance, educational materials, uniforms, and nutritional support to ensure children can focus on their studies. We also offer after-school tutoring and mentorship programs to help students excel academically.",
+            "image": "/DSC_3107.jpeg"
+        }
+    ]
+}
