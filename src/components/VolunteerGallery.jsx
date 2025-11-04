@@ -1,4 +1,4 @@
-import { X } from "lucide-react";
+import { ChevronLeft, ChevronRight, X } from "lucide-react";
 import React, { useEffect, useState } from "react";
 
 const images = [
@@ -22,6 +22,8 @@ const VolunteerGallery = () => {
             requestAnimationFrame(() => setAnimateIn(true));
             const onKey = (e) => {
                 if (e.key === "Escape") close();
+                if (e.key === "ArrowLeft") prev();
+                if (e.key === "ArrowRight") next();
             };
             window.addEventListener("keydown", onKey);
             return () => window.removeEventListener("keydown", onKey);
@@ -46,6 +48,25 @@ const VolunteerGallery = () => {
             e.preventDefault();
             open(src);
         }
+    };
+
+    const getCurrentIndex = () => images.findIndex((s) => s === openSrc);
+
+    const prev = () => {
+        if (!openSrc) return;
+        const idx = getCurrentIndex();
+        const prevIdx = (idx - 1 + images.length) % images.length;
+        // set new src (animation handled by effect)
+        setAnimateIn(false);
+        setTimeout(() => setOpenSrc(images[prevIdx]), 80);
+    };
+
+    const next = () => {
+        if (!openSrc) return;
+        const idx = getCurrentIndex();
+        const nextIdx = (idx + 1) % images.length;
+        setAnimateIn(false);
+        setTimeout(() => setOpenSrc(images[nextIdx]), 80);
     };
 
     return (
@@ -90,6 +111,32 @@ const VolunteerGallery = () => {
                         >
                             <X />
                         </button>
+
+                        {images.length > 1 && (
+                            <>
+                                <button
+                                    onClick={(e) => {
+                                        e.stopPropagation();
+                                        prev();
+                                    }}
+                                    aria-label="Previous image"
+                                    className="modal-nav-button absolute -left-8 top-1/2 -translate-y-1/2 text-white bg-black/40 hover:bg-black/50 rounded-full p-2 z-20"
+                                >
+                                    <ChevronLeft size={32} />
+                                </button>
+
+                                <button
+                                    onClick={(e) => {
+                                        e.stopPropagation();
+                                        next();
+                                    }}
+                                    aria-label="Next image"
+                                    className="modal-nav-button absolute -right-8 top-1/2 -translate-y-1/2 text-white bg-black/40 hover:bg-black/50 rounded-full p-2 z-20"
+                                >
+                                    <ChevronRight size={32} />
+                                </button>
+                            </>
+                        )}
 
                         <img
                             src={openSrc}
