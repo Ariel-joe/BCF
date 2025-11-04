@@ -39,7 +39,10 @@ const SingleWelfare = () => {
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                     <div className="grid lg:grid-cols-2 gap-12 items-center">
                         <div>
-                            <div className="flex gap-6">
+                            <h1 className="text-2xl font-bold text-neutral-900 mb-4 leading-tight">
+                                {welfare.title}
+                            </h1>
+                            <div className="flex gap-3">
                                 <div className="space-x-3 mb-4">
                                     <span className="bg-neutral-300 text-neutral-700 px-3 py-1 rounded-full text-sm">
                                         {welfare.status}
@@ -52,10 +55,7 @@ const SingleWelfare = () => {
                                 </div>
                             </div>
 
-                            <h1 className="text-2xl font-bold text-neutral-900 mb-4 leading-tight">
-                                {welfare.title}
-                            </h1>
-                            <p className="text-lg text-neutral-600 mb-6">
+                            <p className="text-left text-neutral-600 mb-6">
                                 {welfare.about}
                             </p>
 
@@ -73,23 +73,25 @@ const SingleWelfare = () => {
                             )}
                         </div>
                         <div className="lg:order-first">
-                            <div className="rounded-lg h-[400px] flex items-center justify-center">
-                                <img src={welfare.image} alt="welfare image" />
-                            </div>
+                            <img
+                                src={welfare.image}
+                                alt="welfare image"
+                                className="rounded-lg"
+                            />
                         </div>
                     </div>
                 </div>
             </section>
 
             <section id="welfare-overview" className="py-16 bg-neutral-50">
-                <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div className="max-w-7xl mx-auto px-4 sm:px-4 lg:px-6">
                     <div className="grid lg:grid-cols-3 gap-8">
                         <div className="lg:col-span-2">
                             <div className="bg-white rounded-lg p-8 border border-neutral-200">
                                 <h2 className="text-xl font-bold text-neutral-900 mb-6">
                                     Program Overview
                                 </h2>
-                                <p className="prose prose-neutral max-w-none">
+                                <p className="prose prose-neutral max-w-none text-justify">
                                     {(Array.isArray(welfare.description)
                                         ? welfare.description
                                         : String(welfare.description).split(
