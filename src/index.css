@@ -81,6 +81,9 @@ a.active {
     /* default smaller & hidden; classes toggle to scale-100 and opacity-100 */
     transition: transform 0.28s cubic-bezier(.2,.8,.2,1), opacity 0.24s ease;
     transform-origin: center center;
+    will-change: transform, opacity;
+    max-width: 100%;
+    max-height: 100%;
 }
 
 @media (min-width: 768px) {
@@ -111,4 +114,32 @@ a.active {
 .modal-nav-button:focus {
     outline: 2px solid #fff;
     outline-offset: 2px;
+}
+
+/* inner wrapper to ensure modal content fits within the viewport on small screens */
+.modal-inner {
+    box-sizing: border-box;
+    width: 100%;
+    max-width: calc(100vw - 2rem);
+    max-height: calc(100vh - 2rem);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+    overflow: hidden;
+}
+
+/* For medium and larger screens, constrain modal to a smaller centered viewport so it doesn't feel too large */
+@media (min-width: 768px) {
+    .modal-inner {
+        max-width: 65vw; /* slightly smaller than previous 80-85% */
+        max-height: 85vh;
+        padding: 1.25rem;
+    }
+
+    .modal-image {
+        /* fill the inner container without exceeding it */
+        max-width: 100%;
+        max-height: 80vh;
+    }
 }

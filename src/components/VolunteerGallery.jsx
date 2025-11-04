@@ -101,13 +101,13 @@ const VolunteerGallery = () => {
                     role="dialog"
                 >
                     <div
-                        className={`max-w-[95%] max-h-[95%] p-4 rounded-lg select-none relative`}
+                        className={`modal-inner p-4 rounded-lg relative`}
                         onClick={(e) => e.stopPropagation()}
                     >
                         <button
                             onClick={close}
                             aria-label="Close image"
-                            className="absolute -top-1 -right-4 text-white bg-black/40 hover:bg-black/60 rounded-full p-1 z-20"
+                            className="absolute top-2 -right-1 sm:top-2 sm:-right-3 md:right-1 text-white bg-black/40 hover:bg-black/60 rounded-full p-1 z-20"
                         >
                             <X />
                         </button>
@@ -120,7 +120,7 @@ const VolunteerGallery = () => {
                                         prev();
                                     }}
                                     aria-label="Previous image"
-                                    className="modal-nav-button absolute -left-8 top-1/2 -translate-y-1/2 text-white bg-black/40 hover:bg-black/50 rounded-full p-2 z-20"
+                                    className="modal-nav-button absolute -left-3 top-1/2 sm:left-2 sm:top-1/2 -translate-y-1/2 text-white bg-black/40 hover:bg-black/50 rounded-full p-2 z-20"
                                 >
                                     <ChevronLeft size={32} />
                                 </button>
@@ -131,7 +131,7 @@ const VolunteerGallery = () => {
                                         next();
                                     }}
                                     aria-label="Next image"
-                                    className="modal-nav-button absolute -right-8 top-1/2 -translate-y-1/2 text-white bg-black/40 hover:bg-black/50 rounded-full p-2 z-20"
+                                    className="modal-nav-button absolute -right-3 top-1/2 sm:right-2 sm:top-1/2 -translate-y-1/2 text-white bg-black/40 hover:bg-black/50 rounded-full p-2 z-20"
                                 >
                                     <ChevronRight size={32} />
                                 </button>
