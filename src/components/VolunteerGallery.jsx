@@ -1,71 +1,108 @@
+import { X } from "lucide-react";
+import React, { useEffect, useState } from "react";
+
+const images = [
+    "/IMG-20250901-WA0011.jpg",
+    "/IMG-20250901-WA0018.jpg",
+    "/IMG-20250901-WA0032.jpg",
+    "/IMG-20250901-WA0022.jpg",
+    "/IMG-20250901-WA0011.jpg",
+    "/IMG-20250901-WA0029.jpg",
+    "/IMG-20250901-WA0035.jpg",
+    "/IMG-20250901-WA0032.jpg",
+];
+
 const VolunteerGallery = () => {
+    const [openSrc, setOpenSrc] = useState(null);
+    const [animateIn, setAnimateIn] = useState(false);
+
+    useEffect(() => {
+        if (openSrc) {
+            // trigger animation on next frame
+            requestAnimationFrame(() => setAnimateIn(true));
+            const onKey = (e) => {
+                if (e.key === "Escape") close();
+            };
+            window.addEventListener("keydown", onKey);
+            return () => window.removeEventListener("keydown", onKey);
+        } else {
+            setAnimateIn(false);
+        }
+    }, [openSrc]);
+
+    const open = (src) => {
+        setOpenSrc(src);
+    };
+
+    const close = () => {
+        // play reverse animation briefly then close so it feels smooth
+        setAnimateIn(false);
+        // wait for the CSS transition duration (matching CSS below: 350ms)
+        setTimeout(() => setOpenSrc(null), 220);
+    };
+
+    const onThumbKey = (e, src) => {
+        if (e.key === "Enter" || e.key === " ") {
+            e.preventDefault();
+            open(src);
+        }
+    };
+
     return (
         <>
             <div className="text-center mb-16">
                 <h2 className="text-2xl font-bold text-neutral-900 mb-6 marker-highlight">
                     Volunteer Gallery
                 </h2>
-                
             </div>
+
             <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-                <div>
-                    <img
-                        className="h-auto max-w-full rounded-lg"
-                        src="/IMG-20250901-WA0011.jpg"
-                        alt=""
-                    />
-                </div>
-                <div>
-                    <img
-                        className="h-auto max-w-full rounded-lg"
-                        src="/IMG-20250901-WA0018.jpg"
-                        alt=""
-                    />
-                </div>
-                <div>
-                    <img
-                        className="h-auto max-w-full rounded-lg"
-                        src="/IMG-20250901-WA0032.jpg"
-                        alt=""
-                    />
-                </div>
-                <div>
-                    <img
-                        className="h-auto max-w-full rounded-lg"
-                        src="/IMG-20250901-WA0022.jpg"
-                        alt=""
-                    />
-                </div>
-                <div>
-                    <img
-                        className="h-auto max-w-full rounded-lg"
-                        src="/IMG-20250901-WA0011.jpg"
-                        alt=""
-                    />
-                </div>
-                <div>
-                    <img
-                        className="h-auto max-w-full rounded-lg"
-                        src="/IMG-20250901-WA0029.jpg"
-                        alt=""
-                    />
-                </div>
-                <div>
-                    <img
-                        className="h-auto max-w-full rounded-lg"
-                        src="/IMG-20250901-WA0035.jpg"
-                        alt=""
-                    />
-                </div>
-                <div>
-                    <img
-                        className="h-auto max-w-full rounded-lg"
-                        src="/IMG-20250901-WA0032.jpg"
-                        alt=""
-                    />
-                </div>
-                
+                {images.map((src, idx) => (
+                    <div key={idx}>
+                        <img
+                            role="button"
+                            tabIndex={0}
+                            onKeyDown={(e) => onThumbKey(e, src)}
+                            onClick={() => open(src)}
+                            className="h-auto max-w-full rounded-lg cursor-pointer transform transition duration-200 hover:scale-105"
+                            src={src}
+                            alt={`Volunteer ${idx + 1}`}
+                        />
+                    </div>
+                ))}
             </div>
+
+            {openSrc && (
+                <div
+                    className={`fixed inset-0 z-50 flex items-center justify-center modal-backdrop`}
+                    onClick={close}
+                    aria-modal="true"
+                    role="dialog"
+                >
+                    <div
+                        className={`max-w-[95%] max-h-[95%] p-4 rounded-lg select-none relative`}
+                        onClick={(e) => e.stopPropagation()}
+                    >
+                        <button
+                            onClick={close}
+                            aria-label="Close image"
+                            className="absolute -top-1 -right-4 text-white bg-black/40 hover:bg-black/60 rounded-full p-1 z-20"
+                        >
+                            <X />
+                        </button>
+
+                        <img
+                            src={openSrc}
+                            alt="Enlarged volunteer"
+                            className={`modal-image block mx-auto rounded-lg shadow-lg max-h-[80vh] object-contain transform transition-[transform,opacity] duration-300 ${
+                                animateIn
+                                    ? "scale-100 opacity-100"
+                                    : "scale-90 opacity-0"
+                            }`}
+                        />
+                    </div>
+                </div>
+            )}
         </>
     );
 };

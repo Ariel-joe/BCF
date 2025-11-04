@@ -5,36 +5,57 @@
             "name": "Isaac Sean",
             "image": "/board/Sean.jpeg",
             "title": "Chairperson",
-            "description": "He holds a Bachelor's in Procurement and Chain Supply Management He brings expertise in procurement and supply chain management to the foundation. With a strong passion for creating opportunities for the marginalized, Isaac is a dedicated leader committed to making a positive impact in the community through collaborative efforts and strategic initiatives."
+            "description": "He serves as the Chairperson of BCF, providing visionary leadership and strategic direction to the foundation. He holds a Bachelor’s degree in Procurement and Supply Chain Management, bringing valuable expertise in logistics, planning, and organizational efficiency. Guided by a strong passion for creating opportunities for marginalized communities, Isaac is dedicated to driving impactful initiatives that foster empowerment and sustainable growth. His collaborative approach and commitment to service continue to inspire the foundation’s mission and activities."
         },
         {
             "id": "2",
             "name": "Damiana Indoshi Amwayi",
             "image": "https://api.dicebear.com/7.x/notionists/svg?scale=200&seed=67890",
             "title": "Deputy Chairperson",
-            "description": "She holds a Bachelor's in Food Nutrition and Dietetics Dedicated to serve and contribute to the society in ways that can help save life and needs of  people."
+            "description": "She serves as the Deputy Chairperson of BCF. She holds a Bachelor’s degree in Food, Nutrition, and Dietetics, and is deeply passionate about promoting health, wellness, and community development. Driven by compassion and purpose, Damiana is dedicated to serving society and contributing to initiatives that help improve lives and meet the needs of vulnerable communities. Her leadership, empathy, and commitment to positive change make her an invaluable part of the BCF leadership team."
         },
         {
             "id": "3",
             "name": "Cynthia Cayte",
             "image": "/board/cayte.jpg",
-            "title": "Secretary"
-            
+            "title": "Secretary",
+            "description": "She serves as the Secretary of BCF, where she plays a vital role in coordinating organizational communications, documentation, and administrative operations. She holds a Bachelor’s degree in Public Health, bringing a strong background in community welfare, organization, and leadership. With her attention to detail, professionalism, and commitment to service, Cynthia ensures that BCF’s meetings, records, and outreach activities run smoothly and efficiently. Her passion for community health and empowerment aligns closely with BCF’s mission to create positive and sustainable impact."
         },
-        
         {
             "id": "4",
+            "name": "Mary Claire",
+            "image": "https://api.dicebear.com/7.x/notionists/svg?scale=200&seed=67890",
+            "title": "Vice Secretary",
+            "description": ""
+        },
+
+        {
+            "id": "5",
             "name": "Steve Odongo",
             "image": "/board/odongo.jpg",
             "title": "Finance Director",
-            "description": "He holds a bachelors degree in law. Besides that, Steve is a professional mediator. He is driven by an unwavering passion for compassion and service to to others. His vision is rooted in creating meaningful change and fostering hope within the community through impactful and sustainable solutions."
+            "description": "He serves as the Finance Director of BCF, where he provides leadership in financial planning, accountability, and organizational governance. He holds a Bachelor’s degree in Law and is also a professional mediator, combining legal insight with strong interpersonal and conflict-resolution skills. Motivated by compassion and a deep sense of service to others, Steve is committed to creating meaningful change and fostering hope within the community. His vision centers on developing impactful and sustainable solutions that uplift lives and strengthen the foundation’s mission."
         },
         {
-            "id": "5",
+            "id": "6",
             "name": "James otieno",
             "image": "/board/james.jpg",
             "title": "Communications Director",
             "description": "He is a strategic and result-driven communication leader with a strong background in digital media, public relations, and organizational branding. As Head of Communication at BCF, he oversees the foundation’s communication strategy, ensuring clarity, consistency, and impact across all platforms. Holding a degree in Computer Science, James combines technical expertise with creative storytelling to strengthen BCF’s digital presence and community engagement. His passion for innovation and effective communication continues to drive initiatives that amplify BCF’s mission and connect people to meaningful change."
+        },
+        {
+            "id": "7",
+            "name": "Albashir Haji",
+            "image": "https://api.dicebear.com/7.x/notionists/svg?scale=200&seed=67890",
+            "title": "Head of Partnerships and Public Relations",
+            "description": "Albashir Haji serves as the Head of Partnerships and Public Relations at BCF, where he oversees strategic collaborations, stakeholder engagement, and external communications. He is a qualified Aircraft Engineer, a profession that has equipped him with exceptional analytical thinking, precision, and problem-solving abilities — qualities he now channels into organizational growth and community empowerment. In his role, Albashir is responsible for fostering relationships with partner organizations, sponsors, and community networks that align with BCF’s vision of creating sustainable impact. His dedication to teamwork, innovation, and social development enables him to bridge the gap between technical expertise and human connection. Guided by integrity and a deep passion for service, Albashir strives to build partnerships that not only strengthen BCF’s programs but also inspire hope and transformation within the communities the foundation serves. His leadership continues to play a vital role in expanding BCF’s reach, credibility, and long-term sustainability."
+        },
+        {
+            "id": "8",
+            "name": "Joseph Mogesi",
+            "image": "https://api.dicebear.com/7.x/notionists/svg?scale=200&seed=67890",
+            "title": "Event Cordinator",
+            "description": ""
         }
     ]
 }

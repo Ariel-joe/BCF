@@ -68,3 +68,29 @@ a.active {
         height: 0.78em;
     }
 }
+
+/* Modal / lightbox styles for volunteer gallery */
+.modal-backdrop {
+    background: rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+    padding: 1rem;
+}
+
+.modal-image {
+    /* default smaller & hidden; classes toggle to scale-100 and opacity-100 */
+    transition: transform 0.28s cubic-bezier(.2,.8,.2,1), opacity 0.24s ease;
+    transform-origin: center center;
+}
+
+@media (min-width: 768px) {
+    .modal-image {
+        max-width: 80vw;
+    }
+}
+
+@media (max-width: 767px) {
+    .modal-image {
+        max-width: 95vw;
+    }
+}
