@@ -1,5 +1,6 @@
 import React from "react";
-import WelfareProject from "../components/WelfareProject";
+import { welfares } from "../data/welfare.json";
+import WelfareCard from "../components/WelfareCard";
 
 const WelfarePage = () => {
     return (
@@ -15,8 +16,35 @@ const WelfarePage = () => {
                             community
                         </p>
                     </div>
+                    {/* internal welfare section */}
+                    <section id="active-projects" className="py-16 bg-white">
+                        <div className="max-w-7xl mx-auto px-6">
+                            <div className="flex items-center justify-between mb-12">
+                                <h2 className="text-lg font-semibold text-neutral-900">
+                                    Active Projects
+                                </h2>
+                                <div className="flex items-center space-x-2 font-semibold text-neutral-600">
+                                    <span>127 projects</span>
+                                </div>
+                            </div>
+                            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                                {welfares
+                                    .filter(
+                                        (w) =>
+                                            w.category === "Community"
+                                    )
+                                    .map((w, i) => (
+                                        <WelfareCard key={i} welfare={w} />
+                                    ))}
+                            </div>
+                            <div className="text-center mt-12">
+                                <button className="px-8 py-3 border border-neutral-300 text-neutral-700 rounded-md hover:bg-neutral-50">
+                                    View All Active Projects
+                                </button>
+                            </div>
+                        </div>
+                    </section>
 
-                    <WelfareProject />
                     <div className="mt- bg-(--color-logo-orange) p-8 rounded-2xl text-center">
                         <h3 className="text-xl font-bold text-white mb-4">
                             Internal Impact Statistics
@@ -59,6 +87,9 @@ const WelfarePage = () => {
                 </div>
             </section>
 
+            {/* end of internal welfare section */}
+
+            {/* friends of beacon welfare section */}
             <section id="internal-welfare" className="py-20 bg-white">
                 <div className="max-w-7xl mx-auto px-6 lg:px-8">
                     <div className="text-center mb-8">
@@ -70,7 +101,33 @@ const WelfarePage = () => {
                         </p>
                     </div>
 
-                    <WelfareProject />
+                    <section id="active-projects" className="py-16 bg-white">
+                        <div className="max-w-7xl mx-auto px-6">
+                            <div className="flex items-center justify-between mb-12">
+                                <h2 className="text-lg font-semibold text-neutral-900">
+                                    Active Projects
+                                </h2>
+                                <div className="flex items-center space-x-2 font-semibold text-neutral-600">
+                                    <span>127 projects</span>
+                                </div>
+                            </div>
+                            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                                {welfares
+                                    .filter(
+                                        (w) =>
+                                            w.category === "Friends of Beacon"
+                                    )
+                                    .map((w, i) => (
+                                        <WelfareCard key={i} welfare={w} />
+                                    ))}
+                            </div>
+                            <div className="text-center mt-12">
+                                <button className="px-8 py-3 border border-neutral-300 text-neutral-700 rounded-md hover:bg-neutral-50">
+                                    View All Active Projects
+                                </button>
+                            </div>
+                        </div>
+                    </section>
                     <div className="bg-(--color-logo-orange) p-8 rounded-2xl">
                         <h3 className="text-xl font-bold text-white mb-8 text-center">
                             Community Impact Achievements
@@ -128,6 +185,8 @@ const WelfarePage = () => {
                     </div>
                 </div>
             </section>
+
+            {/* end of friends of beacon welfare section */}
         </>
     );
 };

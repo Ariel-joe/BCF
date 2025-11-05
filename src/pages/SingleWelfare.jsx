@@ -9,6 +9,9 @@ const SingleWelfare = () => {
     const params = useParams();
     const id = params?.id;
 
+    console.log(params);
+    
+
     // find the welfare item by id (ids in JSON are numbers)
     const welfare = welfares.find((w) => String(w.id) === String(id));
 
@@ -58,19 +61,6 @@ const SingleWelfare = () => {
                             <p className="text-left text-neutral-600 mb-6">
                                 {welfare.about}
                             </p>
-
-                            {welfare.status === "completed" ? null : (
-                                <div className="flex flex-col sm:flex-row gap-4">
-                                    <Link
-                                        rel="noopener noreferrer"
-                                        to={"/donate"}
-                                    >
-                                        <button className="self-center px-8 py-3 font-semibold rounded bg-(--color-logo-orange) text-gray-100">
-                                            Donate
-                                        </button>
-                                    </Link>
-                                </div>
-                            )}
                         </div>
                         <div className="lg:order-first">
                             <img
@@ -110,6 +100,25 @@ const SingleWelfare = () => {
                         </div>
 
                         <div className="space-y-6">
+                            {welfare.status === "completed" ? null : (
+                                <div className="bg-neutral-900 rounded-lg p-6 text-white">
+                                    <h3 className="text-xl mb-4">
+                                        Make a Difference
+                                    </h3>
+                                    <p className="text-neutral-300 text-sm mb-4">
+                                        Your donation can provide a full year of
+                                        education for a child in need.
+                                    </p>
+                                    <Link
+                                        rel="noopener noreferrer"
+                                        to={"/donate"}
+                                    >
+                                        <button className="self-center px-8 py-3 font-semibold rounded bg-(--color-logo-orange) text-gray-100">
+                                            Donate
+                                        </button>
+                                    </Link>
+                                </div>
+                            )}
                             <div className="bg-white rounded-lg p-6 border border-neutral-200">
                                 <h3 className="text-lg font-semibold text-neutral-900 mb-4">
                                     Program Statistics
@@ -183,21 +192,6 @@ const SingleWelfare = () => {
                                         </span>
                                     </div>
                                 </div>
-                            </div>
-
-                            <div className="bg-neutral-900 rounded-lg p-6 text-white">
-                                <h3 className="text-xl mb-4">
-                                    Make a Difference
-                                </h3>
-                                <p className="text-neutral-300 text-sm mb-4">
-                                    Your donation can provide a full year of
-                                    education for a child in need.
-                                </p>
-                                <Link rel="noopener noreferrer" to={"/donate"}>
-                                    <button className="self-center px-8 py-3 font-semibold rounded bg-(--color-logo-orange) text-gray-100">
-                                        Donate
-                                    </button>
-                                </Link>
                             </div>
                         </div>
                     </div>

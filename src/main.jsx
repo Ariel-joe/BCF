@@ -22,7 +22,8 @@ createRoot(document.getElementById("root")).render(
                 <Route path="/welfare" element={<WelfarePage />} />
                 <Route path="/contact" element={<ContactPage />} />
                 <Route path="/donate" element={<Donatepage />} />
-                <Route path="/welfare/:id" element={<SingleWelfare />} />
+                <Route path="/welfare/friendsOfBeacon/:id" element={<SingleWelfare />} />
+                <Route path="/welfare/community/:id" element={<SingleWelfare />} />
             </Route>
         </Routes>
     </BrowserRouter>
