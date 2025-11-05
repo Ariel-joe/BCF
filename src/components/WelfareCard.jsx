@@ -4,6 +4,10 @@ import { Link } from "react-router";
 const WelfareCard = ({ welfare }) => {
 
     const { image, title, status, date, about, progress, budget, id } = welfare;
+    const preview = about
+        ? (about.length > 10 ? about.substring(0, 100) + "..." : about)
+        : "";
+
     return (
         <>
             <div className="bg-white border border-neutral-200 rounded-lg overflow-hidden hover:shadow-lg transition-shadow">
@@ -18,7 +22,7 @@ const WelfareCard = ({ welfare }) => {
                         <span className="text-neutral-500 text-sm">{date}</span>
                     </div>
                     <h3 className="text-xl text-neutral-900 mb-3">{title}</h3>
-                    <p className="text-neutral-600 mb-4">{about}</p>
+                    <p className="text-neutral-600 mb-4 text-sm">{preview}</p>
                     <div className="mb-4">
                         <div className="flex justify-between text-sm text-neutral-600 mb-1">
                             <span>Progress</span>
@@ -32,7 +36,7 @@ const WelfareCard = ({ welfare }) => {
                         <span className="text-neutral-600">
                             Budget: Ksh {budget}
                         </span>
-                        <Link to={`/welfare/community/${id}`}>
+                        <Link to={`/welfare/${id}`}>
                             <button className="px-4 py-2 bg-neutral-900 text-white rounded-md text-sm hover:bg-neutral-800">
                                 View Details
                             </button>

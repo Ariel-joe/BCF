@@ -10,6 +10,7 @@ import WelfarePage from "./pages/WelfarePage";
 import ContactPage from "./pages/ContactPage";
 import Donatepage from "./pages/Donatepage";
 import SingleWelfare from "./pages/SingleWelfare";
+import TeamProfile from "./pages/Teamprofile";
 
 createRoot(document.getElementById("root")).render(
     <BrowserRouter>
@@ -22,8 +23,10 @@ createRoot(document.getElementById("root")).render(
                 <Route path="/welfare" element={<WelfarePage />} />
                 <Route path="/contact" element={<ContactPage />} />
                 <Route path="/donate" element={<Donatepage />} />
-                <Route path="/welfare/friendsOfBeacon/:id" element={<SingleWelfare />} />
-                <Route path="/welfare/community/:id" element={<SingleWelfare />} />
+                <Route path="/welfare/:id" element={<SingleWelfare />} />
+                <Route path="/team/:id" element={<TeamProfile />} />
+                <Route path="/board/:id" element={<TeamProfile />} />
+
             </Route>
         </Routes>
     </BrowserRouter>

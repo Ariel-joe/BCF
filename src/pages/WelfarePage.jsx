@@ -39,7 +39,7 @@ const WelfarePage = () => {
                             </div>
                             <div className="text-center mt-12">
                                 <button className="px-8 py-3 border border-neutral-300 text-neutral-700 rounded-md hover:bg-neutral-50">
-                                    View All Active Projects
+                                    View All Community Projects
                                 </button>
                             </div>
                         </div>
@@ -123,7 +123,7 @@ const WelfarePage = () => {
                             </div>
                             <div className="text-center mt-12">
                                 <button className="px-8 py-3 border border-neutral-300 text-neutral-700 rounded-md hover:bg-neutral-50">
-                                    View All Active Projects
+                                    View All Friends Of Beacon Projects
                                 </button>
                             </div>
                         </div>
