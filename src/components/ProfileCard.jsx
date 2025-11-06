@@ -11,7 +11,7 @@ const ProfileCard = ({ BoardMember }) => {
                     alt="Executive Director"
                     className="w-32 h-32 rounded-full mx-auto mb-6"
                 />
-                <div className="border-l-4 pl-2 border-(--color-logo-orange)">
+                <div className="border-l-4 pl-2 border-neutral-400">
                     <h3 className="text-2xl text-black font-semibold mb-2">
                         {name}
                     </h3>
@@ -19,7 +19,7 @@ const ProfileCard = ({ BoardMember }) => {
                 </div>
 
                 <Link to={`/profile/${id}`}>
-                    <button className="text-lg p-1.5 w-full bg-neutral-200 text-black rounded-sm">
+                    <button className="text-lg p-1.5 w-full bg-(--color-logo-orange) text-white rounded-sm">
                         Bio
                     </button>
                 </Link>
