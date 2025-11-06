@@ -5,7 +5,7 @@ const ProfileCard = ({ BoardMember }) => {
     const { name, title, image, id } = BoardMember;
     return (
         <>
-            <div className="text-left bg-neutral-50 p-8 rounded-lg">
+            <div className="text-left bg-neutral-100 p-8 rounded-lg">
                 <img
                     src={image}
                     alt="Executive Director"
@@ -19,7 +19,7 @@ const ProfileCard = ({ BoardMember }) => {
                 </div>
 
                 <Link to={`/profile/${id}`}>
-                    <button className="text-lg p-1.5 w-full bg-(--color-logo-orange) text-white rounded-sm">
+                    <button className="text-lg py-1 w-full bg-(--color-logo-orange) text-white rounded-sm">
                         Bio
                     </button>
                 </Link>
