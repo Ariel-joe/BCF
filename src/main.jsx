@@ -24,8 +24,8 @@ createRoot(document.getElementById("root")).render(
                 <Route path="/contact" element={<ContactPage />} />
                 <Route path="/donate" element={<Donatepage />} />
                 <Route path="/welfare/:id" element={<SingleWelfare />} />
-                <Route path="/team/:id" element={<TeamProfile />} />
-                <Route path="/board/:id" element={<TeamProfile />} />
+                <Route path="/profile/:id" element={<TeamProfile />} />
+                
 
             </Route>
         </Routes>

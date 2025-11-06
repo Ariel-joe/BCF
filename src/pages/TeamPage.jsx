@@ -3,6 +3,10 @@ import ProfileCard from '../components/ProfileCard';
 import { TeamMembers } from "../data/team.json";
 
 const TeamPage = () => {
+
+    const team = TeamMembers.filter(
+            (b) => b.slug === "team" || b.slug === "both"
+        );
   return (
       <>
           <section
@@ -23,7 +27,7 @@ const TeamPage = () => {
                       </p>
                   </div>
                   <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                      {TeamMembers.map((TeamMember, i) => (
+                      {team.map((TeamMember, i) => (
                           <ProfileCard key={i} BoardMember={TeamMember} />
                       ))}
                   </div>

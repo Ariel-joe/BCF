@@ -1,20 +1,29 @@
 import React from "react";
+import { Link } from "react-router";
 
 const ProfileCard = ({ BoardMember }) => {
-    const { name, title, description, image } = BoardMember;
+    const { name, title, image, id } = BoardMember;
     return (
         <>
-            <div className="text-center bg-neutral-50 p-8 rounded-lg">
+            <div className="text-left bg-neutral-50 p-8 rounded-lg">
                 <img
                     src={image}
                     alt="Executive Director"
                     className="w-32 h-32 rounded-full mx-auto mb-6"
                 />
-                <h3 className="text-2xl text-black font-semibold mb-2">{name}</h3>
-                <p className="text-black font-medium mb-4">{title}</p>
-                <p className="text-sm text-black/50 mb-4">
-                    {description}
-                </p>
+                <div className="border-l-4 pl-2 border-(--color-logo-orange)">
+                    <h3 className="text-2xl text-black font-semibold mb-2">
+                        {name}
+                    </h3>
+                    <p className="text-neutral-500 mb-4">{title}</p>
+                </div>
+
+                <Link to={`/profile/${id}`}>
+                    <button className="text-lg p-1.5 w-full bg-neutral-200 text-black rounded-sm">
+                        Bio
+                    </button>
+                </Link>
+
                 <div className="flex justify-center space-x-3">
                     <i className="fa-brands fa-linkedin text-neutral-600 hover:text-neutral-900 cursor-pointer"></i>
                     <i className="fa-solid fa-envelope text-neutral-600 hover:text-neutral-900 cursor-pointer"></i>
