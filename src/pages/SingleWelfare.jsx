@@ -80,21 +80,21 @@ const SingleWelfare = () => {
                                 <h2 className="text-xl font-bold text-neutral-900 mb-6">
                                     Program Overview
                                 </h2>
-                                <p className="prose prose-neutral max-w-none text-justify">
+                                <div className="prose prose-neutral max-w-none text-justify">
                                     {(Array.isArray(welfare.description)
                                         ? welfare.description
                                         : String(welfare.description).split(
                                               /\n{2,}/
                                           )
-                                    ).map((para, idx) => (
+                                    ).map((para, i) => (
                                         <p
-                                            key={idx}
+                                            key={i}
                                             className="text-neutral-600 leading-relaxed mb-6"
                                         >
                                             {para}
                                         </p>
                                     ))}
-                                </p>
+                                </div>
                             </div>
                         </div>
 
