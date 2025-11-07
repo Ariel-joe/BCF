@@ -11,6 +11,7 @@ import ContactPage from "./pages/ContactPage";
 import Donatepage from "./pages/Donatepage";
 import SingleWelfare from "./pages/SingleWelfare";
 import TeamProfile from "./pages/Teamprofile";
+import BlogPage from "./pages/SingleBlogPage";
 
 createRoot(document.getElementById("root")).render(
     <BrowserRouter>
@@ -25,6 +26,9 @@ createRoot(document.getElementById("root")).render(
                 <Route path="/donate" element={<Donatepage />} />
                 <Route path="/welfare/:id" element={<SingleWelfare />} />
                 <Route path="/profile/:id" element={<TeamProfile />} />
+
+                {/* blo route */}
+                <Route path="/blog/:id" element={<BlogPage />} />
                 
 
             </Route>

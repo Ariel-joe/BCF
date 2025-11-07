@@ -11,8 +11,13 @@ const WelfareCard = ({ welfare }) => {
     return (
         <>
             <div className="bg-white border border-neutral-200 rounded-lg overflow-hidden hover:shadow-lg transition-shadow">
-                <div className="bg-neutral-400 h-48 flex items-center justify-center">
-                    <img src={image} alt="welfare image" />
+                <div className="bg-neutral-400 h-48 flex items-center justify-center overflow-hidden">
+                    <img
+                        src={image}
+                        alt={title || "welfare image"}
+                        className="w-full h-full object-cover object-center"
+                        loading="lazy"
+                    />
                 </div>
                 <div className="p-6">
                     <div className="flex items-center justify-between mb-3">

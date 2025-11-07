@@ -1,0 +1,66 @@
+{
+    "blogs": [
+        {   
+            "id": "1",
+            "image": "/DSC_3257.jpeg",
+            "author": {
+                "name": "James Otieno",
+                "title": "Communications Director",
+                "image": "/board/james.JPG"
+            },
+            "datePublished": "March 5, 2025",
+            "title": "Transforming Lives Through Education: The Story of Kibera Community School",
+            "summary": "When we first visited Kibera Community School in early 2024, we found a facility struggling with overcrowded classrooms, insufficient learning materials, and teachers working tirelessly with limited resources. Many students were sharing textbooks, and the lack of proper infrastructure was hindering their ability to learn effectively.",
+            "content": [
+                {
+                    "subtitle": "The Challenge We Faced",
+                    "paragraphs": [
+                        "When we first visited Kibera Community School in early 2024, we found a facility struggling with overcrowded classrooms, insufficient learning materials, and teachers working tirelessly with limited resources. Many students were sharing textbooks, and the lack of proper infrastructure was hindering their ability to learn effectively.",
+                        "The principal, Mrs. Akinyi, shared with us that despite these challenges, the students' eagerness to learn never wavered. \"These children come to school every day with hope in their eyes,\" she told us. \"They deserve better, and they deserve a chance.\""
+                    ]
+                },
+                {
+                    "subtitle": "Our Intervention",
+                    "paragraphs": [
+                        "Working closely with the school administration, community leaders, and our network of partners, we developed a comprehensive intervention plan that addressed both immediate needs and long-term sustainability."
+                    ]
+                },
+                {
+                    "subtitle": "The Impact We've Seen",
+                    "paragraphs": [
+                        "Six months into the program, the transformation has been remarkable. Student attendance has increased by 35%, and academic performance has shown significant improvement across all grade levels. Teachers report higher engagement in classrooms, and students are more confident in participating and asking questions.",
+                        "But beyond the numbers, it's the stories that truly capture the impact. Students like 12-year-old Grace, who now dreams of becoming a doctor, or James, who has discovered a passion for mathematics and science. These children are not just learning—they're thriving."
+                    ]
+                }
+            ],
+            "tags": ["Education", "Community", "Impact Stories", "Kibera"]
+        },
+        {   
+            "id": "2",
+            "image": "/LEE_8924.jpg",
+            "author": {
+                "name": "James Otieno",
+                "title": "Communications Director",
+                "image": "/board/james.JPG"
+            },
+            "datePublished": "October 20, 2025",
+            "title": "A Successful Annual General Meeting Marks a Year of Growth and Impact",
+            "summary": "The Annual General Meeting (AGM) brought together members, partners, and stakeholders to review the year's milestones, financial progress, and future goals. The event highlighted the organization’s continued commitment to community empowerment and transparent leadership.",
+            "content": [
+                {
+                    "subtitle": "Celebrating Achievements and Strengthening Our Future",
+                    "paragraphs": [
+                        "The 2025 Annual General Meeting was held at the organization’s main office and was attended by board members, donors, community representatives, and staff. The session provided an opportunity to reflect on our collective achievements over the past year, including expanded outreach programs, successful fundraising campaigns, and the launch of new community development initiatives.",
+                        "Members also reviewed the financial statements, which showed strong growth in funding and efficient resource utilization. The board reaffirmed its dedication to accountability and transparency, ensuring every donation continues to make a tangible difference in the communities we serve.",
+                        "The meeting concluded with a renewed sense of unity and optimism for the coming year, with members expressing gratitude for the dedication of volunteers and the continued support of partners who make our mission possible."
+                    ]
+                }
+            ],
+            "pdf": {
+                "title": "Download Full AGM 2025 Report",
+                "url": "AGM_2025_Report.pdf"
+            },
+            "tags": ["AGM", "Governance", "Transparency", "Community Impact"]
+        }
+    ]
+}

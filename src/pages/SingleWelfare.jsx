@@ -9,7 +9,6 @@ const SingleWelfare = () => {
     const params = useParams();
     const id = params?.id;
 
-    console.log(params);
     
 
     // find the welfare item by id (ids in JSON are numbers)
