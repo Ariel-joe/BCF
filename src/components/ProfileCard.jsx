@@ -9,9 +9,9 @@ const ProfileCard = ({ BoardMember }) => {
                 <img
                     src={image}
                     alt="Executive Director"
-                    className="w-32 h-32 rounded-full mx-auto mb-6"
+                    className="w-42 h-42 rounded-full mx-auto mb-6"
                 />
-                <div className="border-l-4 pl-2 border-neutral-400">
+                <div className="border-l-4 pl-2 border-black">
                     <h3 className="text-2xl text-black font-semibold mb-2">
                         {name}
                     </h3>

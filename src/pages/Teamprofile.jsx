@@ -43,7 +43,7 @@ const TeamProfile = () => {
                                 <img
                                     src={member.image}
                                     alt="Sarah Kimani"
-                                    className="w-60 h-60 mx-auto "
+                                    className="w-70 h-70 mx-auto "
                                 />
 
                                 
@@ -60,12 +60,12 @@ const TeamProfile = () => {
                                 </p>
                                 
 
-                                <p className="text-lg text-neutral-500 mb-8 text-justify leading-relaxed">
+                                <p className="text-lg text-neutral-500 mb-8 px-3 text-justify leading-relaxed">
                                     {member.description}
                                 </p>
                                 <Link
                                     to={"/team"}
-                                    className="text-white bg-(--color-logo-orange) max-w-[20%] p-2 rounded-lg hover:text-neutral-900 text-lg flex items-center justify-center"
+                                    className="text-white bg-(--color-logo-orange) w-[50%] p-2 rounded-lg hover:text-neutral-900 text-lg flex items-center justify-center"
                                 >
                                     <ArrowLeft size={22} className="mr-2" />
                                     Back to Team
