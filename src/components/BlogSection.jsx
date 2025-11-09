@@ -12,7 +12,7 @@ const BlogSection = () => {
             </div>
             <div className="container mx-auto px-6">
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                    {blogs.map((blog, i) => (
+                    {blogs.slice(0, 3).map((blog, i) => (
                         <BlogCard key={i} blog={blog} />
                     ))}
                 </div>

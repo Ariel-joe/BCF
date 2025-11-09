@@ -5,18 +5,24 @@ import { welfares } from "../data/welfare.json";
 const FOBWelfarePage = () => {
     return (
         <>
-            {/* friends of beacon welfare section */}
-            <section id="internal-welfare" className="py-20 bg-white">
-                <div className="max-w-7xl mx-auto px-6 lg:px-8">
-                    <div className="text-center mb-8">
-                        <h2 className="text-2xl text-neutral-900 mb-4 font-bold marker-highlight">
+            <section
+                id="internalwelf-hero"
+                className="bg-neutral-50 flex items-center py-20"
+            >
+                <div className="max-w-7xl mx-auto px-6">
+                    <div className="text-center">
+                        <h1 className="text-2xl text-neutral-900 mb-6 font-bold marker-highlight">
                             Friends Of Beacon
-                        </h2>
-                        <p className="text-lg text-neutral-600 font-semibold">
+                        </h1>
+                        <p className="text-lg font-semibold text-neutral-600 max-w-3xl mx-auto leading-relaxed">
                             Creating lasting impact in communities across Kenya
                         </p>
                     </div>
-
+                </div>
+            </section>
+            {/* friends of beacon welfare section */}
+            <section id="internal-welfare" className="bg-white">
+                <div className="max-w-7xl mx-auto px-6 lg:px-8">
                     <section id="active-projects" className="py-16 bg-white">
                         <div className="max-w-7xl mx-auto px-6">
                             <div className="flex items-center justify-between mb-12">

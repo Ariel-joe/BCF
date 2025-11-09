@@ -5,17 +5,24 @@ import WelfareCard from "../components/WelfareCard";
 const InternalWelfarePage = () => {
     return (
         <>
-            <section id="internal-welfare" className="py-20 bg-white">
-                <div className="max-w-7xl mx-auto px-2 lg:px-8">
-                    <div className="text-center mb-8">
-                        <h2 className="text-2xl text-neutral-900 mb-4 font-bold marker-highlight">
+            <section
+                id="internalwelf-hero"
+                className="bg-neutral-50 flex items-center py-20"
+            >
+                <div className="max-w-7xl mx-auto px-6">
+                    <div className="text-center">
+                        <h1 className="text-2xl text-neutral-900 mb-6 font-bold marker-highlight">
                             Internal Welfare Programs
-                        </h2>
-                        <p className="text-lg text-neutral-600 font-semibold">
+                        </h1>
+                        <p className="text-lg font-semibold text-neutral-600 max-w-3xl mx-auto leading-relaxed">
                             Supporting our team members and organizational
                             community
                         </p>
                     </div>
+                </div>
+            </section>
+            <section id="internal-welfare" className="bg-white">
+                <div className="max-w-7xl mx-auto px-2 lg:px-8">
                     {/* internal welfare section */}
                     <section id="active-projects" className="py-16 bg-white">
                         <div className="max-w-7xl mx-auto px-6">

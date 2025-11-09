@@ -13,6 +13,7 @@ import TeamProfile from "./pages/Teamprofile";
 import BlogPage from "./pages/SingleBlogPage";
 import InternalWelfarePage from "./pages/InternalWelfarePage";
 import FOBWelfarePage from "./pages/FOBWelfarePage";
+import BlogsUpdatePage from "./pages/BlogsUpdatePage";
 
 createRoot(document.getElementById("root")).render(
     <BrowserRouter>
@@ -27,13 +28,15 @@ createRoot(document.getElementById("root")).render(
                 <Route path="/welfare/internal" element={<InternalWelfarePage />} />
                 <Route path="/welfare/friendsofbeacon" element={<FOBWelfarePage />} />
 
-                
+                {/* blogs and updates */}
+                <Route path="/blog" element={<BlogsUpdatePage/>} />
+
                 <Route path="/contact" element={<ContactPage />} />
                 <Route path="/donate" element={<Donatepage />} />
                 <Route path="/welfare/:id" element={<SingleWelfare />} />
                 <Route path="/profile/:id" element={<TeamProfile />} />
 
-                {/* blo route */}
+                {/* view blog route */}
                 <Route path="/blog/:id" element={<BlogPage />} />
                 
 

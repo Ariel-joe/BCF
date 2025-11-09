@@ -140,15 +140,7 @@ const Header = () => {
                                 </ul>
                             )}
                         </li>
-                        {/* <li className="flex">
-                            <NavLink
-                                rel="noopener noreferrer"
-                                to={"/welfare"}
-                                className="flex items-center px-4 py-3 -mb-1 font-bold"
-                            >
-                                Welfare
-                            </NavLink>
-                        </li> */}
+
                         <li className="flex">
                             <NavLink
                                 rel="noopener noreferrer"
@@ -156,6 +148,15 @@ const Header = () => {
                                 className="flex items-center px-4 py-3 -mb-1 font-bold"
                             >
                                 Contact
+                            </NavLink>
+                        </li>
+                        <li className="flex">
+                            <NavLink
+                                rel="noopener noreferrer"
+                                to={"/blog"}
+                                className="flex items-center px-4 py-3 -mb-1 font-bold"
+                            >
+                                Blogs & Updates
                             </NavLink>
                         </li>
                     </ul>
@@ -243,6 +244,16 @@ const Header = () => {
                         >
                             <button className="w-full text-left px-4 py-6 font-semibold  border-b border-(--color-card-orange) text-black">
                                 CONTACT
+                            </button>
+                        </Link>
+
+                        <Link
+                            rel="noopener noreferrer"
+                            to={"/blog"}
+                            onClick={() => setMobileOpen(false)}
+                        >
+                            <button className="w-full text-left px-4 py-6 font-semibold  border-b border-(--color-card-orange) text-black">
+                                BLOGS & UPDATES
                             </button>
                         </Link>
 
