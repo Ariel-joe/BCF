@@ -16,8 +16,8 @@
 a.active {
     color: var(--color-logo-orange);
     border-bottom: 1px solid var(--color-logo-orange);
-    padding-top: 0;
-    padding-bottom: 0;
+    padding-top: 12px;
+    padding-bottom: 12px;
 }
 
 /* marker highlight styling for headings */

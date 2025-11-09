@@ -4,11 +4,13 @@ import { Link, NavLink } from "react-router";
 
 const Header = () => {
     const [mobileOpen, setMobileOpen] = useState(false);
+    const [open, setOpen] = useState(false);
+    const [wOpen, setWOpen] = useState(false)
 
     return (
         <div>
             <header className="p-4 w-full fixed top-0 z-50 bg-white/95 backdrop-blur-sm">
-                <div className="container flex justify-between h-16 mx-auto">
+                <div className="container flex justify-between items-center h-16 mx-auto">
                     <Link
                         rel="noopener noreferrer"
                         to={"/"}
@@ -32,53 +34,126 @@ const Header = () => {
                             </NavLink>
                         </li>
 
-                        <li className="flex">
-                            <NavLink
-                                rel="noopener noreferrer"
-                                to={"/board"}
-                                className={
-                                    "flex items-center px-4 -mb-1 font-bold"
-                                }
+                        <li className="relative">
+                            {/* Dropdown Button */}
+                            <button
+                                onClick={() => setOpen(!open)}
+                                className="flex items-center px-4 py-3 mt-1 font-bold hover:text-(--color-logo-orange) transition"
                             >
-                                BCF Board
-                            </NavLink>
-                        </li>
+                                Who We Are
+                                <svg
+                                    className={`w-4 h-4 ml-1 transition-transform ${
+                                        open ? "rotate-180" : "rotate-0"
+                                    }`}
+                                    fill="none"
+                                    stroke="currentColor"
+                                    strokeWidth="2"
+                                    viewBox="0 0 24 24"
+                                >
+                                    <path d="M19 9l-7 7-7-7" />
+                                </svg>
+                            </button>
 
-                        <li className="flex">
-                            <NavLink
-                                rel="noopener noreferrer"
-                                to={"/team"}
-                                className={
-                                    "flex items-center px-4 -mb-1 font-bold"
-                                }
-                            >
-                                BCF Team
-                            </NavLink>
+                            {/* Dropdown Menu */}
+                            {open && (
+                                <ul className="absolute left-0 mt-2 w-40 bg-white rounded-lg shadow-lg border border-gray-200 z-50">
+                                    <li className="flex">
+                                        <NavLink
+                                            rel="noopener noreferrer"
+                                            to="/board"
+                                            className="flex items-center w-full px-4 py-3 font-bold text-gray-700 hover:bg-gray-100 hover:text-(--color-logo-orange)"
+                                            onClick={() => setOpen(false)}
+                                        >
+                                            BCF Board
+                                        </NavLink>
+                                    </li>
+
+                                    <li className="flex">
+                                        <NavLink
+                                            rel="noopener noreferrer"
+                                            to="/team"
+                                            className="flex items-center w-full px-4 py-3 font-bold text-gray-700 hover:bg-gray-100 hover:text-(--color-logo-orange)"
+                                            onClick={() => setOpen(false)}
+                                        >
+                                            BCF Team
+                                        </NavLink>
+                                    </li>
+                                </ul>
+                            )}
                         </li>
 
                         <li className="flex">
                             <NavLink
                                 rel="noopener noreferrer"
                                 to={"/volunteer"}
-                                className="flex items-center px-4 -mb-1 font-bold"
+                                className="flex items-center px-4 py-3 -mb-1 font-bold"
                             >
                                 Volunteer
                             </NavLink>
                         </li>
-                        <li className="flex">
+
+                        {/* welfare dropwdown */}
+                        <li className="relative">
+                            {/* Dropdown Button */}
+                            <button
+                                onClick={() => setWOpen(!wOpen)}
+                                className="flex items-center px-4 py-3 mt-1 font-bold hover:text-(--color-logo-orange) transition"
+                            >
+                                Welfare
+                                <svg
+                                    className={`w-4 h-4 ml-1 transition-transform ${
+                                        wOpen ? "rotate-180" : "rotate-0"
+                                    }`}
+                                    fill="none"
+                                    stroke="currentColor"
+                                    strokeWidth="2"
+                                    viewBox="0 0 24 24"
+                                >
+                                    <path d="M19 9l-7 7-7-7" />
+                                </svg>
+                            </button>
+
+                            {/* Dropdown Menu */}
+                            {wOpen && (
+                                <ul className="absolute left-0 mt-2 w-40 bg-white rounded-lg shadow-lg border border-gray-200 z-50">
+                                    <li className="flex">
+                                        <NavLink
+                                            rel="noopener noreferrer"
+                                            to="/welfare/internal"
+                                            className="flex items-center w-full px-4 py-3 font-bold text-gray-700 hover:bg-gray-100 hover:text-(--color-logo-orange)"
+                                            onClick={() => setWOpen(false)}
+                                        >
+                                            Internal Welfare
+                                        </NavLink>
+                                    </li>
+
+                                    <li className="flex">
+                                        <NavLink
+                                            rel="noopener noreferrer"
+                                            to="/welfare/friendsofbeacon"
+                                            className="flex items-center w-full px-4 py-3 font-bold text-gray-700 hover:bg-gray-100 hover:text-(--color-logo-orange)"
+                                            onClick={() => setWOpen(false)}
+                                        >
+                                            Friends Of Beacon
+                                        </NavLink>
+                                    </li>
+                                </ul>
+                            )}
+                        </li>
+                        {/* <li className="flex">
                             <NavLink
                                 rel="noopener noreferrer"
                                 to={"/welfare"}
-                                className="flex items-center px-4 -mb-1 font-bold"
+                                className="flex items-center px-4 py-3 -mb-1 font-bold"
                             >
                                 Welfare
                             </NavLink>
-                        </li>
+                        </li> */}
                         <li className="flex">
                             <NavLink
                                 rel="noopener noreferrer"
                                 to={"/contact"}
-                                className="flex items-center px-4 -mb-1 font-bold"
+                                className="flex items-center px-4 py-3 -mb-1 font-bold"
                             >
                                 Contact
                             </NavLink>

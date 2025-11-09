@@ -6,12 +6,13 @@ import Home from "./pages/HomePage";
 import TeamPage from "./pages/TeamPage";
 import BoardPage from "./pages/BoardPage";
 import VolunteerPage from "./pages/VolunteerPage";
-import WelfarePage from "./pages/WelfarePage";
 import ContactPage from "./pages/ContactPage";
 import Donatepage from "./pages/Donatepage";
 import SingleWelfare from "./pages/SingleWelfare";
 import TeamProfile from "./pages/Teamprofile";
 import BlogPage from "./pages/SingleBlogPage";
+import InternalWelfarePage from "./pages/InternalWelfarePage";
+import FOBWelfarePage from "./pages/FOBWelfarePage";
 
 createRoot(document.getElementById("root")).render(
     <BrowserRouter>
@@ -21,7 +22,12 @@ createRoot(document.getElementById("root")).render(
                 <Route path="/team" element={<TeamPage />} />
                 <Route path="/board" element={<BoardPage />} />
                 <Route path="/volunteer" element={<VolunteerPage />} />
-                <Route path="/welfare" element={<WelfarePage />} />
+
+                {/* welfare links */}
+                <Route path="/welfare/internal" element={<InternalWelfarePage />} />
+                <Route path="/welfare/friendsofbeacon" element={<FOBWelfarePage />} />
+
+                
                 <Route path="/contact" element={<ContactPage />} />
                 <Route path="/donate" element={<Donatepage />} />
                 <Route path="/welfare/:id" element={<SingleWelfare />} />

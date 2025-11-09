@@ -63,13 +63,13 @@ const TeamProfile = () => {
                                 <p className="text-lg text-neutral-500 mb-8 px-3 text-justify leading-relaxed">
                                     {member.description}
                                 </p>
-                                <Link
+                                {/* <Link
                                     to={"/team"}
                                     className="text-white bg-(--color-logo-orange) w-[50%] p-2 rounded-lg hover:text-neutral-900 text-lg flex items-center justify-center"
                                 >
                                     <ArrowLeft size={22} className="mr-2" />
                                     Back to Team
-                                </Link>
+                                </Link> */}
                             </div>
                         </div>
                     </div>
