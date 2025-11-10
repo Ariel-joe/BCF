@@ -2,14 +2,18 @@ import { ChevronLeft, ChevronRight, X } from "lucide-react";
 import React, { useEffect, useState } from "react";
 
 const images = [
-    "/IMG-20250901-WA0011.jpg",
+    "/20250906_191100.jpg",
+    "LEE_8770.jpg",
+    "LEE_8906.jpg",
+    "LEE_8919.jpg",
+    "LEE_8928.jpg",
+    "/LEE_8805.jpg",
     "/IMG-20250901-WA0018.jpg",
+    "/LEE_8804.jpg",
     "/IMG-20250901-WA0032.jpg",
     "/IMG-20250901-WA0022.jpg",
-    "/IMG-20250901-WA0011.jpg",
     "/IMG-20250901-WA0029.jpg",
     "/IMG-20250901-WA0035.jpg",
-    "/IMG-20250901-WA0032.jpg",
 ];
 
 const VolunteerGallery = () => {
@@ -72,8 +76,8 @@ const VolunteerGallery = () => {
     return (
         <>
             <div className="text-center mb-16">
-                <h2 className="text-2xl font-bold text-neutral-900 mb-6 marker-highlight">
-                    Volunteer Gallery
+                <h2 className="text-2xl font-bold text-neutral-900 mb-6">
+                    Photo Gallery
                 </h2>
             </div>
 
@@ -85,7 +89,7 @@ const VolunteerGallery = () => {
                             tabIndex={0}
                             onKeyDown={(e) => onThumbKey(e, src)}
                             onClick={() => open(src)}
-                            className="h-auto max-w-full rounded-lg cursor-pointer transform transition duration-200 hover:scale-105"
+                            className="h-full max-w-full rounded-lg cursor-pointer transform transition duration-200 hover:scale-105"
                             src={src}
                             alt={`Volunteer ${idx + 1}`}
                         />

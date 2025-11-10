@@ -21,6 +21,24 @@ const VolunteerPage = () => {
                         </p>
                     </div>
 
+                    <section>
+                        <VolunteerGallery />
+                    </section>
+
+                    <section id="contact-content" className="py-20 bg-white">
+                        <div className="max-w-7xl mx-auto px-2">
+                            <div className="grid grid-cols-1 lg:grid-cols-3 gap-12">
+                                <div className="lg:col-span-2">
+                                    <VolunteerForm />
+                                </div>
+                                <div className="space-y-8">
+                                    <ContactInfo />
+                                    <SocialMedia />
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
                     <div className="bg-neutral-50 p-8 rounded-lg">
                         <h3 className="text-xl text-neutral-900 font-semibold mb-6 text-center">
                             Volunteer Opportunities
@@ -69,24 +87,6 @@ const VolunteerPage = () => {
                             </div>
                         </div>
                     </div>
-
-                    <section id="contact-content" className="py-20 bg-white">
-                        <div className="max-w-7xl mx-auto px-2">
-                            <div className="grid grid-cols-1 lg:grid-cols-3 gap-12">
-                                <div className="lg:col-span-2">
-                                    <VolunteerForm />
-                                </div>
-                                <div className="space-y-8">
-                                    <ContactInfo />
-                                    <SocialMedia />
-                                </div>
-                            </div>
-                        </div>
-                    </section>
-
-                    <section>
-                        <VolunteerGallery />
-                    </section>
                 </div>
             </section>
         </>

@@ -11,7 +11,7 @@
     {
         "id": "2",
         "name": "Damiana Indoshi Amwayi",
-        "image": "https://api.dicebear.com/7.x/notionists/svg?scale=200&seed=67890",
+        "image": "/board/Damiana-indoshi.jpg",
         "title": "Deputy Chairperson",
         "slug": "both",
         "description": "She serves as the Deputy Chairperson of BCF. She holds a Bachelor’s degree in Food, Nutrition, and Dietetics, and is deeply passionate about promoting health, wellness, and community development. Driven by compassion and purpose, Damiana is dedicated to serving society and contributing to initiatives that help improve lives and meet the needs of vulnerable communities. Her leadership, empathy, and commitment to positive change make her an invaluable part of the BCF leadership team."
@@ -27,10 +27,10 @@
     {
         "id": "4",
         "name": "Mary Claire",
-        "image": "https://api.dicebear.com/7.x/notionists/svg?scale=200&seed=67890",
+        "image": "/board/claire.jpg",
         "title": "Vice Secretary",
         "slug": "team",
-        "description": ""
+        "description": "Mary Claire is a meticulous and organized Assistant Secretary at BCF, supporting the foundation’s operations and ensuring smooth administrative processes. She plays a key role in coordinating meetings, maintaining records, and facilitating effective communication within the team. As a Biomedical Science student, Mary Claire brings a strong analytical mindset and attention to detail, making her an essential part of BCF’s mission to create lasting community impact."
     },
 
     {
@@ -60,10 +60,10 @@
     {
         "id": "8",
         "name": "Joseph Mogesi",
-        "image": "https://api.dicebear.com/7.x/notionists/svg?scale=200&seed=67890",
+        "image": "/board/mogesi.jpg",
         "title": "Event Cordinator",
         "slug": "team",
-        "description": ""
+        "description": "Joseph Mogesi is a dedicated and detail-oriented Event Coordinator at BCF, responsible for planning, organizing, and executing events that drive community engagement and support the foundation’s mission. He ensures every event runs smoothly, leaving a lasting impact on attendees and stakeholders alike. Holding a bachelor’s degree in Public Health, Joseph combines his organizational expertise with a deep understanding of community needs, creating events that are both meaningful and impactful. His commitment to excellence and passion for fostering connections make him a vital part of BCF’s team"
     },
 
     {
