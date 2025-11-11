@@ -92,6 +92,7 @@ const VolunteerGallery = () => {
                             className="h-full max-w-full rounded-lg cursor-pointer transform transition duration-200 hover:scale-105"
                             src={src}
                             alt={`Volunteer ${idx + 1}`}
+                            loading="lazy"
                         />
                     </div>
                 ))}
