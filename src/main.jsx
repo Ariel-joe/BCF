@@ -7,7 +7,7 @@ import TeamPage from "./pages/TeamPage";
 import BoardPage from "./pages/BoardPage";
 import VolunteerPage from "./pages/VolunteerPage";
 import ContactPage from "./pages/ContactPage";
-import Donatepage from "./pages/Donatepage";
+import DonationPage from "./pages/DonatePage";
 import SingleWelfare from "./pages/SingleWelfare";
 import TeamProfile from "./pages/Teamprofile";
 import BlogPage from "./pages/SingleBlogPage";
@@ -25,21 +25,25 @@ createRoot(document.getElementById("root")).render(
                 <Route path="/volunteer" element={<VolunteerPage />} />
 
                 {/* welfare links */}
-                <Route path="/welfare/internal" element={<InternalWelfarePage />} />
-                <Route path="/welfare/friendsofbeacon" element={<FOBWelfarePage />} />
+                <Route
+                    path="/welfare/internal"
+                    element={<InternalWelfarePage />}
+                />
+                <Route
+                    path="/welfare/friendsofbeacon"
+                    element={<FOBWelfarePage />}
+                />
 
                 {/* blogs and updates */}
-                <Route path="/blog" element={<BlogsUpdatePage/>} />
+                <Route path="/blog" element={<BlogsUpdatePage />} />
 
                 <Route path="/contact" element={<ContactPage />} />
-                <Route path="/donate" element={<Donatepage />} />
+                <Route path="/donate" element={<DonationPage />} />
                 <Route path="/welfare/:id" element={<SingleWelfare />} />
                 <Route path="/profile/:id" element={<TeamProfile />} />
 
                 {/* view blog route */}
                 <Route path="/blog/:id" element={<BlogPage />} />
-                
-
             </Route>
         </Routes>
     </BrowserRouter>

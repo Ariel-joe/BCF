@@ -1,7 +1,7 @@
 import React from 'react'
 import PaymentOptions from '../components/PaymentOptions'
 
-const Donatepage = () => {
+const DonationPage = () => {
   return (
       <>
           <section id="donation-hero" className="bg-neutral-50 py-16">
@@ -42,4 +42,4 @@ const Donatepage = () => {
   );
 }
 
-export default Donatepage
+export default DonationPage
