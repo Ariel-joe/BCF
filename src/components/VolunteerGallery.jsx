@@ -76,7 +76,7 @@ const VolunteerGallery = () => {
     return (
         <>
             <div className="text-center mb-16">
-                <h2 className="text-2xl font-bold text-neutral-900 mb-6">
+                <h2 className="text-2xl font-bold text-neutral-900 my-6 marker-highlight">
                     Photo Gallery
                 </h2>
             </div>
