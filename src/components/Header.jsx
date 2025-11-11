@@ -20,7 +20,7 @@ const Header = () => {
                         <img
                             src={"/logos/bcf-logo-nobg.png"}
                             alt="bcf logo"
-                            className="h-18 w-full"
+                            className="h-18 w-auto"
                         />
                     </Link>
                     <ul className="items-stretch hidden space-x-3 lg:flex">
