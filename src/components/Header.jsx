@@ -230,11 +230,20 @@ const Header = () => {
                         </Link>
                         <Link
                             rel="noopener noreferrer"
-                            to={"/welfare"}
+                            to={"/welfare/internal"}
                             onClick={() => setMobileOpen(false)}
                         >
                             <button className="w-full text-left px-4 py-6 font-semibold  border-b border-(--color-card-orange) text-black">
-                                WELFARE
+                                INTERNAL WELFARE
+                            </button>
+                        </Link>
+                        <Link
+                            rel="noopener noreferrer"
+                            to={"/welfare/friendsofbeacon"}
+                            onClick={() => setMobileOpen(false)}
+                        >
+                            <button className="w-full text-left px-4 py-6 font-semibold  border-b border-(--color-card-orange) text-black">
+                                FRIENDS OF BEACON
                             </button>
                         </Link>
                         <Link
