@@ -21,10 +21,6 @@ const VolunteerPage = () => {
                         </p>
                     </div>
 
-                    <section>
-                        <VolunteerGallery />
-                    </section>
-
                     <section id="contact-content" className="py-20 bg-white">
                         <div className="max-w-7xl mx-auto px-2">
                             <div className="grid grid-cols-1 lg:grid-cols-3 gap-12">
@@ -87,6 +83,10 @@ const VolunteerPage = () => {
                             </div>
                         </div>
                     </div>
+
+                    <section>
+                        <VolunteerGallery />
+                    </section>
                 </div>
             </section>
         </>
