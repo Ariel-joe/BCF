@@ -22,7 +22,7 @@ const FOBWelfarePage = () => {
             </section>
             {/* friends of beacon welfare section */}
             <section id="internal-welfare" className="bg-white">
-                <div className="max-w-7xl mx-auto px-6 lg:px-8">
+                <div className="max-w-7xl mx-auto px-2 lg:px-8">
                     <section id="active-projects" className="py-16 bg-white">
                         <div className="max-w-7xl mx-auto px-6">
                             <div className="flex items-center justify-between mb-12">
