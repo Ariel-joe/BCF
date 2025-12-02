@@ -4,6 +4,8 @@ import PaystackPop from "@paystack/inline-js";
 const PaystackDonation = () => {
     const [formData, setFormData] = useState({
         email: "",
+        firstName: "",
+        lastName: "",
         amount: "",
         phone: "",
     });
@@ -20,10 +22,10 @@ const PaystackDonation = () => {
     const handlePaystack = async (e) => {
         e.preventDefault();
 
-        const url = `${process.env.VITE_SERVER_URL}/api/v1/donation/initiate`;
+        const url = `${import.meta.env.VITE_SERVER_URL}/api/v1/donation/initiate`;
 
         // Validate form
-        if (!formData.email || !formData.amount || !formData.phone) {
+        if (!formData.email || !formData.amount || !formData.phone || !formData.firstName || !formData.lastName) {
             console.error("Please fill in all fields");
             return;
         }
@@ -46,6 +48,8 @@ const PaystackDonation = () => {
                 },
                 body: JSON.stringify({
                     email: formData.email,
+                    firstName: formData.firstName,
+                    lastName: formData.lastName,
                     amount: amountValue * 100, // Paystack expects amount in kobo/cents
                     phone: formData.phone,
                 }),
@@ -77,6 +81,8 @@ const PaystackDonation = () => {
                     // Reset form
                     setFormData({
                         email: "",
+                        firstName: "",
+                        lastName: "",
                         amount: "",
                         phone: "",
                     });
@@ -103,10 +109,10 @@ const PaystackDonation = () => {
     };
 
     // Optional: Verify transaction on backend
-    const verifyTransaction = async () => {
+    const verifyTransaction = async (reference) => {
         try {
 
-            const url = `${process.env.VITE_SERVER_URL}/api/v1/donation/verify/${reference}`;
+            const url = `${import.meta.env.VITE_SERVER_URL}/api/v1/donation/verify/${reference}`;
             await fetch(
                 url,
                 {
@@ -154,11 +160,40 @@ const PaystackDonation = () => {
             </div>
 
             <label className="block text-sm text-neutral-700 mb-2">
+                First Name *
+            </label>
+            <div className="relative mb-6">
+                <input
+                    type="fname"
+                    name="firstName"
+                    value={formData.firstName}
+                    onChange={handleChange}
+                    className="w-full px-4 py-3 border border-neutral-300 rounded-lg focus:border-neutral-900 focus:outline-none"
+                    placeholder=""
+                    required
+                />
+            </div>
+
+            <label className="block text-sm text-neutral-700 mb-2">
+                Last Name *
+            </label>
+            <div className="relative mb-6">
+                <input
+                    type="lname"
+                    name="lastName"
+                    value={formData.lastName}
+                    onChange={handleChange}
+                    className="w-full px-4 py-3 border border-neutral-300 rounded-lg focus:border-neutral-900 focus:outline-none"
+                    placeholder=""
+                    required
+                />
+            </div>
+
+            <label className="block text-sm text-neutral-700 mb-2">
                 Amount (KES) *
             </label>
             <div className="relative mb-6">
                 <input
-                    type="number"
                     name="amount"
                     value={formData.amount}
                     onChange={handleChange}
