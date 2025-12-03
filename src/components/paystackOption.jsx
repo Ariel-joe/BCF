@@ -130,36 +130,6 @@ const PaystackDonation = () => {
     return (
         <form onSubmit={handlePaystack}>
             <label className="block text-sm text-neutral-700 mb-2">
-                Phone Number *
-            </label>
-            <div className="relative mb-6">
-                <input
-                    type="tel"
-                    name="phone"
-                    value={formData.phone}
-                    onChange={handleChange}
-                    className="w-full px-4 py-3 border border-neutral-300 rounded-lg focus:border-neutral-900 focus:outline-none"
-                    placeholder="254712345678"
-                    required
-                />
-            </div>
-
-            <label className="block text-sm text-neutral-700 mb-2">
-                Email *
-            </label>
-            <div className="relative mb-6">
-                <input
-                    type="email"
-                    name="email"
-                    value={formData.email}
-                    onChange={handleChange}
-                    className="w-full px-4 py-3 border border-neutral-300 rounded-lg focus:border-neutral-900 focus:outline-none"
-                    placeholder="example@gmail.com"
-                    required
-                />
-            </div>
-
-            <label className="block text-sm text-neutral-700 mb-2">
                 First Name *
             </label>
             <div className="relative mb-6">
@@ -188,6 +158,35 @@ const PaystackDonation = () => {
                     required
                 />
             </div>
+            <label className="block text-sm text-neutral-700 mb-2">
+                Phone Number *
+            </label>
+            <div className="relative mb-6">
+                <input
+                    type="tel"
+                    name="phone"
+                    value={formData.phone}
+                    onChange={handleChange}
+                    className="w-full px-4 py-3 border border-neutral-300 rounded-lg focus:border-neutral-900 focus:outline-none"
+                    placeholder=""
+                    required
+                />
+            </div>
+
+            <label className="block text-sm text-neutral-700 mb-2">
+                Email *
+            </label>
+            <div className="relative mb-6">
+                <input
+                    type="email"
+                    name="email"
+                    value={formData.email}
+                    onChange={handleChange}
+                    className="w-full px-4 py-3 border border-neutral-300 rounded-lg focus:border-neutral-900 focus:outline-none"
+                    placeholder=""
+                    required
+                />
+            </div>
 
             <label className="block text-sm text-neutral-700 mb-2">
                 Amount (KES) *
@@ -198,7 +197,7 @@ const PaystackDonation = () => {
                     value={formData.amount}
                     onChange={handleChange}
                     className="w-full px-4 py-3 border border-neutral-300 rounded-lg focus:border-neutral-900 focus:outline-none"
-                    placeholder="1000"
+                    placeholder=""
                     min="100"
                     step="1"
                     required
@@ -211,7 +210,7 @@ const PaystackDonation = () => {
             <button
                 type="submit"
                 disabled={loading}
-                className="w-full bg-[#30B54A] text-white py-4 rounded-lg hover:bg-[#28a042] disabled:bg-neutral-400 disabled:cursor-not-allowed transition-colors flex items-center justify-center"
+                className="w-full bg-(--color-logo-orange) text-white py-4 rounded-lg hover:bg-(--color-card-orange) hover:text-black disabled:bg-neutral-400 disabled:cursor-not-allowed transition-colors flex items-center justify-center"
             >
                 {loading ? "Processing..." : "Donate"}
             </button>

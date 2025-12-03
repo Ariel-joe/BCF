@@ -23,30 +23,33 @@ const PaymentOptions = () => {
                     </Tab>
                     <Tab
                         className={
-                            "flex px-6 py-3 text-neutral-900 data-selected:border-b-2 data-selected:border-neutral-900 bg-white"
+                            "flex items-center justify-between py-3 text-neutral-900 data-selected:border-b-2 data-selected:border-neutral-900 bg-white"
                         }
                     >
                         <img
-                            src={"/logos/mpesa.png"}
+                            src={"/logos/mobile-money.png"}
                             alt="mpesa logo"
-                            className="h-5 w-full"
+                            className="h-6 w-full"
                         />
-                    </Tab>
-                    <Tab
-                        className={
-                            "flex px-6 py-3 text-neutral-900 data-selected:border-b-2 data-selected:border-neutral-900 bg-white"
-                        }
-                    >
-                        DEBIT/CREDIT CARD
+                        <img
+                            src={"/logos/visa-mastercard.png"}
+                            alt="mpesa logo"
+                            className="h-6 w-full"
+                        />
+                        <img
+                            src={"/logos/american-express.png"}
+                            alt="mpesa logo"
+                            className="h-6 w-full"
+                        />
                     </Tab>
                 </TabList>
                 <TabPanels>
                     <TabPanel>
-                        <PaypalOption />
+                        {/* <PaypalOption /> */}
+
+                        <p>currently not available</p>
                     </TabPanel>
-                    <TabPanel>
-                        <MpesaOption />
-                    </TabPanel>
+
                     <TabPanel>
                         <PaystackDonation />
                     </TabPanel>
