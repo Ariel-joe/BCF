@@ -7,7 +7,6 @@ const PaystackDonation = () => {
         firstName: "",
         lastName: "",
         amount: "",
-        phone: "",
     });
     const [loading, setLoading] = useState(false);
 
@@ -22,10 +21,17 @@ const PaystackDonation = () => {
     const handlePaystack = async (e) => {
         e.preventDefault();
 
-        const url = `${import.meta.env.VITE_SERVER_URL}/api/v1/donation/initiate`;
+        const url = `${
+            import.meta.env.VITE_SERVER_URL
+        }/api/v1/donation/initiate`;
 
         // Validate form
-        if (!formData.email || !formData.amount || !formData.phone || !formData.firstName || !formData.lastName) {
+        if (
+            !formData.email ||
+            !formData.amount ||
+            !formData.firstName ||
+            !formData.lastName
+        ) {
             console.error("Please fill in all fields");
             return;
         }
@@ -51,7 +57,6 @@ const PaystackDonation = () => {
                     firstName: formData.firstName,
                     lastName: formData.lastName,
                     amount: amountValue * 100, // Paystack expects amount in kobo/cents
-                    phone: formData.phone,
                 }),
             });
 
@@ -84,7 +89,6 @@ const PaystackDonation = () => {
                         firstName: "",
                         lastName: "",
                         amount: "",
-                        phone: "",
                     });
 
                     // Optional: Verify transaction on your backend
@@ -158,20 +162,7 @@ const PaystackDonation = () => {
                     required
                 />
             </div>
-            <label className="block text-sm text-neutral-700 mb-2">
-                Phone Number *
-            </label>
-            <div className="relative mb-6">
-                <input
-                    type="tel"
-                    name="phone"
-                    value={formData.phone}
-                    onChange={handleChange}
-                    className="w-full px-4 py-3 border border-neutral-300 rounded-lg focus:border-neutral-900 focus:outline-none"
-                    placeholder=""
-                    required
-                />
-            </div>
+
 
             <label className="block text-sm text-neutral-700 mb-2">
                 Email *
