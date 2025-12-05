@@ -1,4 +1,4 @@
-import React from "react";
+ import React from "react";
 import { Tab, TabGroup, TabList, TabPanel, TabPanels } from "@headlessui/react";
 import PaypalOption from "./Paypal";
 import MpesaOption from "./MpesaOption";
