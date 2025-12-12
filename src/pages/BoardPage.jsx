@@ -1,9 +1,27 @@
-import React from 'react'
+import { useEffect, useState } from 'react';
 import ProfileCard from '../components/ProfileCard';
-import { TeamMembers } from "../data/team.json";
+import {useProfileStore} from "../stores/proflieStore"
 
 const BoardPage = () => {
-    const board = TeamMembers.filter(
+
+    const { loading, fetchProfiles, profilesData } = useProfileStore();
+    const [fetchAttempted, setFetchAttempted] = useState(false)
+
+    useEffect(() => {
+        fetchProfiles();
+        setFetchAttempted(true);
+    }, []);
+
+    if (loading || !fetchAttempted) {
+        return (
+            <div className="flex items-center justify-center h-screen">
+                loading...
+            </div>
+        );
+    }
+
+    
+    const board = profilesData.filter(
         (b) => b.slug === "board" || b.slug === "both"
     );
 

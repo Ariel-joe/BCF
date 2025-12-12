@@ -1,18 +1,34 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import ProfileCard from '../components/ProfileCard';
-import { TeamMembers } from "../data/team.json";
+import { useProfileStore } from "../stores/proflieStore";
 
 const TeamPage = () => {
+    const { loading, fetchProfiles, profilesData } = useProfileStore();
+        const [fetchAttempted, setFetchAttempted] = React.useState(false)
+    
+        useEffect(() => {
+            fetchProfiles();
+            setFetchAttempted(true);
+        }, []);
+    
+        if (loading || !fetchAttempted) {
+            return (
+                <div className="flex items-center justify-center h-screen">
+                    loading...
+                </div>
+            );
+        }
 
-    const team = TeamMembers.filter(
-            (b) => b.slug === "team" || b.slug === "both"
-        );
+
+    const team = profilesData.filter(
+        (b) => b.slug === "team" || b.slug === "both"
+    );
   return (
       <>
           <section
               id="team-hero"
               className="h-[450px] flex items-center bg-neutral-50 relative text-white hero bg-cover bg-center"
-              style={{ backgroundImage: 'url("/team.JPG")' }}
+              style={{ backgroundImage: 'url("/team.jpg")' }}
           ></section>
           <section id="leadership" className="py-20 bg-white">
               <div className="max-w-7xl mx-auto px-6">
