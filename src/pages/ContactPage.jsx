@@ -1,5 +1,5 @@
 import React from 'react'
-import { VolunteerForm } from "../components/volunteerForm";
+import { VolunteerForm } from "../components/VolunteerForm";
 import ContactInfo from "../components/ContactInfo";
 import SocialMedia from "../components/SocialMedia";
 

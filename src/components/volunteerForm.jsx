@@ -95,11 +95,12 @@ const VolunteerForm = () => {
                 return;
             }
 
-            // Show success message
-            setSubmitted(true);
+            
 
             // Scroll to top to show thank you message
             window.scrollTo({ top: 0, behavior: "smooth" });
+            // Show success message
+            setSubmitted(true);
 
             // Reset form
             setfName("");
