@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { useFormSubmissionStore } from "../stores/useFormSubmissionStore";
+import { useFormSubmissionStore } from "../stores/formSubmissionStore";
 
 const VolunteerForm = () => {
     const [fName, setfName] = useState("");
