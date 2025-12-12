@@ -1,18 +1,36 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Link, useParams } from "react-router";
-import blogData from "../data/blog.json";
-
-const { blogs } = blogData;
+import { useBlogStore } from "../stores/blogStore";
 
 const BlogPage = () => {
-    // get the :id param from the URL
     const params = useParams();
     const id = params?.id;
+    const stringId = String(id);
 
+    const { getBlogById, singleBlog, loading, } = useBlogStore();
+    const [fetchAttempted, setFetchAttempted] = React.useState(false);
     // find the blog  by id (ids in JSON are numbers)
-    const blog = blogs.find((w) => String(w.id) === String(id));
 
-    if (!blog) {
+    useEffect(() => {
+        const fetchBlog = async () => {
+            if (stringId && stringId !== "undefined") {
+                await getBlogById(stringId);
+                setFetchAttempted(true);
+            }
+        };
+        fetchBlog();
+    }, [stringId, getBlogById]); // Fixed: use stringId instead of id
+
+    // Show loading state
+    if (loading || !fetchAttempted) {
+        return (
+            <div className="flex items-center justify-center h-screen">
+                loading...
+            </div>
+        );
+    }
+    
+    if (!singleBlog) {
         return (
             <section className="py-24">
                 <div className="max-w-4xl mx-auto px-4 text-center">
@@ -31,7 +49,7 @@ const BlogPage = () => {
                         className="max-w-4xl mx-auto px-4 sm:px-4 lg:px-4 py-8"
                     >
                         <h1 className="text-2xl sm:text-4xl text-neutral-900 font-bold leading-tight">
-                            {blog.title}
+                            {singleBlog.title}
                         </h1>
 
                         <div
@@ -41,7 +59,7 @@ const BlogPage = () => {
                             <span className="text-sm text-neutral-600">
                                 TAGS:
                             </span>
-                            {blog.tags.map((t) => (
+                            {singleBlog.tags.map((t) => (
                                 <span
                                     key={t}
                                     className="bg-(--color-logo-blue) text-white px-3 py-1 rounded-md text-sm"
@@ -52,26 +70,19 @@ const BlogPage = () => {
                         </div>
 
                         <div className="flex items-center justify-between border-b border-neutral-200 pb-6">
-                            <div className="flex items-center space-x-4">
-                                <img
-                                    src={blog.author.image}
-                                    alt="Author"
-                                    className="w-12 h-12 rounded-full"
-                                />
-                                <div>
-                                    <div className="text-neutral-900">
-                                        {blog.author.name}
-                                    </div>
-                                    <div className="text-sm text-neutral-600">
-                                        {blog.author.title}
-                                    </div>
-                                </div>
+                            <div className="flex gap-2 items-center space-x-4">
+                                By
+                                <div>BCF Team</div>
                             </div>
 
                             <div className="flex items-center space-x-6 text-sm text-neutral-600">
                                 <div className="flex items-center space-x-2">
                                     <i className="fa-regular fa-calendar"></i>
-                                    <span>{blog.datePublished}</span>
+                                    <span>
+                                        {new Date(
+                                            singleBlog.datePublished
+                                        ).toLocaleDateString()}
+                                    </span>
                                 </div>
                             </div>
                         </div>
@@ -83,10 +94,10 @@ const BlogPage = () => {
                     >
                         {/* Use a fixed-height, overflow-hidden container and object-cover to make the image fit */}
                         <div className="bg-neutral-400 w-full h-96 rounded-lg flex items-center justify-center overflow-hidden">
-                            {blog.image ? (
+                            {singleBlog.image ? (
                                 <img
-                                    src={blog.image}
-                                    alt={blog.title || "Featured image"}
+                                    src={singleBlog.image}
+                                    alt={singleBlog.title || "Featured image"}
                                     className="w-full h-full object-cover rounded-lg"
                                     loading="lazy"
                                 />
@@ -103,7 +114,7 @@ const BlogPage = () => {
                         className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 pb-16 text-justify"
                     >
                         <div className="prose prose-lg">
-                            {blog.content.map((section, i) => {
+                            {singleBlog.content.map((section, i) => {
                                 // section can be a simple string paragraph, or an object like:
                                 // { subtitle: '...', paragraphs: ['p1', 'p2'] } or { subtitle: '...', paragraph: '...' }
                                 if (typeof section === "string") {
@@ -150,14 +161,13 @@ const BlogPage = () => {
                                 );
                             })}
 
-                            {blog.pdf ? (
+                            {singleBlog.pdf && (
                                 <>
                                     <h3 className="text-xl font-semibold text-neutral-900 mt-12 mb-6">
-                                        {blog.pdf.title}
+                                        Download PDF
                                     </h3>
-                                    <div className="flex items-center gap-3 bg-neutral-200 rounded-lg p-4">
-                                        {/* <!-- PDF Icon --> */}
-                                        <div className="bg-(--color-logo-blue) text-white p-2.5 rounded-lg flex items-center justify-center">
+                                    <div className="flex items-center gap-3 bg-neutral-200 p-4">
+                                        <div className="bg-blue-600 text-white p-2.5 rounded-lg flex items-center justify-center">
                                             <svg
                                                 xmlns="http://www.w3.org/2000/svg"
                                                 fill="none"
@@ -179,17 +189,18 @@ const BlogPage = () => {
                                             </svg>
                                         </div>
 
-                                        {/* <!-- PDF URL --> */}
                                         <a
-                                            href={blog.pdf.url}
+                                            href={singleBlog.pdf.url}
                                             target="_blank"
-                                            className="text-sm text-(--color-logo-blue) hover:underline truncate max-w-[250px]"
+                                            rel="noopener noreferrer"
+                                            className="text-sm text-blue-600 hover:underline truncate max-w-[250px]"
                                         >
-                                            {blog.pdf.url}
+                                            {singleBlog.pdf.title ||
+                                                "Download PDF"}
                                         </a>
                                     </div>
                                 </>
-                            ) : null}
+                            )}
 
                             <div className="bg-neutral-900 text-white p-8 rounded-lg my-10">
                                 <h3 className="text-2xl mb-4">

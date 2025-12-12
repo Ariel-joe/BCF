@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router";
 
 const ProfileCard = ({ BoardMember }) => {
-    const { name, title, image, id } = BoardMember;
+    const { name, position, image, _id } = BoardMember;
     return (
         <>
             <div className="text-left bg-neutral-100 p-8 rounded-lg">
@@ -15,10 +15,10 @@ const ProfileCard = ({ BoardMember }) => {
                     <h3 className="text-2xl text-black font-semibold mb-2">
                         {name}
                     </h3>
-                    <p className="text-neutral-500 mb-4">{title}</p>
+                    <p className="text-neutral-500 mb-4">{position}</p>
                 </div>
 
-                <Link to={`/profile/${id}`}>
+                <Link to={`/profile/${_id}`}>
                     <button className="text-lg py-1 w-full bg-(--color-logo-orange) text-white rounded-sm">
                         Bio
                     </button>

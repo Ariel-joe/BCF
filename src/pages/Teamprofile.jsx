@@ -1,18 +1,39 @@
-import { ArrowLeft } from "lucide-react";
-import React from "react";
+import React, { useEffect } from "react";
 import { Link, useParams } from "react-router";
 import TeamData from "../data/team.json";
+import { useProfileStore } from "../stores/proflieStore";
 
 const { TeamMembers } = TeamData;
 
 const TeamProfile = () => {
+    const {getProfileById, profile, loading} = useProfileStore()
+    const [fetchAttempted, setFetchAttempted] = React.useState(false);
+
+
     const params = useParams();
     const id = params?.id;
+    const stringId = String(id);
 
-    // find the welfare item by id (ids in JSON are numbers)
-    const member = TeamMembers.find((t) => String(t.id) === String(id));
+    useEffect(() => {
+        const fetchProfile = async () => {
+            if (stringId && stringId !== "undefined") {
+                await getProfileById(stringId);
+                setFetchAttempted(true);
+            }
+        };
+        fetchProfile();
+    }, [stringId, getProfileById]); // Fixed: use stringId instead of id
 
-    if (!member) {
+    // Show loading state
+    if (loading || !fetchAttempted) {
+        return (
+            <div className="flex items-center justify-center h-screen">
+                loading...
+            </div>
+        );
+    }
+
+    if (!profile) {
         return (
             <section className="py-24">
                 <div className="max-w-4xl mx-auto px-4 text-center">
@@ -41,27 +62,24 @@ const TeamProfile = () => {
                         <div className="lg:col-span-1">
                             <div className="bg-white text-center sticky top-24">
                                 <img
-                                    src={member.image}
+                                    src={profile.image}
                                     alt="Sarah Kimani"
                                     className="w-70 h-70 mx-auto "
                                 />
-
-                                
                             </div>
                         </div>
 
                         <div className="lg:col-span-2">
                             <div className="prose prose-lg max-w-none">
                                 <h1 className="text-3xl text-(--color-logo-orange) font-bold mb-2">
-                                    {member.name}
+                                    {profile.name}
                                 </h1>
                                 <p className="text-lg text-neutral-600 font-semibold mb-4">
-                                    {member.title}
+                                    {profile.position}
                                 </p>
-                                
 
                                 <p className="text-lg text-neutral-500 mb-8 px-3 text-justify leading-relaxed">
-                                    {member.description}
+                                    {profile.bio}
                                 </p>
                                 {/* <Link
                                     to={"/team"}

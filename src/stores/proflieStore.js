@@ -30,7 +30,7 @@ const useProfileStore = create((set) => ({
         try {
             set({ loading: true });
             const res = await fetch(
-                `${process.env.NEXT_PUBLIC_SERVER_URL}/api/v1/profile/${id}`,
+                `${import.meta.env.VITE_SERVER_URL}/api/v1/profile/${id}`,
                 {
                     method: "GET",
                     headers: {

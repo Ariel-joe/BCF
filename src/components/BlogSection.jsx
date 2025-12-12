@@ -1,8 +1,28 @@
-import React from "react";
+import React, { useEffect } from "react";
 import BlogCard from "./BlogCard";
-import { blogs } from "../data/blog.json";
+import {useBlogStore} from "../stores/blogStore"
 
 const BlogSection = () => {
+
+    const { blogs, allBlogs, loading } = useBlogStore();
+    const [fetchAttempted, setFetchAttempted] = React.useState(false);
+
+    useEffect(() => {
+        allBlogs();
+        setFetchAttempted(true);
+    }, []);
+
+    if (loading || !fetchAttempted) {
+        return (
+            <div className="flex items-center justify-center h-screen">
+                loading...
+            </div>
+        );
+    }
+
+
+
+
     return (
         <section id="blog-articles-section" className="py-16 bg-white">
             <div className="text-center mb-16">

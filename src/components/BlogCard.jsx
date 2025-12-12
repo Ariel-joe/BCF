@@ -2,7 +2,7 @@ import { ArrowRight } from "lucide-react";
 import { Link } from "react-router";
 
 const BlogCard = ({ blog }) => {
-    const { image, datePublished, author, summary, id, title } = blog;
+    const { image, datePublished, summary, _id, title } = blog;
 
     const preview = summary
         ? summary.length > 10
@@ -17,9 +17,9 @@ const BlogCard = ({ blog }) => {
                 </div>
                 <div className="p-6">
                     <div className="flex items-center space-x-2 text-xs text-neutral-500 mb-3">
-                        <span>{datePublished}</span>
+                        <span>{new Date(datePublished).toLocaleDateString()}</span>
                         <span>•</span>
-                        <span>{author.name}</span>
+                        <span>BCF Team</span>
                     </div>
                     <h3 className="text-lg text-neutral-900 mb-3 leading-tight">
                         {title}
@@ -28,7 +28,7 @@ const BlogCard = ({ blog }) => {
                         {preview}
                     </p>
                     <div className="flex items-center justify-between">
-                        <Link to={`/blog/${id}`}>
+                        <Link to={`/blog/${_id}`}>
                             <button className="text-neutral-900 cursor-pointer text-sm hover:text-neutral-600 transition-colors flex gap-2">
                                 Read More{" "}
                                 <ArrowRight size={22} />
