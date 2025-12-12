@@ -1,8 +1,8 @@
 import { Calendar, GraduationCap, Hammer, Handshake } from 'lucide-react';
-import  VolunteerForm from '../components/VolunteerForm';
 import VolunteerGallery from '../components/VolunteerGallery';
 import ContactInfo from '../components/ContactInfo';
 import SocialMedia from '../components/SocialMedia';
+import VolunteerForm from '../components/VolunteerForm';
 
 const VolunteerPage = () => {
     return (
