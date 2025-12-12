@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { useFormSubmissionStore } from "../stores/formSubmissionStore";
+import { useFormSubmissionStore } from "../stores/useFormSubmissionStore";
 
 const VolunteerForm = () => {
     const [fName, setfName] = useState("");
@@ -98,6 +98,9 @@ const VolunteerForm = () => {
             // Show success message
             setSubmitted(true);
 
+            // Scroll to top to show thank you message
+            window.scrollTo({ top: 0, behavior: "smooth" });
+
             // Reset form
             setfName("");
             setlName("");
@@ -111,7 +114,7 @@ const VolunteerForm = () => {
             // Hide success message after 5 seconds
             setTimeout(() => {
                 setSubmitted(false);
-            }, 3500);
+            }, 5000);
         } catch (error) {
             console.error("Error:", error);
             setErrors({
