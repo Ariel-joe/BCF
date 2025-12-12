@@ -374,4 +374,4 @@ const VolunteerForm = () => {
     );
 };
 
-export { VolunteerForm };
+export default VolunteerForm;
