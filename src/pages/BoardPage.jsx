@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import ProfileCard from '../components/ProfileCard';
-import {useProfileStore} from "../stores/proflieStore"
+import { useProfileStore } from "../stores/profileStore";
 
 const BoardPage = () => {
 

@@ -1,8 +1,24 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { welfares } from "../data/welfare.json";
 import WelfareCard from "../components/WelfareCard";
+import { useWelfareStore } from "../stores/welfareStore";
 
 const InternalWelfarePage = () => {
+
+    const { welfarePosts, fetchWelfarePosts, loading } = useWelfareStore();
+
+    useEffect(() => {
+        fetchWelfarePosts();
+    }, []);
+
+    if (loading) {
+        return (
+            <div className="flex items-center justify-center h-screen">
+                loading...
+            </div>
+        );
+    }
+
     return (
         <>
             <section
@@ -35,8 +51,8 @@ const InternalWelfarePage = () => {
                                 </div>
                             </div>
                             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                                {welfares
-                                    .filter((w) => w.category === "Internal")
+                                {welfarePosts
+                                    .filter((w) => w.category === "internal")
                                     .map((w, i) => (
                                         <WelfareCard key={i} welfare={w} />
                                     ))}

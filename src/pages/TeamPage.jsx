@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react'
 import ProfileCard from '../components/ProfileCard';
-import { useProfileStore } from "../stores/proflieStore";
+import { useProfileStore } from "../stores/profileStore";
 
 const TeamPage = () => {
     const { loading, fetchProfiles, profilesData } = useProfileStore();

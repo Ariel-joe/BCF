@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import { Link, useParams } from "react-router";
 import TeamData from "../data/team.json";
-import { useProfileStore } from "../stores/proflieStore";
+import { useProfileStore } from "../stores/profileStore";
 
 const { TeamMembers } = TeamData;
 

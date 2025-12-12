@@ -1,8 +1,22 @@
-import React from "react";
+import React, { useEffect } from "react";
 import WelfareCard from "../components/WelfareCard";
-import { welfares } from "../data/welfare.json";
+import { useWelfareStore } from "../stores/welfareStore";
 
 const FOBWelfarePage = () => {
+
+    const { welfarePosts, fetchWelfarePosts, loading } = useWelfareStore();
+
+    useEffect(() => {
+        fetchWelfarePosts();
+    }, []);
+
+    if (loading) {
+        return (
+            <div className="flex items-center justify-center h-screen">
+                loading...
+            </div>
+        );
+    }
     return (
         <>
             <section
@@ -34,10 +48,10 @@ const FOBWelfarePage = () => {
                                 </div>
                             </div>
                             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                                {welfares
+                                {welfarePosts
                                     .filter(
                                         (w) =>
-                                            w.category === "Friends of Beacon"
+                                            w.category === "friends-of-beacon"
                                     )
                                     .map((w, i) => (
                                         <WelfareCard key={i} welfare={w} />

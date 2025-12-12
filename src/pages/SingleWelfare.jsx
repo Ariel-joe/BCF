@@ -1,20 +1,36 @@
-import React from "react";
-import welfareData from "../data/welfare.json";
+import React, { useEffect } from "react";
 import { Link, useParams } from "react-router";
-
-const { welfares } = welfareData;
+import { useWelfareStore } from "../stores/welfareStore";
 
 const SingleWelfare = () => {
     // get the :id param from the URL
     const params = useParams();
     const id = params?.id;
+    const stringId = String(id);
 
-    
+    const { fetchWelfareById, welfareData, loading } = useWelfareStore();
+    const [fetchAttempted, setFetchAttempted] = React.useState(false);
 
-    // find the welfare item by id (ids in JSON are numbers)
-    const welfare = welfares.find((w) => String(w.id) === String(id));
+    useEffect(() => {
+        const fetchBlog = async () => {
+            if (stringId && stringId !== "undefined") {
+                await fetchWelfareById(stringId);
+                setFetchAttempted(true);
+            }
+        };
+        fetchBlog();
+    }, [stringId, fetchWelfareById]); // Fixed: use stringId instead of id
 
-    if (!welfare) {
+    // Show loading state
+    if (loading || !fetchAttempted) {
+        return (
+            <div className="flex items-center justify-center h-screen">
+                Loading...
+            </div>
+        );
+    }
+
+    if (!welfareData) {
         return (
             <section className="py-24">
                 <div className="max-w-4xl mx-auto px-4 text-center">
@@ -25,7 +41,7 @@ const SingleWelfare = () => {
                         No welfare program matches the id in the URL.
                     </p>
                     <Link
-                        to="/welfare"
+                        to="/welfare/internal"
                         className="inline-block mt-6 text-blue-600 underline"
                     >
                         Back to list
@@ -42,28 +58,28 @@ const SingleWelfare = () => {
                     <div className="grid lg:grid-cols-2 gap-12 items-center">
                         <div>
                             <h1 className="text-2xl font-bold text-neutral-900 mb-4 leading-tight">
-                                {welfare.title}
+                                {welfareData.title}
                             </h1>
                             <div className="flex gap-3">
                                 <div className="space-x-3 mb-4">
                                     <span className="bg-neutral-300 text-neutral-700 px-3 py-1 rounded-full text-sm">
-                                        {welfare.status}
+                                        {welfareData.status}
                                     </span>
                                 </div>
                                 <div className="space-x-3 mb-4">
                                     <span className="bg-(--color-logo-blue) text-white px-3 py-1 rounded-full text-sm">
-                                        {welfare.category}
+                                        {welfareData.category}
                                     </span>
                                 </div>
                             </div>
 
                             <p className="text-left text-neutral-600 mb-6">
-                                {welfare.about}
+                                {welfareData.summary}
                             </p>
                         </div>
                         <div className="lg:order-first">
                             <img
-                                src={welfare.image}
+                                src={welfareData.image}
                                 alt="welfare image"
                                 className="rounded-lg"
                             />
@@ -81,25 +97,72 @@ const SingleWelfare = () => {
                                     Program Overview
                                 </h2>
                                 <div className="prose prose-neutral max-w-none text-justify">
-                                    {(Array.isArray(welfare.description)
-                                        ? welfare.description
-                                        : String(welfare.description).split(
-                                              /\n{2,}/
-                                          )
-                                    ).map((para, i) => (
-                                        <p
-                                            key={i}
-                                            className="text-neutral-600 leading-relaxed mb-6"
-                                        >
-                                            {para}
+                                    {welfareData.content &&
+                                    Array.isArray(welfareData.content) ? (
+                                        welfareData.content.map(
+                                            (section, i) => {
+                                                if (
+                                                    typeof section === "string"
+                                                ) {
+                                                    return (
+                                                        <p
+                                                            key={i}
+                                                            className="text-sm text-neutral-700 leading-relaxed mb-6"
+                                                        >
+                                                            {section}
+                                                        </p>
+                                                    );
+                                                }
+
+                                                const subtitle =
+                                                    section?.subtitle ||
+                                                    section?.title ||
+                                                    null;
+                                                const paragraphs =
+                                                    Array.isArray(
+                                                        section?.paragraphs
+                                                    )
+                                                        ? section.paragraphs
+                                                        : section?.paragraphs
+                                                        ? [section.paragraphs]
+                                                        : section?.paragraph
+                                                        ? [section.paragraph]
+                                                        : section?.text
+                                                        ? [section.text]
+                                                        : [];
+
+                                                return (
+                                                    <div key={i}>
+                                                        {subtitle && (
+                                                            <h2 className="text-xl font-semibold text-neutral-900 mt-12 mb-6">
+                                                                {subtitle}
+                                                            </h2>
+                                                        )}
+                                                        {paragraphs.map(
+                                                            (p, idx) => (
+                                                                <p
+                                                                    key={idx}
+                                                                    className="text-base text-neutral-700 leading-relaxed mb-6"
+                                                                >
+                                                                    {p}
+                                                                </p>
+                                                            )
+                                                        )}
+                                                    </div>
+                                                );
+                                            }
+                                        )
+                                    ) : (
+                                        <p className="text-neutral-600">
+                                            No content available.
                                         </p>
-                                    ))}
+                                    )}
                                 </div>
                             </div>
                         </div>
 
                         <div className="space-y-6">
-                            {welfare.status === "completed" ? null : (
+                            {welfareData.status === "completed" ? null : (
                                 <div className="bg-neutral-900 rounded-lg p-6 text-white">
                                     <h3 className="text-xl mb-4">
                                         Make a Difference
@@ -128,7 +191,10 @@ const SingleWelfare = () => {
                                             Individuals Supported
                                         </span>
                                         <span className="text-neutral-900">
-                                            {welfare.individuals}
+                                            {
+                                                welfareData.impactRecord
+                                                    .individuals
+                                            }
                                         </span>
                                     </div>
                                     <div className="flex justify-between items-center">
@@ -136,9 +202,11 @@ const SingleWelfare = () => {
                                             Partners
                                         </span>
                                         <span className="text-neutral-900">
-                                            {Array.isArray(welfare.partners)
-                                                ? welfare.partners.join(", ")
-                                                : welfare.partners}
+                                            {Array.isArray(welfareData.partners)
+                                                ? welfareData.partners.join(
+                                                      ", "
+                                                  )
+                                                : welfareData.partners}
                                         </span>
                                     </div>
                                     <div className="flex justify-between items-center">
@@ -146,7 +214,10 @@ const SingleWelfare = () => {
                                             Communities Reached
                                         </span>
                                         <span className="text-neutral-900">
-                                            {welfare.communities}
+                                            {
+                                                welfareData.impactRecord
+                                                    .communities
+                                            }
                                         </span>
                                     </div>
                                     <div className="flex justify-between items-center">
@@ -154,7 +225,7 @@ const SingleWelfare = () => {
                                             Success Rate
                                         </span>
                                         <span className="text-neutral-900">
-                                            {welfare.successRate}%
+                                            {welfareData.successRate}
                                         </span>
                                     </div>
                                 </div>
@@ -170,7 +241,9 @@ const SingleWelfare = () => {
                                             Started:
                                         </span>
                                         <span className="text-neutral-900">
-                                            {welfare.date}
+                                            {new Date(
+                                                welfareData.startDate
+                                            ).toLocaleDateString()}
                                         </span>
                                     </div>
 
@@ -179,7 +252,10 @@ const SingleWelfare = () => {
                                             Budget:
                                         </span>
                                         <span className="text-neutral-900">
-                                            Ksh {welfare.budget}
+                                            Budget: Ksh{" "}
+                                            {parseInt(
+                                                welfareData.budget
+                                            ).toLocaleString()}
                                         </span>
                                     </div>
                                     <div className="flex justify-between">
@@ -187,7 +263,7 @@ const SingleWelfare = () => {
                                             Coordinator:
                                         </span>
                                         <span className="text-neutral-900">
-                                            {welfare.coordinator}
+                                            {welfareData.coordinator.name}
                                         </span>
                                     </div>
                                 </div>
