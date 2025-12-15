@@ -1,22 +1,34 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import WelfareCard from "../components/WelfareCard";
 import { useWelfareStore } from "../stores/welfareStore";
 
 const FOBWelfarePage = () => {
+    const { welfarePosts, fetchWelfarePosts, loading, pagination } = useWelfareStore();
+    const [fetchAttempted, setFetchAttempted] = useState(false);
+    const [currentPage, setCurrentPage] = useState(1);
 
-    const { welfarePosts, fetchWelfarePosts, loading } = useWelfareStore();
+    // Filter Friends of Beacon welfare posts
+    const fobWelfarePosts = welfarePosts.filter((w) => w.category === "friends-of-beacon");
 
     useEffect(() => {
-        fetchWelfarePosts();
+        fetchWelfarePosts(1);
+        setFetchAttempted(true);
     }, []);
 
-    if (loading) {
+    const loadMore = async () => {
+        const nextPage = currentPage + 1;
+        await fetchWelfarePosts(nextPage);
+        setCurrentPage(nextPage);
+    };
+
+    if (loading && !fetchAttempted) {
         return (
             <div className="flex items-center justify-center h-screen">
                 loading...
             </div>
         );
     }
+
     return (
         <>
             <section
@@ -44,19 +56,36 @@ const FOBWelfarePage = () => {
                                     Active Projects
                                 </h2>
                                 <div className="flex items-center space-x-2 font-semibold text-neutral-600">
-                                    <span>127 projects</span>
+                                    <span>{fobWelfarePosts.length} projects</span>
                                 </div>
                             </div>
                             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                                {welfarePosts
-                                    .filter(
-                                        (w) =>
-                                            w.category === "friends-of-beacon"
-                                    )
-                                    .map((w, i) => (
-                                        <WelfareCard key={i} welfare={w} />
-                                    ))}
+                                {fobWelfarePosts.map((w, i) => (
+                                    <WelfareCard key={w._id || i} welfare={w} />
+                                ))}
                             </div>
+
+                            {/* Load More Button */}
+                            {pagination?.hasMore && (
+                                <div className="flex justify-center mt-12">
+                                    <button
+                                        onClick={loadMore}
+                                        disabled={loading}
+                                        className="px-8 py-3 bg-neutral-900 text-white rounded-lg hover:bg-neutral-800 disabled:bg-neutral-400 disabled:cursor-not-allowed transition-colors font-semibold"
+                                    >
+                                        {loading ? "Loading..." : "Load More Projects"}
+                                    </button>
+                                </div>
+                            )}
+
+                            {/* End of Results Message */}
+                            {!pagination?.hasMore && fobWelfarePosts.length > 0 && (
+                                <div className="text-center mt-12">
+                                    <p className="text-neutral-600">
+                                        You've reached the end of all projects
+                                    </p>
+                                </div>
+                            )}
                         </div>
                     </section>
                     <div className="bg-(--color-logo-orange) p-8 rounded-2xl">

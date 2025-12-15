@@ -4,11 +4,12 @@ const useWelfareStore = create((set) => ({
     loading: false,
     welfarePosts: [],
     welfareData: null,
+    pagination: null,
     
-    fetchWelfarePosts: async () => {
+    fetchWelfarePosts: async (page = 1) => {
         try {
             set({ loading: true });
-            const url = `${import.meta.env.VITE_SERVER_URL}/api/v1/welfare`;
+            const url = `${import.meta.env.VITE_SERVER_URL}/api/v1/welfare?page=${page}&limit=10`;
             const res = await fetch(url, {
                 method: "GET",
                 headers: {
@@ -18,9 +19,16 @@ const useWelfareStore = create((set) => ({
             });
             if (res.ok) {
                 const response = await res.json();
-                set({ welfarePosts: response?.data || [], loading: false });
+                
+                // Append new welfare posts to existing ones for "Load More" functionality
+                set((state) => ({
+                    welfarePosts: page === 1 ? response.data : [...state.welfarePosts, ...response.data],
+                    pagination: response.pagination,
+                    loading: false
+                }));
                 return;
             }
+            set({ loading: false });
         } catch (error) {
             console.error(error);
             set({ loading: false });
@@ -43,6 +51,7 @@ const useWelfareStore = create((set) => ({
                 set({ welfareData: response?.data || {}, loading: false });
                 return;
             }
+            set({ loading: false });
         } catch (error) {
             console.error(error);
             set({ loading: false, welfareData: null });
