@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import PaystackPop from "@paystack/inline-js";
-import { useDonationStore } from "./donationStore";
+import { useDonationStore } from "../stores/donationStore";
 
 const PaystackDonation = () => {
     const [formData, setFormData] = useState({
@@ -61,11 +61,11 @@ const PaystackDonation = () => {
 
             // Initialize Paystack Popup with PUBLIC KEY only
             const popup = new PaystackPop();
-            
+
             popup.resumeTransaction(data.data.access_code, {
                 onSuccess: (transaction) => {
-                    console.log("Payment successful:", transaction);
-                    
+
+
                     // Reset form
                     setFormData({
                         email: "",

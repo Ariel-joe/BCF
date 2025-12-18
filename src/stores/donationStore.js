@@ -34,9 +34,9 @@ const useDonationStore = create((set) => ({
             set({ loading: false });
             return data; // Return the response with access_code
         } catch (error) {
-            set({ 
-                loading: false, 
-                error: error.message || 'Failed to initialize donation' 
+            set({
+                loading: false,
+                error: error.message || 'Failed to initialize donation'
             });
             throw error;
         }
@@ -58,7 +58,7 @@ const useDonationStore = create((set) => ({
 
             if (data.success && data.data.status === 'success') {
                 set({ success: true, error: null });
-                console.log('Donation verified successfully');
+
             }
 
             return data;
