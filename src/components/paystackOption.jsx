@@ -1,5 +1,6 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import PaystackPop from "@paystack/inline-js";
+import { useDonationStore } from "./donationStore";
 
 const PaystackDonation = () => {
     const [formData, setFormData] = useState({
@@ -8,7 +9,18 @@ const PaystackDonation = () => {
         lastName: "",
         amount: "",
     });
-    const [loading, setLoading] = useState(false);
+
+    const { loading, error, success, initiateDonation, verifyDonation, reset } = useDonationStore();
+
+    // Reset success message after showing
+    useEffect(() => {
+        if (success) {
+            const timer = setTimeout(() => {
+                reset();
+            }, 5000);
+            return () => clearTimeout(timer);
+        }
+    }, [success, reset]);
 
     const handleChange = (e) => {
         const { name, value } = e.target;
@@ -21,17 +33,8 @@ const PaystackDonation = () => {
     const handlePaystack = async (e) => {
         e.preventDefault();
 
-        const url = `${
-            import.meta.env.VITE_SERVER_URL
-        }/api/v1/donation/initiate`;
-
         // Validate form
-        if (
-            !formData.email ||
-            !formData.amount ||
-            !formData.firstName ||
-            !formData.lastName
-        ) {
+        if (!formData.email || !formData.amount || !formData.firstName || !formData.lastName) {
             console.error("Please fill in all fields");
             return;
         }
@@ -43,46 +46,26 @@ const PaystackDonation = () => {
             return;
         }
 
-        setLoading(true);
-
         try {
-            // Initialize transaction on your backend
-            const response = await fetch(url, {
-                method: "POST",
-                headers: {
-                    "Content-Type": "application/json",
-                },
-                body: JSON.stringify({
-                    email: formData.email,
-                    firstName: formData.firstName,
-                    lastName: formData.lastName,
-                    amount: amountValue * 100, // Paystack expects amount in kobo/cents
-                }),
+            // Initialize transaction via Zustand store
+            const data = await initiateDonation({
+                email: formData.email,
+                firstName: formData.firstName,
+                lastName: formData.lastName,
+                amount: amountValue,
             });
 
-            if (!response.ok) {
-                throw new Error("Failed to initialize payment");
+            if (!data.data.access_code) {
+                throw new Error("Failed to get access code");
             }
 
-            const data = await response.json();
-
-            console.log("response with access code", data);
-
-            if (!data.success || !data.data.access_code) {
-                throw new Error(data.message || "Failed to get access code");
-            }
-
-            // Initialize Paystack Popup
+            // Initialize Paystack Popup with PUBLIC KEY only
             const popup = new PaystackPop();
-
+            
             popup.resumeTransaction(data.data.access_code, {
                 onSuccess: (transaction) => {
-                    // Payment successful
                     console.log("Payment successful:", transaction);
-                    console.log(
-                        "Donation successful! Thank you for your support."
-                    );
-
+                    
                     // Reset form
                     setFormData({
                         email: "",
@@ -91,121 +74,112 @@ const PaystackDonation = () => {
                         amount: "",
                     });
 
-                    // Optional: Verify transaction on your backend
-                    verifyTransaction(transaction.reference);
+                    // Verify transaction via Zustand store
+                    verifyDonation(transaction.reference);
                 },
                 onCancel: () => {
-                    // User closed the popup
                     console.log("Payment cancelled");
                 },
                 onError: (error) => {
-                    // Payment failed
                     console.error("Payment error:", error);
-                    console.error("Payment failed. Please try again.");
                 },
             });
         } catch (error) {
             console.error("Payment initialization error:", error);
-            console.error(error.message || "Failed to initialize payment");
-        } finally {
-            setLoading(false);
-        }
-    };
-
-    // Optional: Verify transaction on backend
-    const verifyTransaction = async (reference) => {
-        try {
-
-            const url = `${import.meta.env.VITE_SERVER_URL}/api/v1/donation/verify/${reference}`;
-            await fetch(
-                url,
-                {
-                    method: "GET",
-                    headers: {
-                        "Content-Type": "application/json",
-                    },
-                }
-            );
-        } catch (error) {
-            console.error("Verification error:", error);
         }
     };
 
     return (
-        <form onSubmit={handlePaystack}>
-            <label className="block text-sm text-neutral-700 mb-2">
-                First Name *
-            </label>
-            <div className="relative mb-6">
-                <input
-                    type="fname"
-                    name="firstName"
-                    value={formData.firstName}
-                    onChange={handleChange}
-                    className="w-full px-4 py-3 border border-neutral-300 rounded-lg focus:border-neutral-900 focus:outline-none"
-                    placeholder=""
-                    required
-                />
-            </div>
+        <div>
+            {/* Success Message */}
+            {success && (
+                <div className="mb-6 p-4 bg-green-100 border border-green-400 text-green-700 rounded-lg">
+                    Donation successful! Thank you for your support. 🎉
+                </div>
+            )}
 
-            <label className="block text-sm text-neutral-700 mb-2">
-                Last Name *
-            </label>
-            <div className="relative mb-6">
-                <input
-                    type="lname"
-                    name="lastName"
-                    value={formData.lastName}
-                    onChange={handleChange}
-                    className="w-full px-4 py-3 border border-neutral-300 rounded-lg focus:border-neutral-900 focus:outline-none"
-                    placeholder=""
-                    required
-                />
-            </div>
+            {/* Error Message */}
+            {error && (
+                <div className="mb-6 p-4 bg-red-100 border border-red-400 text-red-700 rounded-lg">
+                    {error}
+                </div>
+            )}
 
+            <form onSubmit={handlePaystack}>
+                <label className="block text-sm text-neutral-700 mb-2">
+                    First Name *
+                </label>
+                <div className="relative mb-6">
+                    <input
+                        type="text"
+                        name="firstName"
+                        value={formData.firstName}
+                        onChange={handleChange}
+                        className="w-full px-4 py-3 border border-neutral-300 rounded-lg focus:border-neutral-900 focus:outline-none"
+                        placeholder="John"
+                        required
+                    />
+                </div>
 
-            <label className="block text-sm text-neutral-700 mb-2">
-                Email *
-            </label>
-            <div className="relative mb-6">
-                <input
-                    type="email"
-                    name="email"
-                    value={formData.email}
-                    onChange={handleChange}
-                    className="w-full px-4 py-3 border border-neutral-300 rounded-lg focus:border-neutral-900 focus:outline-none"
-                    placeholder=""
-                    required
-                />
-            </div>
+                <label className="block text-sm text-neutral-700 mb-2">
+                    Last Name *
+                </label>
+                <div className="relative mb-6">
+                    <input
+                        type="text"
+                        name="lastName"
+                        value={formData.lastName}
+                        onChange={handleChange}
+                        className="w-full px-4 py-3 border border-neutral-300 rounded-lg focus:border-neutral-900 focus:outline-none"
+                        placeholder="Doe"
+                        required
+                    />
+                </div>
 
-            <label className="block text-sm text-neutral-700 mb-2">
-                Amount (KES) *
-            </label>
-            <div className="relative mb-6">
-                <input
-                    name="amount"
-                    value={formData.amount}
-                    onChange={handleChange}
-                    className="w-full px-4 py-3 border border-neutral-300 rounded-lg focus:border-neutral-900 focus:outline-none"
-                    placeholder=""
-                    min="100"
-                    step="1"
-                    required
-                />
-                <p className="text-xs text-neutral-500 mt-1">
-                    Minimum amount: KES 100
-                </p>
-            </div>
+                <label className="block text-sm text-neutral-700 mb-2">
+                    Email *
+                </label>
+                <div className="relative mb-6">
+                    <input
+                        type="email"
+                        name="email"
+                        value={formData.email}
+                        onChange={handleChange}
+                        className="w-full px-4 py-3 border border-neutral-300 rounded-lg focus:border-neutral-900 focus:outline-none"
+                        placeholder="john@example.com"
+                        required
+                    />
+                </div>
 
-            <button
-                type="submit"
-                disabled={loading}
-                className="w-full bg-(--color-logo-orange) text-white py-4 rounded-lg hover:bg-(--color-card-orange) hover:text-black disabled:bg-neutral-400 disabled:cursor-not-allowed transition-colors flex items-center justify-center"
-            >
-                {loading ? "Processing..." : "Donate"}
-            </button>
-        </form>
+                <label className="block text-sm text-neutral-700 mb-2">
+                    Amount (KES) *
+                </label>
+                <div className="relative mb-6">
+                    <input
+                        type="number"
+                        name="amount"
+                        value={formData.amount}
+                        onChange={handleChange}
+                        className="w-full px-4 py-3 border border-neutral-300 rounded-lg focus:border-neutral-900 focus:outline-none"
+                        placeholder="100"
+                        min="100"
+                        step="1"
+                        required
+                    />
+                    <p className="text-xs text-neutral-500 mt-1">
+                        Minimum amount: KES 100
+                    </p>
+                </div>
+
+                <button
+                    type="submit"
+                    disabled={loading}
+                    className="w-full bg-orange-500 text-white py-4 rounded-lg hover:bg-orange-600 disabled:bg-neutral-400 disabled:cursor-not-allowed transition-colors flex items-center justify-center"
+                >
+                    {loading ? "Processing..." : "Donate"}
+                </button>
+            </form>
+        </div>
     );
 };
 
